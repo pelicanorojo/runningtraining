@@ -1,12 +1,26 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+//import React, {useState} from 'react';
+import React from 'react';
+import { Calendar, LogIn, User, Settings } from 'lucide-react';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Input } from "@/components/ui/input"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -23,12 +37,89 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  //const [selectedPlan, setSelectedPlan] = useState('half-marathon-12');
+  //const [raceDate, setRaceDate] = useState('');
+  const [selectedPlan, setSelectedPlan] = ['Plan number 1', () => 'Plan number 1']
+  const [raceDate, setRaceDate] = ['2024-11-29', () => '2024-11-29']
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex flex-col min-h-screen mx-auto bg-background">
+          {/* Header */}
+          <header className="border-b">
+            {/* App Title */}
+            <div className="border-b bg-muted/40">
+              <div className="container items-center py-3">
+                <h1 className="text-2xl font-semibold">Marathon Training Planner</h1>
+              </div>
+            </div>
+            
+            {/* Controls */}
+            <div className="container py-4">
+              <div className="flex justify-between items-center">
+                {/* Plan Selection */}
+                <div className="flex items-center space-x-4">
+                  <Select value={selectedPlan} >{/*onValueChange={setSelectedPlan}*/}
+                    <SelectTrigger className="w-[280px]">
+                      <SelectValue placeholder="Select training plan" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="half-marathon-12">Half Marathon - 12 Weeks</SelectItem>
+                      <SelectItem value="marathon-16">Marathon - 16 Weeks</SelectItem>
+                      <SelectItem value="marathon-20">Marathon - 20 Weeks</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Button variant="outline" size="icon">
+                    <Settings className="h-4 w-4" />
+                  </Button>
+                </div>
+
+                {/* Date & User */}
+                <div className="flex items-center space-x-6">
+                  <div className="flex items-center space-x-2">
+                    <Calendar className="h-4 w-4 text-muted-foreground" />
+                    <Input
+                      type="date"
+                      defaultValue={raceDate}
+                      className="w-[160px]"
+                    />
+                      {/*onChange={(e) => {
+                        setRaceDate(e.target.value);
+                        generateTrainingDates(e.target.value);
+                      }}
+                      */}
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <Button variant="ghost" size="sm">
+                      <LogIn className="h-4 w-4 mr-2" />
+                      Login
+                    </Button>
+                    <Avatar>
+                      <AvatarImage src="/api/placeholder/32/32" alt="User" />
+                      <AvatarFallback>
+                        <User className="h-4 w-4" />
+                      </AvatarFallback>
+                    </Avatar>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </header>
+          {/* Main Content */}
+          <div className="flex-1 container py-6">
+            {children}
+          </div>
+          {/* Footer */}
+          <footer className="border-t py-4">
+            <div className="container">
+              <p className="text-sm text-muted-foreground text-center">
+                © 2024 Marathon Training Planner
+              </p>
+            </div>
+          </footer>
+        </div>
       </body>
     </html>
   );
