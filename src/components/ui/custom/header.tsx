@@ -5,7 +5,7 @@ import AuthBox from '@/components/ui/custom/authBox';
 
 export default function Header() {
   return (
-    <header className="border-b">
+    <header role="header" className="border-b">
       <HeaderTitle title="Marathon Training Planner"/>
     {/* Controls */}
     <div className="container py-4">

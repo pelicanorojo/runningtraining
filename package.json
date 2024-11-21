@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "test": "clear; jest",
+    "test:watch": "clear; jest --watch",
+    "test:changes": "clear; jest --watch --onlyChanged"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",

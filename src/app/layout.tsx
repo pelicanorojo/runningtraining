@@ -3,7 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 //import React, {useState} from 'react';
 import React from 'react';
-import Header from "@/components/ui/custom/header";
+import Layout from "@/components/ui/custom/layout";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -29,25 +30,8 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        className={`container mx-auto ${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="flex flex-col min-h-screen mx-auto bg-background">
-          {/* Header */}
-          <Header/>
-          {/* Main Content */}
-          <div className="flex-1 container py-6">
-            {children}
-          </div>
-          {/* Footer */}
-          <footer className="border-t py-4">
-            <div className="container">
-              <p className="text-sm text-muted-foreground text-center">
-                © 2024 Marathon Training Planner
-              </p>
-            </div>
-          </footer>
-        </div>
+      <body className={`container mx-auto ${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <Layout>{children}</Layout>
       </body>
     </html>
   );
