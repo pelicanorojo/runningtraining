@@ -1,36 +1,50 @@
-
-//import React, {useState} from 'react';
-import { Settings } from 'lucide-react';
+'use client'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Button } from "@/components/ui/button"
+} from "@/components/ui/select";
 
 
-export default function PlanSelector() {
-  //const [selectedPlan, setSelectedPlan] = useState('half-marathon-12');
-  //const [raceDate, setRaceDate] = useState('');
-  const selectedPlan = 'Plan number 1';
+import {TrainingPlanThinFrontList, TrainingPlanThinFront, TrainingPlanId} from "@/types/global";
+import { useRouter } from 'next/navigation';
+import paths from '@/lib/paths';
+
+
+interface PlanSelectorProps {
+  availablePlans: TrainingPlanThinFrontList;
+  selectedPlanId?: TrainingPlanId;
+
+}
+
+export default function PlanSelector ({selectedPlanId, availablePlans}: PlanSelectorProps) {
+  const router = useRouter();
+
+  const handleSelect = (value: TrainingPlanId) => {
+    console.log('DBG: handSelected')
+    router.push(paths.trainingPlanShow(value)); // Replace with your desired route
+  };
+
+  const renderTrainingsList = (trainingList: TrainingPlanThinFrontList) => {
+    return trainingList.map( (p: TrainingPlanThinFront) => {
+      return (
+        <SelectItem key={p.id} value={p.id} >{p.label}</SelectItem>
+      );
+    })
+  }
 
   return (
     <div className="flex items-center space-x-4">
-      <Select value={selectedPlan} >{/*onValueChange={setSelectedPlan}*/}
+      <Select value={selectedPlanId} onValueChange={handleSelect}>
         <SelectTrigger className="w-[280px]">
-          <SelectValue placeholder="Select training plan" />
+        <SelectValue placeholder="Select training plan" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="half-marathon-12">Half Marathon - 12 Weeks</SelectItem>
-          <SelectItem value="marathon-16">Marathon - 16 Weeks</SelectItem>
-          <SelectItem value="marathon-20">Marathon - 20 Weeks</SelectItem>
+          {renderTrainingsList(availablePlans)}
         </SelectContent>
       </Select>
-      <Button variant="outline" size="icon">
-        <Settings className="h-4 w-4" />
-      </Button>
     </div>
   );
 }
