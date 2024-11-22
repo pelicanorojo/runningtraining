@@ -1,7 +1,12 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Layout from '@/components/ui/custom/layout';
- 
+
+jest.mock('next/navigation', () => ({
+  useRouter: () => ({
+    push: jest.fn(),
+  }),
+}));
 
 describe('Renders layout properly', () => {
   it('Should render Header, Main with Child, and Footer', () => {
