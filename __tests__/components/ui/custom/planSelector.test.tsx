@@ -1,3 +1,11 @@
+/*
+ * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
+ * @Date: 2024-11-21T11:34:30-03:00
+ * @Last modified by: Pablo Benito <pelicanorojo>
+ * @Last modified time: 2024-11-21T11:35:59-03:00
+ */
+
+
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import PlanSelector from '@/components/ui/custom/planSelector';

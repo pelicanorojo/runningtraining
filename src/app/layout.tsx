@@ -1,3 +1,11 @@
+/*
+ * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
+ * @Date: 2024-11-21T11:34:30-03:00
+ * @Last modified by: Pablo Benito <pelicanorojo>
+ * @Last modified time: 2024-11-21T11:36:26-03:00
+ */
+
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";

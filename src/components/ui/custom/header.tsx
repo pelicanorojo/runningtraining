@@ -1,3 +1,11 @@
+/*
+ * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
+ * @Date: 2024-11-21T11:34:30-03:00
+ * @Last modified by: Pablo Benito <pelicanorojo>
+ * @Last modified time: 2024-11-21T11:36:49-03:00
+ */
+
+
 import HeaderTitle from '@/components/ui/custom/headerTitle';
 import PlanSelector from '@/components/ui/custom/planSelector';
 import RaceDateSelector from '@/components/ui/custom/raceDateSelector';
