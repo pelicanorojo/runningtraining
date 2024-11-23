@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-21T11:37:12-03:00
+ * @Last modified time: 2024-11-23T12:19:35-03:00
  */
 
 
@@ -14,25 +14,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Dispatch } from 'react';
 
-
-import {TrainingPlanThinFrontList, TrainingPlanThinFront, TrainingPlanId} from "@/types/global";
-import { useRouter } from 'next/navigation';
-import paths from '@/lib/paths';
-
+import { TrainingPlanThinFrontList, TrainingPlanThinFront, TrainingPlanId } from "@/types/global";
+import { ConfigReducerAction } from "@/types/global";
 
 interface PlanSelectorProps {
   availablePlans: TrainingPlanThinFrontList;
   selectedPlanId?: TrainingPlanId;
-
+  dispatch: Dispatch<ConfigReducerAction>
 }
 
-export default function PlanSelector ({selectedPlanId, availablePlans}: PlanSelectorProps) {
-  const router = useRouter();
+export default function PlanSelector ({selectedPlanId, availablePlans, dispatch}: PlanSelectorProps) {
 
   const handleSelect = (value: TrainingPlanId) => {
-    console.log('DBG: handSelected')
-    router.push(paths.trainingPlanShow(value)); // Replace with your desired route
+    dispatch({type: 'CHANGE_PLAN', payload: {trainingPlanId: value}});
   };
 
   const renderTrainingsList = (trainingList: TrainingPlanThinFrontList) => {
