@@ -1,3 +1,11 @@
+/*
+ * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
+ * @Date: 2024-11-21T11:34:30-03:00
+ * @Last modified by: Pablo Benito <pelicanorojo>
+ * @Last modified time: 2024-11-23T12:20:45-03:00
+ */
+
+
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 //import userEvent from '@testing-library/user-event';
@@ -11,7 +19,7 @@ jest.mock('next/navigation', () => ({
 
 describe('Header testing...', () => {
   it('Should render header properly', () => {
-    render(<Header />);
+    render(<Header title="Page name"/>);
     const header = screen.getByRole('header');
     expect(header).toBeInTheDocument();
   })

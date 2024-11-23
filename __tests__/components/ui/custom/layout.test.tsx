@@ -1,3 +1,11 @@
+/*
+ * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
+ * @Date: 2024-11-21T11:34:30-03:00
+ * @Last modified by: Pablo Benito <pelicanorojo>
+ * @Last modified time: 2024-11-21T11:35:53-03:00
+ */
+
+
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Layout from '@/components/ui/custom/layout';

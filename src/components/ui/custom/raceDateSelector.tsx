@@ -1,12 +1,25 @@
 
-//import React, {useState} from 'react';
+/*
+ * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
+ * @Date: 2024-11-21T11:34:30-03:00
+ * @Last modified by: Pablo Benito <pelicanorojo>
+ * @Last modified time: 2024-11-23T12:18:35-03:00
+ */
+
+
 import { Calendar } from 'lucide-react';
 import { Input } from "@/components/ui/input"
 
-export default function RaceDateSelector() {
-  //const [selectedPlan, setSelectedPlan] = useState('half-marathon-12');
-  //const [raceDate, setRaceDate] = useState('');
-  const raceDate  = '2024-11-29';
+
+import { Dispatch } from 'react';
+import { ConfigReducerAction } from "@/types/global";
+
+interface RaceDateSelectorProps {
+  raceDate: string | undefined;
+  dispatch: Dispatch<ConfigReducerAction>
+}
+
+export default function RaceDateSelector({raceDate, dispatch}: RaceDateSelectorProps) {
 
   return (
     <div className="flex items-center space-x-2">
@@ -15,12 +28,10 @@ export default function RaceDateSelector() {
         type="date"
         defaultValue={raceDate}
         className="w-[160px]"
-      />
-        {/*onChange={(e) => {
-          setRaceDate(e.target.value);
-          generateTrainingDates(e.target.value);
+        onChange={(e) => {
+          dispatch({type: 'CHANGE_RACEDATE', payload: {raceDate: e.target.value}});
         }}
-        */}
+      />
     </div>
   );
 }
