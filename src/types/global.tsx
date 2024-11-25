@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-23T12:15:15-03:00
+ * @Last modified time: 2024-11-25T01:34:45-03:00
  */
 
 export type TrainingPlanId = string;

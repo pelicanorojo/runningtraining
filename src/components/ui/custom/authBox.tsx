@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-21T11:36:39-03:00
+ * @Last modified time: 2024-11-25T01:32:03-03:00
  */
 
 
@@ -19,7 +19,7 @@ export default function AuthBox() {
         Login
       </Button>
       <Avatar>
-        <AvatarImage src="/api/placeholder/32/32" alt="User" />
+        <AvatarImage src="" alt="User" />
         <AvatarFallback>
           <User className="h-4 w-4" />
         </AvatarFallback>
@@ -27,3 +27,4 @@ export default function AuthBox() {
     </div>
   );
 }
+//        <AvatarImage src="/api/placeholder/32/32" alt="User" />

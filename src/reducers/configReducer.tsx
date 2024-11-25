@@ -1,3 +1,11 @@
+/*
+ * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
+ * @Date: 2024-11-23T01:50:49-03:00
+ * @Last modified by: Pablo Benito <pelicanorojo>
+ * @Last modified time: 2024-11-25T01:34:37-03:00
+ */
+
+
 import {ConfigReducerAction, PlanConfig} from "@/types/global";
 
 
@@ -7,7 +15,6 @@ export const initialState: PlanConfig = {
 };
 
 export function configReducer(state: PlanConfig, {type, payload}: ConfigReducerAction) {
-  console.log('configReducer: (type, payload) =', type, payload);
 
   switch (type) {
     case 'CHANGE_PLAN': {
