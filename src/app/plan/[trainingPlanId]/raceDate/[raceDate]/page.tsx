@@ -2,12 +2,14 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-21T11:36:09-03:00
+ * @Last modified time: 2024-11-25T01:00:31-03:00
  */
 
 
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button"
+import ConfigBar from '@/components/ui/custom/configBar';
+
 import {
   Card,
   CardContent,
@@ -20,9 +22,17 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 // next are wrong types, define similar but for training workout lists...
 import {TrainingPlanThinFrontList, TrainingPlanId} from "@/types/global"; 
 
+interface ShowPlanPageProps {
+  params: {
+    trainingPlanId: string;
+    raceDate: string;
+  }
+}
 
-
-export default function Home() {
+export default function ShowPlanPage({params}: ShowPlanPageProps) {
+  const {trainingPlanId, raceDate} = params;
+  const initialState = {trainingPlanId, raceDate};
+  
   //const [selectedTraining, setSelectedTraining] = useState(5);
   //const [trainingDates, setTrainingDates] = useState(['2024-10-01', '2024-10-03']);
   const selectedTrainingId: undefined | TrainingPlanId = undefined;
@@ -35,6 +45,9 @@ export default function Home() {
   ]
 */
   return (
+    <>
+    <div>{trainingPlanId}, {raceDate}</div>
+    <ConfigBar initialState={initialState}/> 
     <div className="flex gap-6 h-[calc(100vh-240px)]">
     {/* Left Panel - Dates */}
     <Card className="w-[240px] shadow-none">
@@ -85,5 +98,6 @@ export default function Home() {
       </CardContent>
     </Card>
   </div>
+  </>
   )
 }
