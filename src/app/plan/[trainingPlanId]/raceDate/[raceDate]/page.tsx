@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-25T01:00:31-03:00
+ * @Last modified time: 2024-11-25T01:49:06-03:00
  */
 
 
@@ -46,7 +46,6 @@ export default function ShowPlanPage({params}: ShowPlanPageProps) {
 */
   return (
     <>
-    <div>{trainingPlanId}, {raceDate}</div>
     <ConfigBar initialState={initialState}/> 
     <div className="flex gap-6 h-[calc(100vh-240px)]">
     {/* Left Panel - Dates */}
