@@ -2,14 +2,14 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-23T01:02:15-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-23T01:40:06-03:00
+ * @Last modified time: 2024-11-25T09:08:30-03:00
  */
 
 
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import RaceDateSelector from '@/components/ui/custom/raceDateSelector';
-import {PlanConfig, TrainingPlanThinFrontList, TrainingPlanThinFront} from "@/types/global";
+import {PlanConfig} from "@/types/global";
 import { useReducer } from 'react';
 
 //const recreateMocks = () => {
@@ -40,7 +40,7 @@ describe('RaceDate Selector ...', () => {
     expect(theDate).toBeInTheDocument();
   })
 
-  it('Should dispatch an action when is selected a RaceDate', async () => {
+  it('Should dispatch an action when is selected a RaceDate',  () => {
     const mockDispatch = jest.fn();
     jest.mocked(useReducer).mockReturnValue([{ }, mockDispatch]);
 

@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-23T12:19:35-03:00
+ * @Last modified time: 2024-11-25T10:22:57-03:00
  */
 
 
@@ -38,7 +38,6 @@ export default function PlanSelector ({selectedPlanId, availablePlans, dispatch}
       );
     })
   }
-
   return (
     <div className="flex items-center space-x-4">
       <Select value={selectedPlanId} onValueChange={handleSelect}>

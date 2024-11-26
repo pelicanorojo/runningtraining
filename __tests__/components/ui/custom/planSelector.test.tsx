@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-23T01:30:28-03:00
+ * @Last modified time: 2024-11-25T09:43:35-03:00
  */
 
 
@@ -11,7 +11,8 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import PlanSelector from '@/components/ui/custom/planSelector';
 import {PlanConfig, TrainingPlanThinFrontList, TrainingPlanThinFront} from "@/types/global";
 import {trainingPlansAvailableBack} from "@/lib/constants";
-import { useReducer } from 'react';
+// TODO: don't mock reducer, limit to mock the dispatch, having here is used the dispatch, should be reducer agnostic
+//DONT: :) import { useReducer } from 'react';
 
 const trainingPlansAvailableFront:TrainingPlanThinFrontList = trainingPlansAvailableBack.map( p => {
   return {id: p.id, label: p.label};
@@ -22,7 +23,7 @@ const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[1];
 //const recreateMocks = () => {
   //jest.clearAllMocks();
 //TODO: check how mock in an between tests decoupled way, but sharing a given text mock instance, with the used by the component tested.
-//*
+/*
   const sharedRouterMock = jest.fn();
 
   jest.mock('react', () => ({
@@ -96,9 +97,9 @@ describe('Plan Selector ...', () => {
     //
   })
 
-  it('Should dispatch an action when is selected an option', async () => {
+  it('Should dispatch an action when is selected an option', () => {
     const mockDispatch = jest.fn();
-    jest.mocked(useReducer).mockReturnValue([{ }, mockDispatch]);
+    //jest.mocked(useReducer).mockReturnValue([{ }, mockDispatch]);
 
     const state: PlanConfig  = {
       trainingPlanId: undefined,
@@ -115,7 +116,7 @@ describe('Plan Selector ...', () => {
 
     // Filter options by text
     const optionElement = screen.getAllByRole('option').filter(option => {
-      return option.textContent.includes(aTrainingPlan.label);
+      return option.textContent?.includes(aTrainingPlan.label);
     });
     
     fireEvent.click(optionElement[0]);

@@ -3,7 +3,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-25T01:33:41-03:00
+ * @Last modified time: 2024-11-25T01:50:25-03:00
  */
 
 
@@ -23,7 +23,6 @@ export default function RaceDateSelector({raceDate, dispatch}: RaceDateSelectorP
 
   return (
     <div className="flex items-center space-x-2">
-      <Calendar className="h-4 w-4 text-muted-foreground" />
       <Input
         type="date"
         defaultValue={raceDate}
@@ -38,3 +37,4 @@ export default function RaceDateSelector({raceDate, dispatch}: RaceDateSelectorP
     </div>
   );
 }
+// the icon is redundant with the Input date calendar       <Calendar className="h-4 w-4 text-muted-foreground" />
