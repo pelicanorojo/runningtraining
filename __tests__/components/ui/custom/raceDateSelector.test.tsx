@@ -2,21 +2,20 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-23T01:02:15-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-25T09:08:30-03:00
+ * @Last modified time: 2024-11-27T08:32:36-03:00
  */
 
 
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import RaceDateSelector from '@/components/ui/custom/raceDateSelector';
-import {PlanConfig} from "@/types/global";
 import { useReducer } from 'react';
+//TODO: show the dates in a shape selectable by the user.
 
 //const recreateMocks = () => {
   //jest.clearAllMocks();
 //TODO: check how mock in an between tests decoupled way, but sharing a given text mock instance, with the used by the component tested.
 //*
-  const sharedRouterMock = jest.fn();
 
   jest.mock('react', () => ({
     ...jest.requireActual('react'),
@@ -44,10 +43,6 @@ describe('RaceDate Selector ...', () => {
     const mockDispatch = jest.fn();
     jest.mocked(useReducer).mockReturnValue([{ }, mockDispatch]);
 
-    const state: PlanConfig  = {
-      trainingPlanId: undefined,
-      raceDate: undefined
-    }
     const aDate = '2024-11-01'
     render(<RaceDateSelector raceDate={aDate}  dispatch={mockDispatch}/>);
 

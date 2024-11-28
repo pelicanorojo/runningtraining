@@ -2,16 +2,15 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-25T01:44:44-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-25T10:22:31-03:00
+ * @Last modified time: 2024-11-27T08:48:04-03:00
  */
 
 
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import ConfigBar from '@/components/ui/custom/configBar';
-import {PlanConfig, TrainingPlanThinFrontList, TrainingPlanThinFront} from "@/types/global";
-import {trainingPlansAvailableBack} from "@/lib/constants";
-import { useReducer } from 'react';
+import { TrainingPlanThinFront } from "@/types/global";
+import { trainingPlansAvailableFront } from "@/lib/constants";
 import { useRouter } from 'next/navigation';
 import paths from '@/lib/paths';
 
@@ -20,9 +19,6 @@ jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
 }));
 
-const trainingPlansAvailableFront:TrainingPlanThinFrontList = trainingPlansAvailableBack.map( p => {
-  return {id: p.id, label: p.label};
-})
 
 const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[1];
 const otheraTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[2];
@@ -32,7 +28,7 @@ describe('ConfigBar ...', () => {
     const aRaceDate = '2024-12-01';
     const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aRaceDate};
 
-    render(<ConfigBar initialState={initialState}/>);
+    render(<ConfigBar trainingPlansAvailable={trainingPlansAvailableFront} initialState={initialState}/>);
     const theText =  screen.getByText(aTrainingPlan.label);
 
     expect(theText).toBeInTheDocument();
@@ -50,7 +46,7 @@ describe('ConfigBar ...', () => {
     const aRaceDate = '2024-12-01';
     const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aRaceDate};
 
-    render(<ConfigBar initialState={initialState}/>);
+    render(<ConfigBar trainingPlansAvailable={trainingPlansAvailableFront} initialState={initialState}/>);
     expect(mockPush).not.toHaveBeenCalled();
   })
 
@@ -65,7 +61,7 @@ describe('ConfigBar ...', () => {
     const aDate = '2024-12-01';
     const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aDate};
 
-    render(<ConfigBar initialState={initialState}/>);
+    render(<ConfigBar trainingPlansAvailable={trainingPlansAvailableFront} initialState={initialState}/>);
 
     const combo = screen.getByRole('combobox');
 
@@ -95,7 +91,7 @@ describe('ConfigBar ...', () => {
     const aDate = '2024-12-01';
     const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aDate};
 
-    render(<ConfigBar initialState={initialState}/>);
+    render(<ConfigBar trainingPlansAvailable={trainingPlansAvailableFront} initialState={initialState}/>);
 
     const theDate = screen.getByDisplayValue(aDate)
 
@@ -121,7 +117,7 @@ describe('ConfigBar ...', () => {
     const aDate = '2024-12-01';
     const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aDate};
 
-    render(<ConfigBar initialState={initialState}/>);
+    render(<ConfigBar trainingPlansAvailable={trainingPlansAvailableFront} initialState={initialState}/>);
 
     const theDate = screen.getByDisplayValue(aDate)
 

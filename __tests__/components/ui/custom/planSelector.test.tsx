@@ -2,15 +2,15 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-25T09:43:35-03:00
+ * @Last modified time: 2024-11-27T08:14:27-03:00
  */
 
 
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import PlanSelector from '@/components/ui/custom/planSelector';
-import {PlanConfig, TrainingPlanThinFrontList, TrainingPlanThinFront} from "@/types/global";
-import {trainingPlansAvailableBack} from "@/lib/constants";
+import { TrainingPlanThinFrontList, TrainingPlanThinFront } from "@/types/global";
+import { trainingPlansAvailableBack } from "@/lib/constants";
 // TODO: don't mock reducer, limit to mock the dispatch, having here is used the dispatch, should be reducer agnostic
 //DONT: :) import { useReducer } from 'react';
 
@@ -100,11 +100,6 @@ describe('Plan Selector ...', () => {
   it('Should dispatch an action when is selected an option', () => {
     const mockDispatch = jest.fn();
     //jest.mocked(useReducer).mockReturnValue([{ }, mockDispatch]);
-
-    const state: PlanConfig  = {
-      trainingPlanId: undefined,
-      raceDate: undefined
-    }
 
     render(<PlanSelector availablePlans={trainingPlansAvailableFront} dispatch={mockDispatch}/>);
 
