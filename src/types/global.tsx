@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-26T10:11:59-03:00
+ * @Last modified time: 2024-11-28T12:51:29-03:00
  */
 
 export type TrainingPlanId = string;
@@ -46,6 +46,7 @@ export interface TrainingNotes {
 
 export interface RawTrainingData {
   workoutId: number;
+  workoutName: string;
   scheduledDate: utcDate; //This an unshifted value, which needs to be adjusted so the last training is one day before the race in general.
   order: number;
   recommendedTime: number;
@@ -61,6 +62,7 @@ export type RawPlanData = {
 
 export interface TrainingData {
   trainingDate: utcDate;
+  workoutName: string;
   order: number;
   recommendedTime: number;
   intervals: interval[];
