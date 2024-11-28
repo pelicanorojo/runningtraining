@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-22T10:12:07-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-27T12:40:03-03:00
+ * @Last modified time: 2024-11-27T10:45:22-03:00
  */
 
 'use client'
@@ -38,8 +38,12 @@ function isValidRouteData (availablePlans: TrainingPlanThinFrontList, {trainingP
   return selectedPlanOk && selectedRaceDateOk
 }
 
+interface ConfigBarProps {
+  trainingPlansAvailable: TrainingPlanThinFrontList;
+  initialState: PlanConfig;
+};
 
-export default function ConfigBar({trainingPlansAvailable, initialState}: {trainingPlansAvailable: TrainingPlanThinFrontList, initialState: PlanConfig}) {
+export default function ConfigBar({trainingPlansAvailable, initialState}: ConfigBarProps) {
   const [state, dispatch] = useReducer(configReducer, initialState);
   const router = useRouter();
   const prevState = useRef(initialState);
@@ -50,7 +54,7 @@ export default function ConfigBar({trainingPlansAvailable, initialState}: {train
         router.push(paths.trainingPlanShow(state as {trainingPlanId: string; raceDate:string}))
       }
     }
-  }, [state])
+  }, [state, router, trainingPlansAvailable])
 
   return (
     <div className="container py-4">
