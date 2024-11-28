@@ -1,0 +1,259 @@
+{
+  "itemsPerPage": 250,
+  "totalResults": 3,
+  "results": [
+    {
+      "workoutId": 10197051700,
+      "scheduledWorkoutId": 10197051700,
+      "workoutType": "plan",
+      "scheduledDate": "2017-10-07T00:00:00",
+      "workoutName": "FINALIZAR MÁS RÁPIDO - 1/2 MARATÓN",
+      "training": {
+        "href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003288248?lang=ar",
+        "mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+        "id": 60003288248
+      },
+      "plan": {
+        "href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375493?lang=ar",
+        "mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+        "id": 100004375493
+      },
+      "order": 3,
+      "recommendedTime": 1800,
+      "intervals": [
+        {
+          "intervalType": "warmUp",
+          "totalTimeInZone": 300,
+          "miCoachZone": "blue"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 1200,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "coolDown",
+          "totalTimeInZone": 300,
+          "miCoachZone": "blue"
+        }
+      ],
+      "trainingNotes": {
+        "noteSummary": "Carrera verde.",
+        "note": "Calienta y haz un poco de footing sencillo, y después acelera hasta alcanzar la velocidad de tu zona verde.",
+        "secondaryNote": "Prepara tu equipo para el día de la carrera: las mismas zapatillas y ropa, todo el buen equipo con el que te has ejercitado. Nada nuevo. ¡Disfruta!. ¡BUENA SUERTE!"
+      }
+    },
+    {
+      "workoutId": 10197051699,
+      "scheduledWorkoutId": 10197051699,
+      "workoutType": "plan",
+      "scheduledDate": "2017-10-05T00:00:00",
+      "workoutName": "FINALIZAR MÁS RÁPIDO - 1/2 MARATÓN",
+      "training": {
+        "href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003288247?lang=ar",
+        "mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+        "id": 60003288247
+      },
+      "plan": {
+        "href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375493?lang=ar",
+        "mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+        "id": 100004375493
+      },
+      "order": 2,
+      "recommendedTime": 1800,
+      "intervals": [
+        {
+          "intervalType": "warmUp",
+          "totalTimeInZone": 300,
+          "miCoachZone": "blue"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 60,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "coolDown",
+          "totalTimeInZone": 300,
+          "miCoachZone": "blue"
+        }
+      ],
+      "trainingNotes": {
+        "noteSummary": "Intervalos en la zona amarilla Fartlek.",
+        "note": "Estas zonas amarillas se corren a tu ritmo de carrera de 5 km.",
+        "secondaryNote": "Corre rápido en cada zona amarilla pero no te pares para recuperarte en la verde. Sigue corriendo aunque necesites reducir el ritmo hasta hacer footing."
+      }
+    },
+    {
+      "workoutId": 10197051698,
+      "scheduledWorkoutId": 10197051698,
+      "workoutType": "plan",
+      "scheduledDate": "2017-10-03T00:00:00",
+      "workoutName": "FINALIZAR MÁS RÁPIDO - 1/2 MARATÓN",
+      "training": {
+        "href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003288246?lang=ar",
+        "mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+        "id": 60003288246
+      },
+      "plan": {
+        "href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375493?lang=ar",
+        "mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+        "id": 100004375493
+      },
+      "order": 1,
+      "recommendedTime": 1920,
+      "intervals": [
+        {
+          "intervalType": "warmUp",
+          "totalTimeInZone": 300,
+          "miCoachZone": "blue"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 90,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 240,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 90,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 240,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 90,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 240,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 90,
+          "miCoachZone": "green"
+        },
+        {
+          "intervalType": "middle",
+          "totalTimeInZone": 240,
+          "miCoachZone": "yellow"
+        },
+        {
+          "intervalType": "coolDown",
+          "totalTimeInZone": 300,
+          "miCoachZone": "blue"
+        }
+      ],
+      "trainingNotes": {
+        "noteSummary": "Intervalos de ritmo controlado en la zona amarilla.",
+        "note": "Corre cada zona amarilla a tu ritmo de carrera de entre 8 y 12 km.",
+        "secondaryNote": "Permanece en las zonas. Corre intensamente en cada zona amarilla y utiliza las zonas verdes para recuperarte. Este entrenamiento será duro; realiza una serie cada vez."
+      }
+    }
+  ]
+}

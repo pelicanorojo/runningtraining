@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-25T12:15:34-03:00
+ * @Last modified time: 2024-11-27T12:50:23-03:00
  */
 
 
@@ -12,6 +12,9 @@ const paths = {
   }
   , trainingPlanShow ({trainingPlanId, raceDate}: {trainingPlanId: string; raceDate: string}) {
     return `/plan/${trainingPlanId}/raceDate/${raceDate}`;
+  }
+  , trainingShow({trainingPlanId, raceDate, trainingOrder}: {trainingPlanId: string; raceDate: string, trainingOrder?: number}) {
+    return `/plan/${trainingPlanId}/raceDate/${raceDate}/trainingOrder/${trainingOrder}`;
   }
 };
 

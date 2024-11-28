@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-22T10:12:07-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-25T01:32:56-03:00
+ * @Last modified time: 2024-11-27T12:40:03-03:00
  */
 
 'use client'
@@ -10,16 +10,10 @@ import PlanSelector from '@/components/ui/custom/planSelector';
 import RaceDateSelector from '@/components/ui/custom/raceDateSelector';
 import { useRouter } from 'next/navigation';
 
-import {TrainingPlanThinFrontList, PlanConfig} from "@/types/global";
-import {trainingPlansAvailableBack} from "@/lib/constants";
+import { PlanConfig, TrainingPlanThinFrontList } from "@/types/global";
 import { useReducer, useEffect, useRef } from 'react';
 import { configReducer } from '@/reducers/configReducer';
 import paths from '@/lib/paths';
-
-const trainingPlansAvailableFront:TrainingPlanThinFrontList = trainingPlansAvailableBack.map( p => {
-  return {id: p.id, label: p.label};
-})
-
 
 function isValidDate(dateString: string | undefined): boolean {
   // is defined?
@@ -45,14 +39,14 @@ function isValidRouteData (availablePlans: TrainingPlanThinFrontList, {trainingP
 }
 
 
-export default function ConfigBar({initialState}: {initialState: PlanConfig}) {
+export default function ConfigBar({trainingPlansAvailable, initialState}: {trainingPlansAvailable: TrainingPlanThinFrontList, initialState: PlanConfig}) {
   const [state, dispatch] = useReducer(configReducer, initialState);
   const router = useRouter();
   const prevState = useRef(initialState);
 
   useEffect(() => {
     if (prevState.current.trainingPlanId !== state.trainingPlanId || prevState.current.raceDate !== state.raceDate) {
-      if (isValidRouteData(trainingPlansAvailableFront, state)) {
+      if (isValidRouteData(trainingPlansAvailable, state)) {
         router.push(paths.trainingPlanShow(state as {trainingPlanId: string; raceDate:string}))
       }
     }
@@ -61,7 +55,7 @@ export default function ConfigBar({initialState}: {initialState: PlanConfig}) {
   return (
     <div className="container py-4">
       <div className="flex flex-row gap-10 items-center">
-        <PlanSelector availablePlans={trainingPlansAvailableFront} selectedPlanId={state.trainingPlanId} dispatch={dispatch}/>
+        <PlanSelector availablePlans={trainingPlansAvailable} selectedPlanId={state.trainingPlanId} dispatch={dispatch}/>
         <RaceDateSelector raceDate={state.raceDate} dispatch={dispatch}/>
       </div>
     </div>
