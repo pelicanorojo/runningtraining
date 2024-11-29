@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-28T12:51:29-03:00
+ * @Last modified time: 2024-11-28T09:00:51-03:00
  */
 
 export type TrainingPlanId = string;
@@ -88,3 +88,10 @@ export type ChangeRacedateAction = {
 }
 
 export type ConfigReducerAction = ChangePlanAction | ChangeRacedateAction;
+
+// ----------
+export interface TrainingPathData {
+  trainingPlanId: string;
+  raceDate: string;
+  trainingOrder?: number;
+}
