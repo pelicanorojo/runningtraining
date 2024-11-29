@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-22T10:12:07-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-27T10:45:22-03:00
+ * @Last modified time: 2024-11-29T12:10:34-03:00
  */
 
 'use client'
@@ -58,9 +58,9 @@ export default function ConfigBar({trainingPlansAvailable, initialState}: Config
 
   return (
     <div className="container py-4">
-      <div className="flex flex-row gap-10 items-center">
+      <div className="flex flex-row gap-6 items-center">
         <PlanSelector availablePlans={trainingPlansAvailable} selectedPlanId={state.trainingPlanId} dispatch={dispatch}/>
-        <RaceDateSelector raceDate={state.raceDate} dispatch={dispatch}/>
+        <RaceDateSelector raceDate={state.raceDate} dispatch={dispatch} />
       </div>
     </div>
   );

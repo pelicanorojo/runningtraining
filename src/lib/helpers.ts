@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-20T01:08:43-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-26T10:33:49-03:00
+ * @Last modified time: 2024-11-28T08:51:05-03:00
  */
 
 import path from 'path';
@@ -62,13 +62,14 @@ export const generateScheduleFromPlan = (planData: RawPlanData, raceDate: RaceDa
 
   const lastTraining = trainingsList[0];
   const lastTrainingRawDate = createUTCDateFromString(lastTraining.scheduledDate);
-  let lastTrainingDateReference = shiftDate(createUTCDateFromString(raceDate), -1);
+  const lastTrainingDateReference = shiftDate(createUTCDateFromString(raceDate), -1);
 
   // TODO: a compute diff function
   const dateDifference = dateDiff(lastTrainingDateReference, lastTrainingRawDate);
   
   const result =  trainingsList.map(
     (t: RawTrainingData): TrainingData => ({
+      workoutName: t.workoutName,
       trainingDate: formatDate(shiftDate(createUTCDateFromString(t.scheduledDate), dateDifference)),
       order: t.order,
       recommendedTime: t.recommendedTime,

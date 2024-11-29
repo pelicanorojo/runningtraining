@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-27T10:39:18-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-28T01:52:52-03:00
+ * @Last modified time: 2024-11-29T12:03:55-03:00
  */
 
 
@@ -11,102 +11,67 @@
 import TrainingContainerMain from '@/components/ui/custom/trainingContainerMain';
 import {
   Card,
+  CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
   CardFooter
 } from "@/components/ui/card";
 
-import { TrainingData } from "@/types/global";
+import { TrainingData, TrainingPathData } from "@/types/global";
 
 import { useState, useEffect  } from 'react';
+import {mocks} from '@/lib/fetchers';
+
 /*import { configReducer } from '@/reducers/configReducer';
 import paths from '@/lib/paths';
 */
-interface PathData {
-  trainingPlanId: string;
-  raceDate: string;
-  trainingOrder?: number;
-}
 
-async function fetchTrainingData({pathData}: PathData): Promise<TrainingData | null> {
-  const trainingData = {
-    "trainingDate": "2017-10-07",
-    "workoutName": "FINALIZAR MÁS RÁPIDO - 1/2 MARATÓN",
-    "order": 3,
-    "recommendedTime": 1800,
-    "intervals": [
-      {
-        "intervalType": "warmUp",
-        "totalTimeInZone": 300,
-        "miCoachZone": "blue"
-      },
-      {
-        "intervalType": "middle",
-        "totalTimeInZone": 1200,
-        "miCoachZone": "green"
-      },
-      {
-        "intervalType": "coolDown",
-        "totalTimeInZone": 300,
-        "miCoachZone": "blue"
-      }
-    ],
-    "trainingNotes": {
-      "noteSummary": "Carrera verde.",
-      "note": "Calienta y haz un poco de footing sencillo, y después acelera hasta alcanzar la velocidad de tu zona verde.",
-      "secondaryNote": "Prepara tu equipo para el día de la carrera: las mismas zapatillas y ropa, todo el buen equipo con el que te has ejercitado. Nada nuevo. ¡Disfruta!. ¡BUENA SUERTE!"
-    }
-  } as TrainingData;
-
-  const p = new Promise((rs) => {
-    //*
-    setTimeout( () => rs(trainingData), 200);
-    //*/setTimeout( () => rs(null), 200);
-  }) as Promise<TrainingData | null>;
-
-  return p;
-}
-
+const fetchTrainingData = mocks.fetchTrainingData; 
 
 interface TrainingContainerHeaderProps {
-  trainingData: TrainingData | null;
+  trainingData: TrainingData;
+  dataTestid?: string;
 }
 
-export function TrainingContainerHeader({trainingData}: TrainingContainerHeaderProps) {
+export function TrainingContainerHeader({ trainingData, dataTestid }: TrainingContainerHeaderProps) {
   return (
-    <CardHeader className="flex-none">
-      <CardTitle>{trainingData?.workoutName || 'Training Details'}</CardTitle>
-      <CardDescription>{trainingData?.trainingNotes.noteSummary} (Training Order {trainingData?.order}, Date {trainingData?.trainingDate})</CardDescription>
+    <CardHeader data-testid={dataTestid} className="flex-none">
+      <CardTitle>{trainingData?.workoutName}</CardTitle>
+      <CardDescription>{trainingData?.trainingNotes.noteSummary}</CardDescription>
+      <CardDescription>(Training Order {trainingData.order || '?'}, Date {trainingData.trainingDate || '?'})</CardDescription>
     </CardHeader>
   );
 }
 
 interface TrainingContainerFooterProps {
-  trainingData: TrainingData | null;
+  trainingData: TrainingData;
 }
 
 export function TrainingContainerFooter({trainingData}: TrainingContainerFooterProps) {
   return (
     <CardFooter className="flex-none flex-col items-start">
-      <CardTitle>{trainingData?.trainingNotes.noteSummary}</CardTitle>
-      <CardDescription className='text-foreground'>{trainingData?.trainingNotes.note}</CardDescription>
-      <CardDescription className='text-foreground'>{trainingData?.trainingNotes.secondaryNote}</CardDescription>
+      <CardTitle>{trainingData.trainingNotes.noteSummary}</CardTitle>
+      <CardDescription className='text-foreground'>{trainingData.trainingNotes.note}</CardDescription>
+      <CardDescription className='text-foreground'>{trainingData.trainingNotes.secondaryNote}</CardDescription>
     </CardFooter>
   );
 }
 
 interface TrainingContainerProps {
-  pathData: PathData;
+  pathData: TrainingPathData;
 }
 
 export default function TrainingContainer({pathData}: TrainingContainerProps) {
   const [trainingData, setTrainingData] = useState<TrainingData | null>(null);
 
-
   useEffect(() => {
     const fetchData =  async () => {
-      const aTrainingData = await fetchTrainingData(pathData);
+      let aTrainingData = null;
+
+      if (pathData.trainingOrder) {
+        aTrainingData = await fetchTrainingData(pathData);
+      }
       setTrainingData(aTrainingData);
     };
 
@@ -115,9 +80,14 @@ export default function TrainingContainer({pathData}: TrainingContainerProps) {
 
   return (
     <Card className="flex-1 shadow-none flex flex-col h-full overflow-y-auto justify-between">
-      <TrainingContainerHeader trainingData={trainingData} />
-      <TrainingContainerMain trainingData={trainingData} />
-      <TrainingContainerFooter trainingData={trainingData}/>
+      {trainingData ?
+        <>
+        <TrainingContainerHeader dataTestid='trainingContainerHeader' trainingData={trainingData} />
+        <TrainingContainerMain trainingData={trainingData} />
+        <TrainingContainerFooter trainingData={trainingData} />
+        </>
+      : <CardContent data-testid='emptyCardContent' className="flex items-center justify-center h-full">Select a date to view training details...</CardContent>
+      }
     </Card>
   );
 }
