@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-27T10:39:18-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-29T12:03:55-03:00
+ * @Last modified time: 2024-11-29T11:12:10-03:00
  */
 
 
@@ -27,7 +27,9 @@ import {mocks} from '@/lib/fetchers';
 import paths from '@/lib/paths';
 */
 
-const fetchTrainingData = mocks.fetchTrainingData; 
+const fetchTrainingData = (pathData: TrainingPathData) => {
+  return mocks.fetchTrainingData(pathData, 0, true);
+}
 
 interface TrainingContainerHeaderProps {
   trainingData: TrainingData;

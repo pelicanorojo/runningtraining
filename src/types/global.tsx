@@ -2,9 +2,10 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-28T09:00:51-03:00
+ * @Last modified time: 2024-11-29T11:20:43-03:00
  */
 
+// -- plan types
 export type TrainingPlanId = string;
 export type RaceDate = string;
 export type utcDate = string;
@@ -28,49 +29,6 @@ export type PlanConfig = {
   raceDate: RaceDate | undefined;
 }
 
-// json types:
-export type IntervalType = 'warmUp' | 'middle' | 'coolDown';
-export type Zone = 'blue' | 'green' | 'yellow' | 'red';
-
-export interface interval {
-  intervalType: IntervalType;
-  totalTimeInZone: number;
-  miCoachZone: Zone;
-};
-
-export interface TrainingNotes {
-  noteSummary: string;
-  note: string;
-  secondaryNote: string;
-}
-
-export interface RawTrainingData {
-  workoutId: number;
-  workoutName: string;
-  scheduledDate: utcDate; //This an unshifted value, which needs to be adjusted so the last training is one day before the race in general.
-  order: number;
-  recommendedTime: number;
-  intervals: interval[];
-  trainingNotes: TrainingNotes;
-  //[key: string]: any; // Allows any additional properties
-}
-
-export type RawPlanData = {
-  totalResults: number;
-  results: RawTrainingData[];
-};
-
-export interface TrainingData {
-  trainingDate: utcDate;
-  workoutName: string;
-  order: number;
-  recommendedTime: number;
-  intervals: interval[];
-  trainingNotes: TrainingNotes;
-}
-
-export type PlanData = TrainingData[];
-
 export type KnownConfigReducerAction = 'CHANGE_PLAN' | 'CHANGE_RACEDATE';
 
 export type ChangePlanAction = {
@@ -89,9 +47,58 @@ export type ChangeRacedateAction = {
 
 export type ConfigReducerAction = ChangePlanAction | ChangeRacedateAction;
 
-// ----------
+// path types
 export interface TrainingPathData {
   trainingPlanId: string;
   raceDate: string;
   trainingOrder?: number;
 }
+
+// training types
+export type IntervalType = 'warmUp' | 'middle' | 'coolDown';
+export type Zone = 'blue' | 'green' | 'yellow' | 'red';
+
+export interface RawInterval {
+  intervalType: IntervalType;
+  totalTimeInZone: number;
+  miCoachZone: Zone;
+};
+
+export interface Interval {
+  intervalType: IntervalType;
+  totalTimeInZone: number;
+  zone: Zone;
+};
+
+export interface TrainingNotes {
+  noteSummary: string;
+  note: string;
+  secondaryNote: string;
+}
+
+export interface RawTrainingData {
+  workoutId: number;
+  workoutName: string;
+  scheduledDate: utcDate; //This an unshifted value, which needs to be adjusted so the last training is one day before the race in general.
+  order: number;
+  recommendedTime: number;
+  intervals: RawInterval[];
+  trainingNotes: TrainingNotes;
+  //[key: string]: any; // Allows any additional properties
+}
+
+export type RawPlanData = {
+  totalResults: number;
+  results: RawTrainingData[];
+};
+
+export interface TrainingData {
+  trainingDate: utcDate;
+  workoutName: string;
+  order: number;
+  recommendedTime: number;
+  intervals: Interval[];
+  trainingNotes: TrainingNotes;
+}
+
+export type PlanData = TrainingData[];

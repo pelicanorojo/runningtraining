@@ -2,13 +2,13 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-26T10:53:01-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-26T10:35:58-03:00
+ * @Last modified time: 2024-11-29T11:24:13-03:00
  */
 
 
 import '@testing-library/jest-dom';
 import * as helpers from  '@/lib/helpers';
-import { RawPlanData, RawTrainingData, TrainingPlanThinBack } from "@/types/global";
+import { RawPlanData, TrainingPlanThinBack } from "@/types/global";
 
 import { trainingPlansAvailableBack, plansSubFolder } from "@/lib/constants";
 import * as process from 'process';
@@ -43,23 +43,23 @@ describe('Helper createUTCDateFromString', () => {
     expect(aYear).toEqual(year); expect(aMonthIndex).toEqual(month - 1); expect(aDate).toEqual(date);
     expect(aHour).toEqual(0); expect(aMinute).toEqual(0); expect(aSecond).toEqual(0); expect(aMillisecond).toEqual(0);
 
-    year = 2024, month = 12, date = 31;
+    year = 2024; month = 12; date = 31;
     sSampleDate = `${year}-${month}-${date}`;
     aSampleUTCDate = helpers.createUTCDateFromString(sSampleDate);
 
-    aYear = aSampleUTCDate.getUTCFullYear(), aMonthIndex = aSampleUTCDate.getUTCMonth(),  aDate = aSampleUTCDate.getUTCDate();
-    aHour = aSampleUTCDate.getUTCHours(), aMinute = aSampleUTCDate.getUTCMinutes(), aSecond = aSampleUTCDate.getUTCSeconds();
+    aYear = aSampleUTCDate.getUTCFullYear(); aMonthIndex = aSampleUTCDate.getUTCMonth();  aDate = aSampleUTCDate.getUTCDate();
+    aHour = aSampleUTCDate.getUTCHours(); aMinute = aSampleUTCDate.getUTCMinutes(); aSecond = aSampleUTCDate.getUTCSeconds();
     aMillisecond = aSampleUTCDate.getUTCMilliseconds();
 
     expect(aYear).toEqual(year); expect(aMonthIndex).toEqual(month - 1); expect(aDate).toEqual(date);
     expect(aHour).toEqual(0); expect(aMinute).toEqual(0); expect(aSecond).toEqual(0); expect(aMillisecond).toEqual(0);
 
-    year = 2024, month = 1, date = 1;
+    year = 2024; month = 1; date = 1;
     sSampleDate = `${year}-${month}-${date}`;
     aSampleUTCDate = helpers.createUTCDateFromString(sSampleDate);
 
-    aYear = aSampleUTCDate.getUTCFullYear(), aMonthIndex = aSampleUTCDate.getUTCMonth(),  aDate = aSampleUTCDate.getUTCDate();
-    aHour = aSampleUTCDate.getUTCHours(), aMinute = aSampleUTCDate.getUTCMinutes(), aSecond = aSampleUTCDate.getUTCSeconds();
+    aYear = aSampleUTCDate.getUTCFullYear(); aMonthIndex = aSampleUTCDate.getUTCMonth();  aDate = aSampleUTCDate.getUTCDate();
+    aHour = aSampleUTCDate.getUTCHours(); aMinute = aSampleUTCDate.getUTCMinutes(); aSecond = aSampleUTCDate.getUTCSeconds();
     aMillisecond = aSampleUTCDate.getUTCMilliseconds();
 
     expect(aYear).toEqual(year); expect(aMonthIndex).toEqual(month - 1); expect(aDate).toEqual(date);
@@ -79,11 +79,11 @@ describe('createUTCDate', () => {
     expect(aYear).toEqual(year); expect(aMonthIndex).toEqual(month - 1); expect(aDate).toEqual(date);
     expect(aHour).toEqual(0); expect(aMinute).toEqual(0); expect(aSecond).toEqual(0); expect(aMillisecond).toEqual(0);
 
-    year = 2024, month = 1, date = 1;
+    year = 2024; month = 1; date = 1;
     aSampleUTCDate = helpers.createUTCDate(year, month, date);
 
-    aYear = aSampleUTCDate.getUTCFullYear(), aMonthIndex = aSampleUTCDate.getUTCMonth(),  aDate = aSampleUTCDate.getUTCDate();
-    aHour = aSampleUTCDate.getUTCHours(), aMinute = aSampleUTCDate.getUTCMinutes(), aSecond = aSampleUTCDate.getUTCSeconds();
+    aYear = aSampleUTCDate.getUTCFullYear(); aMonthIndex = aSampleUTCDate.getUTCMonth();  aDate = aSampleUTCDate.getUTCDate();
+    aHour = aSampleUTCDate.getUTCHours(); aMinute = aSampleUTCDate.getUTCMinutes(); aSecond = aSampleUTCDate.getUTCSeconds();
     aMillisecond = aSampleUTCDate.getUTCMilliseconds();
 
     expect(aYear).toEqual(year); expect(aMonthIndex).toEqual(month - 1); expect(aDate).toEqual(date);
