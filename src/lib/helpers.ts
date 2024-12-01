@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-20T01:08:43-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-28T08:51:05-03:00
+ * @Last modified time: 2024-11-30T12:00:24-03:00
  */
 
 import path from 'path';
@@ -46,7 +46,7 @@ export function formatDate(date: Date): string {
 }
 
 export const shiftDate = (date: Date, dateDifference: number): Date => {
-  let copy = new Date(date);
+  const copy = new Date(date);
   copy.setDate(copy.getDate() + dateDifference);
   return copy;
 };
@@ -73,11 +73,11 @@ export const generateScheduleFromPlan = (planData: RawPlanData, raceDate: RaceDa
       trainingDate: formatDate(shiftDate(createUTCDateFromString(t.scheduledDate), dateDifference)),
       order: t.order,
       recommendedTime: t.recommendedTime,
-      intervals: t.intervals,
+      intervals: t.intervals.map( i => ({intervalType: i.intervalType, totalTimeInZone: i.totalTimeInZone, zone: i.miCoachZone})),
       trainingNotes: t.trainingNotes
     })
   );
-  
+
   return result;
 };
 //========== dates functions, past to use a libray only when strictly necesary/ ==========
