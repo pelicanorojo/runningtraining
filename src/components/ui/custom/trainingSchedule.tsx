@@ -2,14 +2,11 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-26T10:46:13-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-27T11:56:37-03:00
+ * @Last modified time: 2024-12-04T01:29:57-03:00
  */
 
 
 'use client';
-import { useRouter } from 'next/navigation';
-import paths from '@/lib/paths';
-
 import {
   Card,
   CardContent,
@@ -22,20 +19,16 @@ import { PlanData } from "@/types/global";
 
 interface trainingScheduleProps {
   scheduledTrainings: PlanData;
-  pathData: {
-    trainingPlanId: string;
-    raceDate: string;
-    trainingOrder?: number;
-  };
+  order?: number;
+  onOrderChange(order: number): void;
 }
 
 export const TrainingSelectedMarker = ({localizationId}: {localizationId: string}) => (<span className="mx-1" data-testid={localizationId}>selected</span>); 
 
-export default function TrainingSchedule({scheduledTrainings,  pathData}: trainingScheduleProps) {
-  const router = useRouter();
-  const onTrainingOrderClick = (order: number) => {
-    if (order !== pathData.trainingOrder) {
-      router.push(paths.trainingShow({...pathData, trainingOrder: order}));
+export default function TrainingSchedule({scheduledTrainings,  order, onOrderChange}: trainingScheduleProps) {
+  const onTrainingOrderClick = (aOrder: number) => {
+    if (aOrder !== order) {
+      onOrderChange(aOrder);
     }
   }
 
@@ -52,12 +45,12 @@ export default function TrainingSchedule({scheduledTrainings,  pathData}: traini
                 {scheduledTrainings.map((item) => (
                   <Button
                     key={item.trainingDate}
-                    variant={pathData.trainingOrder === item.order ? "secondary" : "ghost"}
+                    variant={order === item.order ? "secondary" : "ghost"}
                     className="w-full justify-start px-3"
                     onClick={() => onTrainingOrderClick(item.order)}
                   >
                     <div className="flex flex-col items-start">
-                      <span className="text-sm">{item.trainingDate}{pathData.trainingOrder === item.order && <TrainingSelectedMarker localizationId={item.trainingDate}/>}</span>
+                      <span className="text-sm">{item.trainingDate}{order === item.order && <TrainingSelectedMarker localizationId={item.trainingDate}/>}</span>
                     </div>
                   </Button>
                 ))}

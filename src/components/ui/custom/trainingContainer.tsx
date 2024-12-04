@@ -2,13 +2,15 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-27T10:39:18-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-29T11:12:10-03:00
+ * @Last modified time: 2024-12-04T01:34:48-03:00
  */
 
 
 'use client'
 
+import TrainingSchedule from '@/components/ui/custom/trainingSchedule';
 import TrainingContainerMain from '@/components/ui/custom/trainingContainerMain';
+
 import {
   Card,
   CardContent,
@@ -18,18 +20,11 @@ import {
   CardFooter
 } from "@/components/ui/card";
 
-import { TrainingData, TrainingPathData } from "@/types/global";
+import { PlanData, TrainingData, PlanDataParams as PlanDataParams } from "@/types/global";
 
 import { useState, useEffect  } from 'react';
-import {mocks} from '@/lib/fetchers';
+import { fetchTrainingData } from '@/lib/fetchers';
 
-/*import { configReducer } from '@/reducers/configReducer';
-import paths from '@/lib/paths';
-*/
-
-const fetchTrainingData = (pathData: TrainingPathData) => {
-  return mocks.fetchTrainingData(pathData, 0, true);
-}
 
 interface TrainingContainerHeaderProps {
   trainingData: TrainingData;
@@ -61,26 +56,32 @@ export function TrainingContainerFooter({trainingData}: TrainingContainerFooterP
 }
 
 interface TrainingContainerProps {
-  pathData: TrainingPathData;
+  scheduledTrainings: PlanData;
+  planDataParams: PlanDataParams;
 }
 
-export default function TrainingContainer({pathData}: TrainingContainerProps) {
+export default function TrainingContainer({scheduledTrainings, planDataParams: getPlanDataParams}: TrainingContainerProps) {
+  const [order, setOrder] = useState<number|undefined>(undefined);
   const [trainingData, setTrainingData] = useState<TrainingData | null>(null);
 
   useEffect(() => {
+    
     const fetchData =  async () => {
       let aTrainingData = null;
 
-      if (pathData.trainingOrder) {
-        aTrainingData = await fetchTrainingData(pathData);
+      if (order) {
+
+        aTrainingData = await fetchTrainingData({...getPlanDataParams, order});
+        setTrainingData(aTrainingData);
       }
-      setTrainingData(aTrainingData);
     };
 
-    fetchData();
-  }, [pathData])
+    if (order) { fetchData();}
+  }, [getPlanDataParams, order])
 
   return (
+    <>
+    <TrainingSchedule scheduledTrainings={scheduledTrainings} order={order} onOrderChange={setOrder}/>
     <Card className="flex-1 shadow-none flex flex-col h-full overflow-y-auto justify-between">
       {trainingData ?
         <>
@@ -91,5 +92,6 @@ export default function TrainingContainer({pathData}: TrainingContainerProps) {
       : <CardContent data-testid='emptyCardContent' className="flex items-center justify-center h-full">Select a date to view training details...</CardContent>
       }
     </Card>
+    </>
   );
 }

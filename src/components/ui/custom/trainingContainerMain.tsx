@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-27T10:39:18-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-01T12:24:07-03:00
+ * @Last modified time: 2024-12-04T01:35:14-03:00
  */
 
 
@@ -10,40 +10,7 @@ import { CardContent } from "@/components/ui/card";
 import { TrainingData, Zone, Interval } from "@/types/global";
 
 
-
-/* all this stuf for use neares tailwind basis- cant be used, cause the srips don't looks proportional.
-//----------------- for helpers and constants:
-const availableSufixesOrdered = [0,1,2,3,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96];
-const maxAvailableSufix = Math.max(...availableSufixesOrdered);
-const findNearestValue = (arr: number[], target: number): number => {
-  let left = 0;
-  let right = arr.length - 1;
-
-  while (left <= right) {
-    const mid = Math.floor((left + right) / 2);
-
-    if (arr[mid] === target) {
-      return arr[mid];
-    } else if (arr[mid] < target) {
-      left = mid + 1;
-    } else {
-      right = mid - 1;
-    }
-  }
-
-  // If the target value is not found, return the nearest value
-  return arr[left] - target < target - arr[right] ? arr[left] : arr[right];
-}
-
-const findNearesSufix = (
-  ( availableSufixes: number[] ) => {
-    return ( desiredSufix: number ) => findNearestValue(availableSufixes, desiredSufix);
-  }
-)(availableSufixesOrdered);
-
-const addBasisClassSufixed = (className: string, basisSufix: number):string => `${className} basis-${basisSufix}`;
-*/
-// next specialized helpers and Strip component are exported only for testing purpuse, actually shouldnt be published.
+// next specialized helpers and Strip component are exported only for testing purpose, actually shouldnt be published.
 export const seconds2Minutes = (s: number ): number => Math.round(s / 60);
 
 export const stripTitleBuilder = (zone: Zone, secondsInZone: number): string => {
