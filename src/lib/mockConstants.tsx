@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-28T09:50:10-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-30T12:06:44-03:00
+ * @Last modified time: 2024-12-03T10:20:06-03:00
  */
 import { TrainingData, PlanData } from "@/types/global";
 
@@ -188,7 +188,7 @@ export const aLongSampleTrainingData: PlanData = [
     }
   },
   {
-    "trainingDate": "2017-10-03",
+    "trainingDate": "2017-10-01",
     "workoutName": "FINALIZAR MÁS RÁPIDO - 1/2 MARATÓN",
     "order": 1,
     "recommendedTime": 1920,

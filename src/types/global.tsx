@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-29T11:20:43-03:00
+ * @Last modified time: 2024-12-04T01:36:57-03:00
  */
 
 // -- plan types
@@ -48,7 +48,7 @@ export type ChangeRacedateAction = {
 export type ConfigReducerAction = ChangePlanAction | ChangeRacedateAction;
 
 // path types
-export interface TrainingPathData {
+export interface TrainingPathDataREMOVE {
   trainingPlanId: string;
   raceDate: string;
   trainingOrder?: number;
@@ -102,3 +102,14 @@ export interface TrainingData {
 }
 
 export type PlanData = TrainingData[];
+
+export interface PlanDataParams {
+  trainingPlanId: TrainingPlanId;
+  raceDate: RaceDate;
+};
+
+export interface TrainingDataParams {
+  trainingPlanId: TrainingPlanId;
+  raceDate: RaceDate;
+  order: number;
+};

@@ -2,21 +2,22 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-29T12:04:38-03:00
+ * @Last modified time: 2024-12-04T02:13:35-03:00
  */
 
 
 import '@testing-library/jest-dom';
-import { waitFor, render, screen } from '@testing-library/react';
+import { waitFor, render, screen, fireEvent } from '@testing-library/react';
 import TrainingContainer, { TrainingContainerHeader, TrainingContainerFooter } from '@/components/ui/custom/trainingContainer';
-import { TrainingPathData } from '@/types/global';
-import { aSampleTrainingData } from '@/lib/mockConstants';
+import { PlanDataParams } from '@/types/global';
+import { aSampleTrainingData, aLongSampleTrainingData } from '@/lib/mockConstants';
 
-jest.mock('next/navigation', () => ({
-  useRouter: () => ({
-    push: jest.fn(),
-  }),
-}));
+// @ts-expect-error cause yes.
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve(aSampleTrainingData),
+  })
+);
 
 const unSearcheableString = 'unSearcheableString';
 
@@ -63,30 +64,36 @@ describe('TrainingContainerFooter ...', () => {
 });
 
 describe('TrainingContainer ...', () => {
-  it('Should works well without trainingOrder', async () => {
-    const pathData: TrainingPathData = {
-      trainingPlanId: 'noMatters',
-      raceDate: 'noMatters',
-      //trainingOrder: 1 // should be defined but not used, on mock except for check if present
-    };
 
-    render(<TrainingContainer pathData={pathData}/>);
+  it('Should works well without trainingOrder', async () => {
+    const planParams: PlanDataParams = {
+      trainingPlanId: 'test',
+      raceDate: '2024-12-12'
+    }
+
+    render(<TrainingContainer  scheduledTrainings={aLongSampleTrainingData} planDataParams={planParams} />);
     const content = screen.getByTestId('emptyCardContent');
-    expect(content).toBeInTheDocument();    
+    expect(content).toBeInTheDocument();
   })
 
+  
   it('Should works well with trainingOrder', async () => {
-    const pathData: TrainingPathData = {
-      trainingPlanId: 'noMatters',
-      raceDate: 'noMatters',
-      trainingOrder: 1 // should be defined but not used, on mock except for check if present
-    };
+    const planParams: PlanDataParams = {
+      trainingPlanId: 'test',
+      raceDate: '2025-03-11'
+    }
 
-    render(<TrainingContainer pathData={pathData}/>);
+    render(<TrainingContainer scheduledTrainings={aLongSampleTrainingData} planDataParams={planParams}/>);
 
     //initially
     const content = screen.getAllByTestId('emptyCardContent');
     expect(content.length).toBe(1);
+
+    const aTrainingOrder = 3;
+    const training = aLongSampleTrainingData.find( t => t.order === aTrainingOrder); 
+    const theItemToClick = screen.getByText(training?.trainingDate || unSearcheableString);
+
+    fireEvent.click(theItemToClick);
 
     //after fetch
     await waitFor(() => {

@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-27T01:21:04-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-27T09:04:14-03:00
+ * @Last modified time: 2024-12-03T10:29:03-03:00
  */
 
 
@@ -10,8 +10,6 @@ import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import TrainingSchedule from '@/components/ui/custom/trainingSchedule';
 import { RawPlanData } from "@/types/global";
-import { useRouter } from 'next/navigation';
-import paths from '@/lib/paths';
 import { generateScheduleFromPlan } from '@/lib/helpers';
 import aRawPlanData from  "@/data/plans/test.json";
 
@@ -29,11 +27,11 @@ describe('TrainingSchedule ...', () => {
     const planData = aRawPlanData as RawPlanData;
     const raceDate = '2025-03-11';
     const aDayBeforeRaceDate = '2025-03-10';
-    const initialState = {trainingPlanId: 'test', raceDate}; 
+
     const scheduledTrainings = generateScheduleFromPlan(planData, raceDate);
     const lastTraining = scheduledTrainings[0];
 
-    render(<TrainingSchedule scheduledTrainings={scheduledTrainings} pathData={{...initialState}}/>)
+    render(<TrainingSchedule scheduledTrainings={scheduledTrainings} onOrderChange={() => {}}/>)
 
     let theText = screen.queryByText(raceDate);
     expect(theText).not.toBeInTheDocument();
@@ -54,7 +52,6 @@ describe('TrainingSchedule ...', () => {
   it('Should be rendered with an item selected.', () => {
     const planData = aRawPlanData as RawPlanData;
     const raceDate = '2025-03-11';
-    const initialState = {trainingPlanId: 'test', raceDate}; 
     const scheduledTrainings = generateScheduleFromPlan(planData, raceDate);
     const trainingOrder = '2';
     const nTrainingOrder = parseInt(trainingOrder, 10)
@@ -62,7 +59,7 @@ describe('TrainingSchedule ...', () => {
 
     let theText = null;
 
-    render(<TrainingSchedule scheduledTrainings={scheduledTrainings} pathData={{...initialState, trainingOrder: nTrainingOrder}}/>)
+    render(<TrainingSchedule scheduledTrainings={scheduledTrainings} order={nTrainingOrder} onOrderChange={() => {}}/>)
 
     theText = screen.getByText(aTraining?.trainingDate || unSearcheableString);
     expect(theText).toBeInTheDocument();
@@ -72,52 +69,42 @@ describe('TrainingSchedule ...', () => {
   })
 
   it('Should not navigate if clicked an item already selected.', () => {
-    const mockPush = jest.fn();
-    (useRouter as jest.Mock).mockReturnValue({
-      push: mockPush,
-    });
+    const mockEventHandler = jest.fn();
+
 
     const planData = aRawPlanData as RawPlanData;
     const raceDate = '2025-03-11';
-    const initialState = {trainingPlanId: 'test', raceDate}; 
+
     const scheduledTrainings = generateScheduleFromPlan(planData, raceDate);
     const trainingOrder = '2';
     const nTrainingOrder = parseInt(trainingOrder, 10)
     const aTraining = scheduledTrainings.find( t => t.order === nTrainingOrder);
 
-    render(<TrainingSchedule scheduledTrainings={scheduledTrainings} pathData={{...initialState, trainingOrder: nTrainingOrder}}/>)
+    render(<TrainingSchedule scheduledTrainings={scheduledTrainings}  order={nTrainingOrder} onOrderChange={mockEventHandler} />)
 
     const theSelected = screen.getByTestId(aTraining?.trainingDate || unSearcheableString);
 
     fireEvent.click(theSelected);
-    expect(mockPush).not.toHaveBeenCalled();
+    expect(mockEventHandler).not.toHaveBeenCalled();
   })
 
-  it('Should navigate if clicked an unselected item.', () => {
-    const mockPush = jest.fn();
-    (useRouter as jest.Mock).mockReturnValue({
-      push: mockPush,
-    });
+  it('Should dispatch event if clicket an order different to the selected one.', () => {
+    const mockEventHandler = jest.fn();
 
     const planData = aRawPlanData as RawPlanData;
     const raceDate = '2025-03-11';
-    const initialState = {trainingPlanId: 'test', raceDate}; 
     const scheduledTrainings = generateScheduleFromPlan(planData, raceDate);
-    const trainingOrder = '2';
-    const nTrainingOrder = parseInt(trainingOrder, 10)
+    const trainingOrder = 2;
 
-    const otherTrainingOrder = '3';
-    const nOtherTrainingOrder = parseInt(otherTrainingOrder, 10)
-    const otherTraining = scheduledTrainings.find( t => t.order === nOtherTrainingOrder); 
+    const otherTrainingOrder = 3;
+    const otherTraining = scheduledTrainings.find( t => t.order === otherTrainingOrder); 
 
-    render(<TrainingSchedule scheduledTrainings={scheduledTrainings} pathData={{...initialState, trainingOrder: nTrainingOrder}}/>)
+    render(<TrainingSchedule scheduledTrainings={scheduledTrainings}  order={trainingOrder} onOrderChange={mockEventHandler} />)
 
     const theItemToClick = screen.getByText(otherTraining?.trainingDate || unSearcheableString);
 
     fireEvent.click(theItemToClick);
-    const expectedRoute = paths.trainingShow({...initialState, trainingOrder: nOtherTrainingOrder});
-
-    expect(mockPush).toHaveBeenCalledWith(expectedRoute);
-    expect(mockPush).toHaveBeenCalledTimes(1);
+    expect(mockEventHandler).toHaveBeenCalledWith(otherTrainingOrder);
+    expect(mockEventHandler).toHaveBeenCalledTimes(1);
   })
 });
