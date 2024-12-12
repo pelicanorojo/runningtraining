@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-27T10:39:18-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-04T01:35:14-03:00
+ * @Last modified time: 2024-12-12T12:22:40-03:00
  */
 
 
@@ -12,13 +12,35 @@ import { TrainingData, Zone, Interval } from "@/types/global";
 
 // next specialized helpers and Strip component are exported only for testing purpose, actually shouldnt be published.
 export const seconds2Minutes = (s: number ): number => Math.round(s / 60);
+export const seconds2TimeComponents = (_s: number): {h: number, m: number, s: number} => {
+  let s = _s;
+
+  const h = s < 3600 ? 0 : Math.trunc(s / 3600);
+  s-= h * 3600;
+
+  const m = s < 60 ? 0 : Math.trunc(s / 60) ;
+  s-= m * 60;
+  return {h, m, s};
+}
 
 export const stripTitleBuilder = (zone: Zone, secondsInZone: number): string => {
-  return `${( secondsInZone < 60 ) ? `${secondsInZone} seconds`: `${seconds2Minutes(secondsInZone)} minutes`} in zone ${zone}.`;
+  //return `${( secondsInZone < 60 ) ? `${secondsInZone} seconds`: `${seconds2Minutes(secondsInZone)} minutes`} in zone ${zone}.`;
+  const tm = seconds2TimeComponents(secondsInZone);
+  const t: string[] = [];
+  if (tm.h) { t.push(`${tm.h} hours`)}
+  if (tm.m) { t.push(`${tm.m} minutes`)}
+  if (tm.s) { t.push(`${tm.s} seconds`)};
+ return `${t.join(' ')} in zone ${zone}.`;
 }
 
 export const stripLabelBuilder = (secondsInZone: number): string => {
-  return `${( secondsInZone < 60 ) ? `${secondsInZone} s`: `${seconds2Minutes(secondsInZone)} m`}`;
+  //return `${( secondsInZone < 60 ) ? `${secondsInZone} s`: `${seconds2Minutes(secondsInZone)} m`}`;
+  const tm = seconds2TimeComponents(secondsInZone);
+  let t = '';
+  t += tm.h ? `${tm.h}h` : '';
+  t += tm.m ? `${tm.m}m` : '';
+  t += tm.s ? `${tm.s}s` : '';
+  return t;
 }
 
 export const  zoneToColorClassMap = {
