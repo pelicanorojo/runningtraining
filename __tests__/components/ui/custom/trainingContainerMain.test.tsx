@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-30T10:30:09-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-01T12:57:06-03:00
+ * @Last modified time: 2024-12-12T12:32:12-03:00
  */
 
 import '@testing-library/jest-dom';
@@ -30,6 +30,41 @@ describe('seconds2Minutes ...', () => {
   })
 });
 
+describe('seconds2TimeComponents ...', () => {
+  it('Should convert well 0 to 59 seconds.', () => {
+    expect(seconds2TimeComponents(0)).toEqual({h: 0, m: 0, s: 0});
+    expect(seconds2TimeComponents(59)).toEqual({h: 0, m: 0, s: 59});
+  });
+
+  it('Should convert well 60 seconds.', () => {
+    expect(seconds2TimeComponents(60)).toEqual({h: 0, m: 1, s: 0});
+  });
+
+  it('Should convert well 61 to 3599 seconds.', () => {
+    expect(seconds2TimeComponents(61)).toEqual({h: 0, m: 1, s: 1});
+    expect(seconds2TimeComponents(3599)).toEqual({h: 0, m: 59, s: 59});
+  });
+  
+  it('Should convert well 3600 to infinite seconds.', () => {
+    expect(seconds2TimeComponents(3600)).toEqual({h: 1, m: 0, s: 0});
+    expect(seconds2TimeComponents(3660)).toEqual({h: 1, m: 1, s: 0});
+    expect(seconds2TimeComponents(3661)).toEqual({h: 1, m: 1, s: 1});
+    expect(seconds2TimeComponents(3601)).toEqual({h: 1, m: 0, s: 1});
+  });
+});
+
+export const seconds2TimeComponents = (_s: number): {h: number, m: number, s: number} => {
+  let s = _s;
+
+  const h = s < 3600 ? 0 : Math.trunc(s / 3600);
+  s-= h * 3600;
+
+  const m = s < 60 ? 0 : Math.trunc(s / 60) ;
+  s-= m * 60;
+  return {h, m, s};
+}
+
+
 describe('stripTitleBuilder ...', () => {
   it('Should build well a 59 seconds green zone title.', () => {
     const zone: Zone = 'green'; const seconds = 59;
@@ -40,7 +75,7 @@ describe('stripTitleBuilder ...', () => {
   it('Should build well a 89 seconds green zone title.', () => {
     const zone: Zone = 'green'; const seconds = 89;
     const title = stripTitleBuilder(zone, seconds);
-    expect(title).toEqual(`1 minutes in zone ${zone}.`);
+    expect(title).toEqual(`1 minutes 29 seconds in zone ${zone}.`);
   })
 });
 
@@ -48,13 +83,13 @@ describe('stripLabelBuilder ...', () => {
   it('Should build well a 59 seconds label.', () => {
     const seconds = 59;
     const label = stripLabelBuilder(seconds);
-    expect(label).toEqual('59 s');
+    expect(label).toEqual('59s');
   })
   
   it('Should build well a 89 seconds label.', () => {
     const seconds = 89;
     const title = stripLabelBuilder( seconds);
-    expect(title).toEqual('1 m');
+    expect(title).toEqual('1m29s');
   })
 });
 
