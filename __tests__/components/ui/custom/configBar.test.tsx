@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-25T01:44:44-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-27T08:48:04-03:00
+ * @Last modified time: 2024-12-14T01:39:11-03:00
  */
 
 
@@ -29,6 +29,10 @@ describe('ConfigBar ...', () => {
     const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aRaceDate};
 
     render(<ConfigBar trainingPlansAvailable={trainingPlansAvailableFront} initialState={initialState}/>);
+
+    const thePopupTrigger = screen.getByRole('button');
+    fireEvent.click(thePopupTrigger);
+
     const theText =  screen.getByText(aTrainingPlan.label);
 
     expect(theText).toBeInTheDocument();
@@ -63,6 +67,9 @@ describe('ConfigBar ...', () => {
 
     render(<ConfigBar trainingPlansAvailable={trainingPlansAvailableFront} initialState={initialState}/>);
 
+    const thePopupTrigger = screen.getByRole('button');
+    fireEvent.click(thePopupTrigger);
+
     const combo = screen.getByRole('combobox');
 
     fireEvent.click(combo);
@@ -93,6 +100,9 @@ describe('ConfigBar ...', () => {
 
     render(<ConfigBar trainingPlansAvailable={trainingPlansAvailableFront} initialState={initialState}/>);
 
+    const thePopupTrigger = screen.getByRole('button');
+    fireEvent.click(thePopupTrigger);
+
     const theDate = screen.getByDisplayValue(aDate)
 
     fireEvent.click(theDate);
@@ -119,6 +129,9 @@ describe('ConfigBar ...', () => {
 
     render(<ConfigBar trainingPlansAvailable={trainingPlansAvailableFront} initialState={initialState}/>);
 
+    const thePopupTrigger = screen.getByRole('button');
+    fireEvent.click(thePopupTrigger);
+
     const theDate = screen.getByDisplayValue(aDate)
 
     fireEvent.click(theDate);
@@ -127,7 +140,6 @@ describe('ConfigBar ...', () => {
 
     fireEvent.change(theDate, {target: {value: otherDate}});
     
-    const expectedRoute = paths.trainingPlanShow({...initialState, raceDate: otherDate});
     expect(mockPush).toHaveBeenCalledTimes(0);
   })
 });
