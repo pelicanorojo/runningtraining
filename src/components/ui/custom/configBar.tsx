@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-22T10:12:07-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-14T01:36:54-03:00
+ * @Last modified time: 2024-12-17T12:41:07-03:00
  */
 
 'use client'
@@ -19,7 +19,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 
-import { Settings } from 'lucide-react';
+import { Settings, MoveRightIcon } from 'lucide-react';
 
 import { trainingPlansAvailableFront } from '@/lib/constants';
 import { PlanConfig, TrainingPlanThinFrontList } from "@/types/global";
@@ -80,10 +80,18 @@ export default function ConfigBar({trainingPlansAvailable, initialState}: Config
       <div className="flex flex-row items-center gap-6 p-4 bg-background border-b">
         <div className='flex-1  flex-col'>
         <div className="flex-1 text-sm">
-          {`Plan: ${trainingLabel}`}
+          {
+          trainingLabel
+            ? `Plan: ${trainingLabel}`
+            : <>Plan: Select one <MoveRightIcon className="inline-block h-4 w-4"/></>
+          }    
           </div>
           <div className="flex-1 text-sm">
-          {`Race Date: (${state.raceDate})`}
+          {
+          state.raceDate
+            ? `Race Date: (${state.raceDate})`
+            : <>Race Date: ( Select one <MoveRightIcon className="inline-block h-4 w-4"/>)</>
+          }
         </div>
         </div>
         <Dialog>
@@ -93,7 +101,7 @@ export default function ConfigBar({trainingPlansAvailable, initialState}: Config
             </button>
           </DialogTrigger>
           <DialogContent className="sm:max-w-[425px]">
-            <DialogDescription>This is a popup for select the training plan, and the race date.</DialogDescription>
+            <DialogDescription>Select the training plan, and the race date.</DialogDescription>
             <DialogHeader>
               <DialogTitle>Configuration</DialogTitle>
             </DialogHeader>
