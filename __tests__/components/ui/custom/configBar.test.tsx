@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-25T01:44:44-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-14T01:39:11-03:00
+ * @Last modified time: 2024-12-17T12:51:07-03:00
  */
 
 
@@ -24,7 +24,21 @@ const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[1];
 const otheraTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[2];
 
 describe('ConfigBar ...', () => {
-  it('Should render with its childs initialized with the param initialState.',  () => {
+  it('Should show placeholders on subtitles when some initial state undefined.', () => {
+    let aUndefined;
+    const initialState = {trainingPlanId: aUndefined, raceDate: aUndefined};
+
+    render(<ConfigBar trainingPlansAvailable={trainingPlansAvailableFront} initialState={initialState}/>);
+
+    const theText =   screen.getByText('Plan: Select one');
+
+    expect(theText).toBeInTheDocument();
+
+    const theDate =  screen.getByText('Race Date: ( Select one )');
+    expect(theDate).toBeInTheDocument(); 
+  })
+
+  it('Should render the popup with its childs initialized with the param initialState.',  () => {
     const aRaceDate = '2024-12-01';
     const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aRaceDate};
 
