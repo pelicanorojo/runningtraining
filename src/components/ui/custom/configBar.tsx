@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-22T10:12:07-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-19T11:36:36-03:00
+ * @Last modified time: 2024-12-20T01:41:40-03:00
  */
 
 'use client'
@@ -105,8 +105,14 @@ export default function ConfigBar({trainingPlansAvailable, initialState}: Config
             <DialogHeader>
               <DialogTitle>Configuration</DialogTitle>
             </DialogHeader>
-            <PlanSelector availablePlans={trainingPlansAvailable} selectedPlanId={state.trainingPlanId} dispatch={dispatch}/>
+            <div className="flex flex-row items-center gap-2 place-content-between">
+              <h3>Plan: </h3>
+              <PlanSelector availablePlans={trainingPlansAvailable} selectedPlanId={state.trainingPlanId} dispatch={dispatch}/>
+            </div>
+            <div className="flex flex-row items-center gap-2 place-content-between">
+            <h3>Race Date: </h3>
             <RaceDateSelector raceDate={state.raceDate} dispatch={dispatch} />
+            </div>
           </DialogContent>
         </Dialog>
       </div>
