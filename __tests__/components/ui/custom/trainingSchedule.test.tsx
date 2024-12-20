@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-27T01:21:04-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-03T10:29:03-03:00
+ * @Last modified time: 2024-12-20T01:22:58-03:00
  */
 
 
@@ -13,7 +13,10 @@ import { RawPlanData } from "@/types/global";
 import { generateScheduleFromPlan } from '@/lib/helpers';
 import aRawPlanData from  "@/data/plans/test.json";
 
-//TODO: show the dates in a shape selectable by the user.
+jest.mock('react', () => ({
+  ...jest.requireActual('react'),
+  useEffect: jest.fn(),
+})); 
 
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
@@ -49,6 +52,7 @@ describe('TrainingSchedule ...', () => {
     expect(theText).not.toBeInTheDocument();
   })
 
+  
   it('Should be rendered with an item selected.', () => {
     const planData = aRawPlanData as RawPlanData;
     const raceDate = '2025-03-11';

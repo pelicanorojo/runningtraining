@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-20T01:08:43-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-04T01:24:42-03:00
+ * @Last modified time: 2024-12-20T12:05:44-03:00
  */
 
 import path from 'path';
@@ -109,6 +109,6 @@ export const generateScheduleFromPlan = (planData: RawPlanData, raceDate: RaceDa
     })
   );
 
-  return result;
+  return result.reverse();
 };
 //========== dates functions, past to use a libray only when strictly necesary/ ==========
