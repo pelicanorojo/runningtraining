@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-26T10:46:13-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-20T01:22:09-03:00
+ * @Last modified time: 2024-12-20T01:50:28-03:00
  */
 
 
@@ -62,7 +62,7 @@ export default function TrainingSchedule({scheduledTrainings,  order, onOrderCha
                   <Button
                     key={item.order}
                     ref={item.order === order ? selectedItemRef : null}
-                    variant={order === item.order ? "secondary" : "ghost"}
+                    variant={order === item.order ? "default" : "ghost"}
                     className="w-full justify-start px-3 py-0 h-7"
                     onClick={() => onTrainingOrderClick(item.order)}
                   >
