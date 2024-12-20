@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-27T10:39:18-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-19T10:22:58-03:00
+ * @Last modified time: 2024-12-20T12:40:05-03:00
  */
 
 
@@ -58,10 +58,11 @@ export function TrainingContainerFooter({trainingData}: TrainingContainerFooterP
 interface TrainingContainerProps {
   scheduledTrainings: PlanData;
   planDataParams: PlanDataParams;
+  defaultOrder?: number;
 }
 
-export default function TrainingContainer({scheduledTrainings, planDataParams: getPlanDataParams}: TrainingContainerProps) {
-  const [order, setOrder] = useState<number|undefined>(undefined);
+export default function TrainingContainer({scheduledTrainings, planDataParams: getPlanDataParams, defaultOrder}: TrainingContainerProps) {
+  const [order, setOrder] = useState<number|undefined>(defaultOrder);
   const [trainingData, setTrainingData] = useState<TrainingData | null>(null);
 
   useEffect(() => {
@@ -69,8 +70,7 @@ export default function TrainingContainer({scheduledTrainings, planDataParams: g
     const fetchData =  async () => {
       let aTrainingData = null;
 
-      if (order) {
-
+      if (order) {        
         aTrainingData = await fetchTrainingData({...getPlanDataParams, order});
         setTrainingData(aTrainingData);
       }

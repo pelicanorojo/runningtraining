@@ -2,11 +2,13 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-26T10:46:13-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-19T11:10:54-03:00
+ * @Last modified time: 2024-12-20T01:22:09-03:00
  */
 
 
 'use client';
+
+import { useRef, useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -26,6 +28,19 @@ interface trainingScheduleProps {
 export const TrainingSelectedMarker = ({localizationId}: {localizationId: string}) => (<span className="mx-1" data-testid={localizationId}>*</span>); 
 
 export default function TrainingSchedule({scheduledTrainings,  order, onOrderChange}: trainingScheduleProps) {
+  const selectedItemRef = useRef<HTMLButtonElement>(null);
+
+
+  useEffect(() => {
+    if (selectedItemRef.current) {
+      selectedItemRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center', // Align to vertical center
+      });
+    }
+  }, [order]); // Only run when selectedIndex changes
+
+
   const onTrainingOrderClick = (aOrder: number) => {
     if (aOrder !== order) {
       onOrderChange(aOrder);
@@ -45,7 +60,8 @@ export default function TrainingSchedule({scheduledTrainings,  order, onOrderCha
               <div className="space-y-1">
                 {scheduledTrainings.map((item) => (
                   <Button
-                    key={item.trainingDate}
+                    key={item.order}
+                    ref={item.order === order ? selectedItemRef : null}
                     variant={order === item.order ? "secondary" : "ghost"}
                     className="w-full justify-start px-3 py-0 h-7"
                     onClick={() => onTrainingOrderClick(item.order)}

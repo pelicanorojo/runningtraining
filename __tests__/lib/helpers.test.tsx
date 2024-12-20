@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-26T10:53:01-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-11-29T11:24:13-03:00
+ * @Last modified time: 2024-12-20T12:44:32-03:00
  */
 
 
@@ -145,7 +145,7 @@ describe('generateScheduleFromPlan', () => {
 
   const theRawData = aRawPlanData as RawPlanData;
   const theScheduleData = helpers.generateScheduleFromPlan(theRawData, raceDate);
-  const lastTraining = theScheduleData[0];
+  const lastTraining = theScheduleData[theScheduleData.length -1];
   //console.log(helpers.createUTCDateFromString(theRawData.results[0].scheduledDate))
 
   const lastTrainingDate = helpers.createUTCDateFromString(lastTraining.trainingDate);

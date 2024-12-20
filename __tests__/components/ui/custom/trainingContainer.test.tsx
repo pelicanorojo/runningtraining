@@ -2,12 +2,13 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-04T02:13:35-03:00
+ * @Last modified time: 2024-12-20T01:23:08-03:00
  */
 
+global.Element.prototype.scrollIntoView = jest.fn();
 
 import '@testing-library/jest-dom';
-import { waitFor, render, screen, fireEvent } from '@testing-library/react';
+import { waitFor, render, screen, fireEvent, act } from '@testing-library/react';
 import TrainingContainer, { TrainingContainerHeader, TrainingContainerFooter } from '@/components/ui/custom/trainingContainer';
 import { PlanDataParams } from '@/types/global';
 import { aSampleTrainingData, aLongSampleTrainingData } from '@/lib/mockConstants';
@@ -70,7 +71,6 @@ describe('TrainingContainer ...', () => {
       trainingPlanId: 'test',
       raceDate: '2024-12-12'
     }
-
     render(<TrainingContainer  scheduledTrainings={aLongSampleTrainingData} planDataParams={planParams} />);
     const content = screen.getByTestId('emptyCardContent');
     expect(content).toBeInTheDocument();
@@ -94,11 +94,12 @@ describe('TrainingContainer ...', () => {
     const theItemToClick = screen.getByText(training?.trainingDate || unSearcheableString);
 
     fireEvent.click(theItemToClick);
-
+//*
     //after fetch
     await waitFor(() => {
       const content = screen.getAllByTestId('trainingContainerHeader');
       expect(content.length).toBe(1);
     });
+    //*/
   })
 });
