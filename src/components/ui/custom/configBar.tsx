@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-22T10:12:07-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-17T12:41:07-03:00
+ * @Last modified time: 2024-12-19T11:36:36-03:00
  */
 
 'use client'
@@ -75,11 +75,11 @@ export default function ConfigBar({trainingPlansAvailable, initialState}: Config
   }, [state, router, trainingPlansAvailable])
 
   return (
-    <div className="container w-full py-4">
+    <div className="container w-full">
       {/*<div className="flex flex-row gap-6 items-center"><div className="flex items-center justify-between p-4 bg-background border-b">*/}
       <div className="flex flex-row items-center gap-6 p-4 bg-background border-b">
-        <div className='flex-1  flex-col'>
-        <div className="flex-1 text-sm">
+        <div className='flex-1 flex flex-col'>
+          <div className="flex-1 text-sm">
           {
           trainingLabel
             ? `Plan: ${trainingLabel}`
@@ -92,7 +92,7 @@ export default function ConfigBar({trainingPlansAvailable, initialState}: Config
             ? `Race Date: (${state.raceDate})`
             : <>Race Date: ( Select one <MoveRightIcon className="inline-block h-4 w-4"/>)</>
           }
-        </div>
+          </div>
         </div>
         <Dialog>
           <DialogTrigger asChild>

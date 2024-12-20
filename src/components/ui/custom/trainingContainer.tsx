@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-27T10:39:18-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-04T01:34:48-03:00
+ * @Last modified time: 2024-12-19T10:22:58-03:00
  */
 
 
@@ -80,18 +80,21 @@ export default function TrainingContainer({scheduledTrainings, planDataParams: g
   }, [getPlanDataParams, order])
 
   return (
-    <>
-    <TrainingSchedule scheduledTrainings={scheduledTrainings} order={order} onOrderChange={setOrder}/>
-    <Card className="flex-1 shadow-none flex flex-col h-full overflow-y-auto justify-between">
-      {trainingData ?
-        <>
-        <TrainingContainerHeader dataTestid='trainingContainerHeader' trainingData={trainingData} />
-        <TrainingContainerMain trainingData={trainingData} />
-        <TrainingContainerFooter trainingData={trainingData} />
-        </>
-      : <CardContent data-testid='emptyCardContent' className="flex items-center justify-center h-full">Select a date to view training details...</CardContent>
-      }
-    </Card>
-    </>
+    <div className="flex-1 w-full overflow-x-auto">
+      <div className="flex-1 gap-6 shadow-none flex flex-row h-full  justify-between min-w-max">
+        <TrainingSchedule scheduledTrainings={scheduledTrainings} order={order} onOrderChange={setOrder}/>
+        <Card className="flex-1 flex flex-col h-full overflow-x-auto justify-between w-[30rem]">
+          {trainingData ?
+            <>
+            <TrainingContainerHeader dataTestid='trainingContainerHeader' trainingData={trainingData} />
+            <TrainingContainerMain trainingData={trainingData} />
+            <TrainingContainerFooter trainingData={trainingData} />
+            </>
+          : <CardContent data-testid='emptyCardContent' className="flex items-center justify-center h-full">Select a date to view training details...</CardContent>
+          }
+        </Card>
+      </div>
+    </div>
+
   );
 }
