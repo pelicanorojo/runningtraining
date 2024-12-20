@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-26T10:46:13-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-04T01:29:57-03:00
+ * @Last modified time: 2024-12-19T11:10:54-03:00
  */
 
 
@@ -23,7 +23,7 @@ interface trainingScheduleProps {
   onOrderChange(order: number): void;
 }
 
-export const TrainingSelectedMarker = ({localizationId}: {localizationId: string}) => (<span className="mx-1" data-testid={localizationId}>selected</span>); 
+export const TrainingSelectedMarker = ({localizationId}: {localizationId: string}) => (<span className="mx-1" data-testid={localizationId}>*</span>); 
 
 export default function TrainingSchedule({scheduledTrainings,  order, onOrderChange}: trainingScheduleProps) {
   const onTrainingOrderClick = (aOrder: number) => {
@@ -34,11 +34,12 @@ export default function TrainingSchedule({scheduledTrainings,  order, onOrderCha
 
   return (
     <>
-      <Card className="w-[240px] shadow-none">
-        <CardHeader>
-          <CardTitle>Training Schedule</CardTitle>
+      <Card className="flex flex-col w-[7rem] shadow-none h-full">
+        <CardHeader className="p-3">
+          <CardTitle>Schedule</CardTitle>
         </CardHeader>
-        <ScrollArea className="h-[calc(100vh-340px)]">
+        {/*        <ScrollArea className="h-[calc(100vh-340px)]">*/}
+        <ScrollArea className="h-[calc(100vh-250px)]">
           <CardContent className="p-0">
             {scheduledTrainings.length > 0 &&
               <div className="space-y-1">
@@ -46,7 +47,7 @@ export default function TrainingSchedule({scheduledTrainings,  order, onOrderCha
                   <Button
                     key={item.trainingDate}
                     variant={order === item.order ? "secondary" : "ghost"}
-                    className="w-full justify-start px-3"
+                    className="w-full justify-start px-3 py-0 h-7"
                     onClick={() => onTrainingOrderClick(item.order)}
                   >
                     <div className="flex flex-col items-start">

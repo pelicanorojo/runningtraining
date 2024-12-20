@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-03T11:35:24-03:00
+ * @Last modified time: 2024-12-19T11:32:37-03:00
  */
 
 
@@ -34,13 +34,7 @@ export default async function ShowPlanPage({params}: ShowPlanPageProps) {
   return (
     <>
     <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront} initialState={initialState}/> 
-    <div className="flex gap-6 h-[calc(100vh-240px)]">
-    {/* Left Panel - Dates <TrainingSchedule scheduledTrainings={scheduledTrainings} pathData={initialState}/> */}
-    
-
-    {/* Right Panel - Training Details */}
     <TrainingContainer  scheduledTrainings={scheduledTrainings} planDataParams={params}/>
-  </div>
-  </>
+    </>
   )
 }

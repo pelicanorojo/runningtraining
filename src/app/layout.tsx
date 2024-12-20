@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-11T11:11:20-03:00
+ * @Last modified time: 2024-12-19T10:39:20-03:00
  */
 
 
@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <div className={`container mx-auto`}>
+      <div className={`container mx-auto h-svh px-2 flex flex-col gap-2`}>
         <Layout>{children}</Layout>
       </div>
       </body>
