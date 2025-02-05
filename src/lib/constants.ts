@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-14T01:22:56-03:00
+ * @Last modified time: 2025-02-04T10:50:42-03:00
  */
 
 
@@ -26,3 +26,8 @@ export const trainingPlansAvailableFront:TrainingPlanThinFrontList = trainingPla
 })
 
 export const plansSubFolder = 'data/plans';
+
+export const supportedLocales = ['en', 'es']
+export const localesRegExPart = supportedLocales.join('|')
+
+export const defaultLocale = supportedLocales[0];

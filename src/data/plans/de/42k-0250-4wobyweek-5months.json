@@ -1,0 +1,6353 @@
+{
+	"itemsPerPage": 250,
+	"totalResults": 87,
+	"results": [
+		{
+			"workoutId": 10197051458,
+			"scheduledWorkoutId": 10197051458,
+			"workoutType": "plan",
+			"scheduledDate": "2017-10-07T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330044?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330044
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 87,
+			"recommendedTime": 1800,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1200,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Das einzige Ziel dieses Trainings besteht darin, Ihre Beine mit Energie zu versorgen. Übertreiben Sie es nicht mit dem Training. erfordert nur den minimal notwendigen Aufwand. Der Tag des Marathons rückt näher.",
+				"secondaryNote": "Bereiten Sie Ihre Ausrüstung für den Renntag vor: dieselben Schuhe und Kleidung, die gesamte gute Ausrüstung, mit der Sie trainiert haben. Nichts Neues. Genießen!. VIEL GLÜCK!"
+			}
+		},
+		{
+			"workoutId": 10197051457,
+			"scheduledWorkoutId": 10197051457,
+			"workoutType": "plan",
+			"scheduledDate": "2017-10-05T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330043?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330043
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 86,
+			"recommendedTime": 2700,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Gewöhnen Sie sich in diesem kurzen Training an das Marathontempo. Beginnen Sie in Ihrem Zieltempo; sollte für ein kurzes Training bequem sein.",
+				"secondaryNote": "Wenn Sie es heute ruhig angehen lassen, denken Sie an all die Fortschritte, die Sie gemacht haben. Der Renntag steht vor der Tür."
+			}
+		},
+		{
+			"workoutId": 10197051456,
+			"scheduledWorkoutId": 10197051456,
+			"workoutType": "plan",
+			"scheduledDate": "2017-10-03T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330042?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330042
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 85,
+			"recommendedTime": 2100,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Schrittintervalle.",
+				"note": "Beschleunigen Sie das Tempo. Beschleunigen Sie, wenn Sie in die rote Zone kommen. Wenn Sie die blaue Zone betreten, verlangsamen Sie die Geschwindigkeit auf einen Lauf.",
+				"secondaryNote": "Behalten Sie ein gleichmäßiges Tempo bei. Versuchen Sie nicht, ein hartes Training daraus zu machen – der Wettkampftag steht vor der Tür. Sie haben bereits alle notwendigen Arbeiten erledigt."
+			}
+		},
+		{
+			"workoutId": 10197051455,
+			"scheduledWorkoutId": 10197051455,
+			"workoutType": "plan",
+			"scheduledDate": "2017-10-01T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330041?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330041
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 84,
+			"recommendedTime": 3900,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 600,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1800,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 600,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen mit schnellem Finish.",
+				"note": "Beginnen Sie diesen langen Lauf in Ihrem normalen, leichten Tempo. Steigern Sie Ihr Tempo schrittweise, sodass Sie in der zweiten Hälfte der grünen Zone Ihr Marathon-Zieltempo erreichen. Beendet mit großartiger Leistung in der gelben Zone.",
+				"secondaryNote": "Nur noch eine Woche! Die Trainingseinheiten dieser Woche sind darauf ausgelegt, Ihre Muskeln in Bewegung zu halten. Ihr Körper könnte jederzeit einen Marathon laufen. Sie sind WIRKLICH bereit dafür!"
+			}
+		},
+		{
+			"workoutId": 10197051454,
+			"scheduledWorkoutId": 10197051454,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-30T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330040?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330040
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 83,
+			"recommendedTime": 3000,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2400,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Die blaue Zone ist in diesem Training genauso wichtig wie die grüne Zone. Geben Sie Ihr Bestes, in jeder Zone zu bleiben.",
+				"secondaryNote": "Nur noch eine Woche! Die Trainingseinheiten dieser Woche sind darauf ausgelegt, Ihre Muskeln in Bewegung zu halten. Ihr Körper könnte jederzeit einen Marathon laufen. Sie sind WIRKLICH bereit dafür!"
+			}
+		},
+		{
+			"workoutId": 10197051453,
+			"scheduledWorkoutId": 10197051453,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-28T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330039?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330039
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 82,
+			"recommendedTime": 1800,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 420,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 420,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Serien im gelben Bereich.",
+				"note": "Jede Serie in der gelben Zone besteht aus dem Laufen in Ihrem 10-km-Renntempo.",
+				"secondaryNote": "Lassen Sie am Marathontag nicht zu, dass das Adrenalin Sie überwältigt. Merken Sie sich Ihr Tempo und bleiben Sie dabei. Wenn Sie auf den ersten Kilometern zu schnell loslegen, kann es sein, dass Sie bei Kilometer 32 „versagen“ (Ihre Glykogenreserven aufgebraucht sind)."
+			}
+		},
+		{
+			"workoutId": 10197051452,
+			"scheduledWorkoutId": 10197051452,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-26T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330038?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330038
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 81,
+			"recommendedTime": 1800,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Intervalle in der gelben Fartlek-Zone.",
+				"note": "Diese gelben Zonen werden in Ihrem 5-km-Renntempo gelaufen.",
+				"secondaryNote": "Achten Sie darauf, dass die Kleidung, die Sie beim Marathon tragen, gut sitzt. Warten Sie nicht bis zum Renntag, um ein neues Outfit auszuprobieren. Nutzen Sie den langen Lauf am Morgen, um am Renntag eine optimale Leistung sicherzustellen. Gleiches gilt auch für Turnschuhe."
+			}
+		},
+		{
+			"workoutId": 10197051451,
+			"scheduledWorkoutId": 10197051451,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-24T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330037?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330037
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 80,
+			"recommendedTime": 5400,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1800,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1800,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 600,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen mit schnellem Finish.",
+				"note": "Beginnen Sie diesen langen Lauf in Ihrem normalen, leichten Tempo. Steigern Sie Ihr Tempo schrittweise, sodass Sie in der zweiten Hälfte der grünen Zone Ihr Marathon-Zieltempo erreichen. Beendet mit großartiger Leistung in der gelben Zone.",
+				"secondaryNote": "Eine ausreichende Flüssigkeitszufuhr hilft, Krämpfe zu verhindern. Wasser ist in Ordnung, aber Sportgetränke können die notwendigen Elektrolyte mit einer Geschmacksnote liefern. Experimentieren Sie jetzt, damit Sie am Renntag wissen, was für Sie am besten funktioniert."
+			}
+		},
+		{
+			"workoutId": 10197051450,
+			"scheduledWorkoutId": 10197051450,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-23T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330036?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330036
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 79,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Heute ist ein sanfter und angenehmer Rhythmus angesagt. Sie sollten Energie für die größere Anstrengung am nächsten Tag sparen.",
+				"secondaryNote": "Laufen Sie keinen Marathon von einem Badezimmer zum anderen. Probieren Sie es jetzt aus. Erfahre, welche Nahrungsmittel, Getränke und Gels vor und während langer Läufe geeignet sind."
+			}
+		},
+		{
+			"workoutId": 10197051449,
+			"scheduledWorkoutId": 10197051449,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-21T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330035?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330035
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 78,
+			"recommendedTime": 4800,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 3600,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Laufen Sie im Marathon-Zieltempo.",
+				"note": "Nach dem Aufwärmen in der blauen Zone beschleunigen Sie in der grünen Zone auf Ihr exaktes Marathontempo.",
+				"secondaryNote": "Haben Sie darüber nachgedacht, wie Sie sich am Marathontag kleiden werden? Wählen Sie etwas, von dem Sie wissen, dass es bequem ist. Tragen Sie am Marathontag keine neue Ausrüstung. Dies könnte zu Hautreizungen führen."
+			}
+		},
+		{
+			"workoutId": 10197051448,
+			"scheduledWorkoutId": 10197051448,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-19T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330034?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330034
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 77,
+			"recommendedTime": 2400,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Intervalle in der gelben Fartlek-Zone.",
+				"note": "Diese gelben Zonen werden in Ihrem 5-km-Renntempo gelaufen.",
+				"secondaryNote": "Die beste Möglichkeit, Ihre aerobe Kapazität zu steigern, besteht darin, schnelleres Laufen zu trainieren. Wie geht es dir heute?"
+			}
+		},
+		{
+			"workoutId": 10197051447,
+			"scheduledWorkoutId": 10197051447,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-17T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330033?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330033
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 76,
+			"recommendedTime": 10200,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 9000,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen.",
+				"note": "Lassen Sie sich Zeit, bei diesem Rennen sollten Sie insgesamt zwischen 32 und 39 km bzw. zwischen 20 und 24 Meilen zurücklegen.",
+				"secondaryNote": "Lange Läufe können hart sein. Unwohlsein und Müdigkeit sind normal. Wenn Sie jedoch das Gefühl haben, eine Verletzung zu spüren, hören Sie mit dem Laufen auf, bevor es schlimmer wird."
+			}
+		},
+		{
+			"workoutId": 10197051446,
+			"scheduledWorkoutId": 10197051446,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-16T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330032?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330032
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 75,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Sie befinden sich auf der Zielgeraden des Programms. Füllen Sie sich mit Energie; du bereitest dich auf das Abschlusstraining vor.",
+				"secondaryNote": "Laufen Sie keinen Marathon von einem Badezimmer zum anderen. Probieren Sie es jetzt aus. Erfahre, welche Nahrungsmittel, Getränke und Gels vor und während langer Läufe geeignet sind."
+			}
+		},
+		{
+			"workoutId": 10197051445,
+			"scheduledWorkoutId": 10197051445,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-14T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330031?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330031
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 74,
+			"recommendedTime": 4200,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 1200,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1800,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 1200,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Serien im gelben Bereich.",
+				"note": "Laufen Sie diese langen gelben Zonen zwischen 12 km und Halbmarathon im Renntempo.",
+				"secondaryNote": "Lassen Sie am Marathontag nicht zu, dass das Adrenalin Sie überwältigt. Merken Sie sich Ihr Tempo und bleiben Sie dabei. Wenn Sie auf den ersten Kilometern zu schnell loslegen, kann es sein, dass Sie bei Kilometer 32 „versagen“ (Ihre Glykogenreserven aufgebraucht sind)."
+			}
+		},
+		{
+			"workoutId": 10197051444,
+			"scheduledWorkoutId": 10197051444,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-12T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330030?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330030
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 73,
+			"recommendedTime": 6600,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 5400,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Ein schöner und entspannter Lauf. Konzentrieren Sie sich auf Ihre Atmung und machen Sie gleichmäßige, leichte Schritte.",
+				"secondaryNote": "Nehmen Sie ein Energiegel. Probieren Sie verschiedene Marken aus. Wählen Sie die Option aus, die für Sie am besten geeignet ist. Befolgen Sie die Anweisungen für jede Marke."
+			}
+		},
+		{
+			"workoutId": 10197051443,
+			"scheduledWorkoutId": 10197051443,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-10T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330029?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330029
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 72,
+			"recommendedTime": 6600,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 3000,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1800,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 600,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen mit schnellem Finish.",
+				"note": "Beginnen Sie diesen langen Lauf in Ihrem normalen, leichten Tempo. Steigern Sie Ihr Tempo schrittweise, sodass Sie in der zweiten Hälfte der grünen Zone Ihr Marathon-Zieltempo erreichen. Beendet mit großartiger Leistung in der gelben Zone.",
+				"secondaryNote": "Genieße den langen Lauf heute. Füllen Sie sich mit Energie; Sie bereiten sich auf den Marathon vor."
+			}
+		},
+		{
+			"workoutId": 10197051442,
+			"scheduledWorkoutId": 10197051442,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-09T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330028?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330028
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 71,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Heute ist ein sanfter und angenehmer Rhythmus angesagt. Sie sollten Energie für die größere Anstrengung am nächsten Tag sparen.",
+				"secondaryNote": "Schenken Sie der Ruhepause die gleiche Aufmerksamkeit wie Ihren Trainingsläufen: Es handelt sich um eine bewusste körperliche Aktivität, die für Ihren Fortschritt und Ihr Wohlbefinden von wesentlicher Bedeutung ist."
+			}
+		},
+		{
+			"workoutId": 10197051441,
+			"scheduledWorkoutId": 10197051441,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-07T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330027?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330027
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 70,
+			"recommendedTime": 4600,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "800-Meter-Intervalle in der gelben Zone.",
+				"note": "Führen Sie dieses Training auf einer Laufbahn durch. Jede gelbe Zone muss 800 Meter lang sein. Wenn Ihnen das gelingt, sind Sie auf dem besten Weg, Ihr Marathonziel zu erreichen. Wenn nicht, gehen Sie es langsamer an.",
+				"secondaryNote": "Weitere Informationen zum Training, mit dem sich die Marathonleistung vorhersagen lässt, finden Sie unter www.McMillanRunning.com."
+			}
+		},
+		{
+			"workoutId": 10197051440,
+			"scheduledWorkoutId": 10197051440,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-05T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330026?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330026
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 69,
+			"recommendedTime": 2400,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Intervalle in der gelben Fartlek-Zone.",
+				"note": "Diese gelben Zonen werden in Ihrem 5-km-Renntempo gelaufen.",
+				"secondaryNote": "Leiden Sie unter Müdigkeit? Verlangsamen Sie Ihr Tempo und konzentrieren Sie sich auf die Beibehaltung einer guten Laufhaltung."
+			}
+		},
+		{
+			"workoutId": 10197051439,
+			"scheduledWorkoutId": 10197051439,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-03T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330025?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330025
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 68,
+			"recommendedTime": 9600,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 8400,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen.",
+				"note": "Lassen Sie sich Zeit, bei diesem Rennen sollten Sie insgesamt zwischen 29 und 35 km bzw. zwischen 18 und 22 Meilen zurücklegen.",
+				"secondaryNote": "Lange Läufe können hart sein. Obwohl Unbehagen und Müdigkeit normal sind, sollten Sie sich bei starken Schmerzen nicht zum Weiterlaufen zwingen. Wenn Sie das Gefühl haben, eine Verletzung zu spüren, hören Sie mit dem Laufen auf, bevor es schlimmer wird."
+			}
+		},
+		{
+			"workoutId": 10197051438,
+			"scheduledWorkoutId": 10197051438,
+			"workoutType": "plan",
+			"scheduledDate": "2017-09-02T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330024?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330024
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 67,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Heute ist ein einfaches und angenehmes Rennen. Morgen erwartet dich eine lange Trainingseinheit.",
+				"secondaryNote": "Weißt du schon, welche isotonischen Getränke oder welches Energiegel beim Marathon verteilt werden? Trainieren Sie mit ihnen bei langen Läufen oder planen Sie, Ihr Lieblingsteam mitzubringen."
+			}
+		},
+		{
+			"workoutId": 10197051437,
+			"scheduledWorkoutId": 10197051437,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-31T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330023?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330023
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 66,
+			"recommendedTime": 4200,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 3000,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Laufen Sie im Marathon-Zieltempo.",
+				"note": "Nach dem Aufwärmen in der blauen Zone beschleunigen Sie in der grünen Zone auf Ihr exaktes Marathontempo.",
+				"secondaryNote": "Vergiss nicht zu essen. Mit zunehmenden Trainingsfortschritten werden Sie immer weiter laufen. Ihr Körper braucht Treibstoff, um diesen Fortschritt aufrechtzuerhalten."
+			}
+		},
+		{
+			"workoutId": 10197051436,
+			"scheduledWorkoutId": 10197051436,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-29T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330022?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330022
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 65,
+			"recommendedTime": 6600,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 5400,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Die blaue Zone ist in diesem Training genauso wichtig wie die grüne Zone. Geben Sie Ihr Bestes, in jeder Zone zu bleiben.",
+				"secondaryNote": "Fällt es Ihnen an manchen Tagen schwer, motiviert zu sein? Konzentrieren Sie sich auf das Aufwärmen. Wenn Sie fertig sind, können Sie es wahrscheinlich kaum erwarten, loszulaufen."
+			}
+		},
+		{
+			"workoutId": 10197051435,
+			"scheduledWorkoutId": 10197051435,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-27T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330021?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330021
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 64,
+			"recommendedTime": 6000,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2400,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1800,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 600,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen mit schnellem Finish.",
+				"note": "Beginnen Sie diesen langen Lauf in Ihrem normalen, leichten Tempo. Steigern Sie Ihr Tempo schrittweise, sodass Sie in der zweiten Hälfte der grünen Zone Ihr Marathon-Zieltempo erreichen. Beendet mit großartiger Leistung in der gelben Zone.",
+				"secondaryNote": "Genieße den langen Lauf heute. Füllen Sie sich mit Energie; Sie bereiten sich auf den Marathon vor."
+			}
+		},
+		{
+			"workoutId": 10197051434,
+			"scheduledWorkoutId": 10197051434,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-26T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330020?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330020
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 63,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Heute ist ein sanfter und angenehmer Rhythmus angesagt. Sie sollten Energie für die größere Anstrengung am nächsten Tag sparen.",
+				"secondaryNote": "Lassen Sie es heute ruhig angehen und versuchen Sie, heute Abend komplexe Kohlenhydrate zu essen. Beginnen Sie mit der Planung Ihrer Marathonmahlzeit."
+			}
+		},
+		{
+			"workoutId": 10197051433,
+			"scheduledWorkoutId": 10197051433,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-24T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330019?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330019
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 62,
+			"recommendedTime": 3600,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 1200,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1200,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 1200,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Serien im gelben Bereich.",
+				"note": "Laufen Sie diese langen gelben Zonen zwischen 12 km und Halbmarathon im Renntempo.",
+				"secondaryNote": "Wichtig ist, dass die Ruhe wieder Einzug hält. Sie lassen Blut durch Ihren Körper zirkulieren, um die Genesung zu verbessern."
+			}
+		},
+		{
+			"workoutId": 10197051432,
+			"scheduledWorkoutId": 10197051432,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-22T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330018?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330018
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 61,
+			"recommendedTime": 2400,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Intervalle in der gelben Fartlek-Zone.",
+				"note": "Diese gelben Zonen werden in Ihrem 5-km-Renntempo gelaufen.",
+				"secondaryNote": "Die beste Möglichkeit, Ihre aerobe Kapazität zu steigern, besteht darin, schnelleres Laufen zu trainieren. Wie geht es dir heute?"
+			}
+		},
+		{
+			"workoutId": 10197051431,
+			"scheduledWorkoutId": 10197051431,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-20T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330017?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330017
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 60,
+			"recommendedTime": 9000,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 7800,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen.",
+				"note": "Lassen Sie sich Zeit, bei diesem Rennen sollten Sie insgesamt zwischen 29 und 35 km bzw. zwischen 18 und 22 Meilen zurücklegen.",
+				"secondaryNote": "Während die Herzfrequenzzonen auf Ihr Profil zugeschnitten sind, beziehen sich die Tempozonen speziell auf Ihr Laufziel. Um einen Marathon in 2 Stunden und 50 Minuten zu absolvieren, passen Sie Ihre Zonen in der Option „Einstellungen“ so an, dass das Tempo oben in der roten Zone 02:29:00 Min./km (04:00:00 Min./ km). ./Meile) und die grüne beträgt 03:56:00 Min./km (06:20:00 Min./Meile)."
+			}
+		},
+		{
+			"workoutId": 10197051430,
+			"scheduledWorkoutId": 10197051430,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-19T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330016?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330016
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 59,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Heute ist ein einfaches und angenehmes Rennen. Morgen erwartet dich eine lange Trainingseinheit.",
+				"secondaryNote": "Nehmen Sie für den langen Lauf morgen ein Energiegel mit. Probieren Sie verschiedene Marken aus. Wählen Sie die Option aus, die für Sie am besten geeignet ist. Befolgen Sie die Anweisungen für jede Marke."
+			}
+		},
+		{
+			"workoutId": 10197051429,
+			"scheduledWorkoutId": 10197051429,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-17T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330015?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330015
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 58,
+			"recommendedTime": 4600,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 170,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "800-Meter-Intervalle in der gelben Zone.",
+				"note": "Führen Sie dieses Training auf einer Laufbahn durch. Jede gelbe Zone muss 800 Meter lang sein. Wenn Ihnen das gelingt, sind Sie auf dem besten Weg, Ihr Marathonziel zu erreichen. Wenn nicht, gehen Sie es langsamer an.",
+				"secondaryNote": "Weitere Informationen zum Training, mit dem sich die Marathonleistung vorhersagen lässt, finden Sie unter www.McMillanRunning.com."
+			}
+		},
+		{
+			"workoutId": 10197051428,
+			"scheduledWorkoutId": 10197051428,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-15T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330014?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330014
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 57,
+			"recommendedTime": 6600,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 5400,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Finden Sie ein angenehmes Durchschnittstempo im grünen Bereich. Gehen Sie es langsam an und überfordern Sie sich nicht im blauen Bereich.",
+				"secondaryNote": "Nehmen Sie ein Energiegel. Probieren Sie verschiedene Marken aus. Wählen Sie die Option aus, die für Sie am besten geeignet ist. Befolgen Sie die Anweisungen für jede Marke."
+			}
+		},
+		{
+			"workoutId": 10197051427,
+			"scheduledWorkoutId": 10197051427,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-13T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330013?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330013
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 56,
+			"recommendedTime": 9000,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 7800,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen.",
+				"note": "Lassen Sie sich Zeit, bei diesem Rennen sollten Sie insgesamt zwischen 26 und 32 km bzw. zwischen 16 und 20 Meilen zurücklegen.",
+				"secondaryNote": "Lange Läufe können hart sein. Obwohl Unbehagen und Müdigkeit normal sind, sollten Sie sich bei starken Schmerzen nicht zum Weiterlaufen zwingen. Wenn Sie das Gefühl haben, eine Verletzung zu spüren, hören Sie mit dem Laufen auf, bevor es schlimmer wird."
+			}
+		},
+		{
+			"workoutId": 10197051426,
+			"scheduledWorkoutId": 10197051426,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-12T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330012?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330012
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 55,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Denken Sie an das heutige Tempo. Was ist Ihrer Meinung nach natürlich, bequem und nachhaltig?",
+				"secondaryNote": "Setzen Sie sich heute nicht unter Druck; ohne Sorgen. Ruhen Sie sich für das lange Training morgen aus."
+			}
+		},
+		{
+			"workoutId": 10197051425,
+			"scheduledWorkoutId": 10197051425,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-10T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330011?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330011
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 54,
+			"recommendedTime": 3600,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 420,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 420,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 420,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 420,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 420,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Serien im gelben Bereich.",
+				"note": "Ihr Tempo in der gelben Zone sollte etwas schneller sein als Ihre Halbmarathongeschwindigkeit.",
+				"secondaryNote": "Wichtig ist, dass die Ruhe wieder Einzug hält. Sie lassen Blut durch Ihren Körper zirkulieren, um die Genesung zu verbessern."
+			}
+		},
+		{
+			"workoutId": 10197051424,
+			"scheduledWorkoutId": 10197051424,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-08T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330010?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330010
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 53,
+			"recommendedTime": 2400,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Intervalle in der gelben Fartlek-Zone.",
+				"note": "Diese gelben Zonen werden in Ihrem 5-km-Renntempo gelaufen.",
+				"secondaryNote": "Durch Training im gelben Bereich verbessern Sie Ihre Fähigkeit, größere Anstrengungen länger durchzuhalten."
+			}
+		},
+		{
+			"workoutId": 10197051423,
+			"scheduledWorkoutId": 10197051423,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-06T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330009?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330009
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 52,
+			"recommendedTime": 3900,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1800,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1200,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Karriere im Gange.",
+				"note": "Beenden Sie dieses Rennen mit Ihrer 10-km-Rennleistung in der gelben Zone.",
+				"secondaryNote": "Nach dem leichten Lauf des Vortags können Sie Ihren Oberschenkel und Ihre Waden mit einer langsamen, sanften Dehnung pflegen."
+			}
+		},
+		{
+			"workoutId": 10197051422,
+			"scheduledWorkoutId": 10197051422,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-05T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330008?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330008
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 51,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Heute ist ein sanfter und angenehmer Rhythmus angesagt. Sie sollten Energie für die größere Anstrengung am nächsten Tag sparen.",
+				"secondaryNote": "Nehmen Sie für den langen Lauf morgen ein Energiegel mit. Probieren Sie verschiedene Marken aus. Wählen Sie die Option aus, die für Sie am besten geeignet ist. Befolgen Sie die Anweisungen für jede Marke."
+			}
+		},
+		{
+			"workoutId": 10197051421,
+			"scheduledWorkoutId": 10197051421,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-03T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330007?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330007
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 50,
+			"recommendedTime": 2580,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 90,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 240,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 90,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 240,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 90,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 240,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 90,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 240,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 90,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 240,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 90,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 240,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Kontrollierte Tempointervalle in der gelben Zone.",
+				"note": "Laufen Sie jede gelbe Zone in Ihrem Renntempo zwischen 8 und 12 km.",
+				"secondaryNote": "Erfahrene Läufer beherrschen ihr Tempo perfekt. Dieses Wissen hilft ihnen beim Rennen, zu schnelles Fahren und damit verbundene Überanstrengung zu vermeiden."
+			}
+		},
+		{
+			"workoutId": 10197051420,
+			"scheduledWorkoutId": 10197051420,
+			"workoutType": "plan",
+			"scheduledDate": "2017-08-01T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330006?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330006
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 49,
+			"recommendedTime": 5700,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 4500,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Ein schöner und entspannter Lauf. Konzentrieren Sie sich auf Ihre Atmung und machen Sie gleichmäßige, leichte Schritte.",
+				"secondaryNote": "Nehmen Sie ein Energiegel. Probieren Sie verschiedene Marken aus. Wählen Sie die Option aus, die für Sie am besten geeignet ist. Befolgen Sie die Anweisungen für jede Marke."
+			}
+		},
+		{
+			"workoutId": 10197051419,
+			"scheduledWorkoutId": 10197051419,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-30T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330005?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330005
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 48,
+			"recommendedTime": 8400,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 7200,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen.",
+				"note": "Lassen Sie sich Zeit, bei diesem Rennen sollten Sie insgesamt zwischen 26 und 29 km bzw. zwischen 16 und 18 Meilen zurücklegen.",
+				"secondaryNote": "Trinken Sie bei langen Läufen häufig kleine Mengen. Trinken Sie alle 15 bis 30 Minuten kleine Mengen. Ihr Körper muss hydriert bleiben."
+			}
+		},
+		{
+			"workoutId": 10197051418,
+			"scheduledWorkoutId": 10197051418,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-29T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330004?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330004
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 47,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Die blaue Zone ist in diesem Training genauso wichtig wie die grüne Zone. Geben Sie Ihr Bestes, in jeder Zone zu bleiben.",
+				"secondaryNote": "Laufen Sie keinen Marathon von einem Badezimmer zum anderen. Probieren Sie es jetzt aus. Erfahre, welche Nahrungsmittel, Getränke und Gels vor und während langer Läufe geeignet sind."
+			}
+		},
+		{
+			"workoutId": 10197051417,
+			"scheduledWorkoutId": 10197051417,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-27T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330003?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330003
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 46,
+			"recommendedTime": 3000,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 300,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 300,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 300,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 300,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 300,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Intervalle in der gelben Fartlek-Zone.",
+				"note": "Diese gelben Zonen werden in Ihrem 10-km-Renntempo gelaufen.",
+				"secondaryNote": "Um den Marathon erfolgreich zu beenden, ist die Verbesserung Ihrer Milchsäureschwelle entscheidend."
+			}
+		},
+		{
+			"workoutId": 10197051416,
+			"scheduledWorkoutId": 10197051416,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-25T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330002?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330002
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 45,
+			"recommendedTime": 2400,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Intervalle in der gelben Fartlek-Zone.",
+				"note": "Diese gelben Zonen werden in Ihrem 5-km-Renntempo gelaufen.",
+				"secondaryNote": "Die beste Möglichkeit, Ihre aerobe Kapazität zu steigern, besteht darin, schnelleres Laufen zu trainieren. Wie geht es dir heute?"
+			}
+		},
+		{
+			"workoutId": 10197051415,
+			"scheduledWorkoutId": 10197051415,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-23T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330001?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330001
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 44,
+			"recommendedTime": 8400,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 7200,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen.",
+				"note": "Lassen Sie sich Zeit, bei diesem Rennen sollten Sie insgesamt zwischen 22 und 26 km bzw. zwischen 14 und 16 Meilen zurücklegen.",
+				"secondaryNote": "Dieses Training verbessert Ihre Ausdauer. Das Ziel ist Zeit; Geschwindigkeit spielt keine Rolle. Es ist in Ordnung, langsamer zu laufen als Ihre erwartete Marathongeschwindigkeit."
+			}
+		},
+		{
+			"workoutId": 10197051414,
+			"scheduledWorkoutId": 10197051414,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-22T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003330000?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003330000
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 43,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Heute ist ein einfaches und angenehmes Rennen. Morgen erwartet dich eine lange Trainingseinheit.",
+				"secondaryNote": "Setzen Sie sich heute nicht unter Druck; ohne Sorgen. Ruhen Sie sich für das lange Training morgen aus."
+			}
+		},
+		{
+			"workoutId": 10197051413,
+			"scheduledWorkoutId": 10197051413,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-20T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329999?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329999
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 42,
+			"recommendedTime": 2400,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Intervalle in der gelben Fartlek-Zone.",
+				"note": "Kontrollieren Sie in der gelben Zone Ihre Geschwindigkeit. In jeder zweiminütigen gelben Zone müssen Sie eine Laufleistung zwischen 5 und 10 km erbringen.",
+				"secondaryNote": "Wichtig ist, dass die Ruhe wieder Einzug hält. Sie lassen Blut durch Ihren Körper zirkulieren, um die Genesung zu verbessern."
+			}
+		},
+		{
+			"workoutId": 10197051412,
+			"scheduledWorkoutId": 10197051412,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-18T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329998?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329998
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 41,
+			"recommendedTime": 4200,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 600,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2700,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Bleiben Sie auf der Schwelle",
+				"note": "Laufen Sie mit konstantem Tempo in der gelben Zone. Das Tempo sollte zwischen Ihrem 30-km-Renntempo und Ihrem Halbmarathontempo liegen.",
+				"secondaryNote": "Durch die Beschleunigung verringert sich Ihre Belastbarkeit. Die Kenntnis des eigenen Tempos unterscheidet Laufanfänger von erfahrenen Läufern."
+			}
+		},
+		{
+			"workoutId": 10197051411,
+			"scheduledWorkoutId": 10197051411,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-16T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329997?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329997
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 40,
+			"recommendedTime": 3900,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1800,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1200,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Karriere im Gange.",
+				"note": "Beenden Sie dieses Rennen mit Ihrer 10-km-Rennleistung in der gelben Zone.",
+				"secondaryNote": "Es gibt kein einzelnes Training, das Sie auf den Marathon vorbereitet. Der Marathon erfordert viele Trainingskilometer mit ausreichend Ruhepausen zur Anpassung."
+			}
+		},
+		{
+			"workoutId": 10197051410,
+			"scheduledWorkoutId": 10197051410,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-15T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329996?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329996
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 39,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Heute ist ein sanfter und angenehmer Rhythmus angesagt. Sie sollten Energie für die größere Anstrengung am nächsten Tag sparen.",
+				"secondaryNote": "Konzentrieren Sie sich statt auf lange, kräftige Schritte auf kürzere, schnellere Schritte. Der Fuß sollte den Boden knapp unter dem Körper berühren, nicht zu weit vorne."
+			}
+		},
+		{
+			"workoutId": 10197051409,
+			"scheduledWorkoutId": 10197051409,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-13T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329995?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329995
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 38,
+			"recommendedTime": 2520,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 300,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 300,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 300,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 180,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 300,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Intervalle in der gelben Fartlek-Zone.",
+				"note": "Diese gelben Zonen werden in Ihrem 10-km-Renntempo gelaufen.",
+				"secondaryNote": "Machen Sie aus diesen Trainingseinheiten ein Spiel: Versuchen Sie, so schnell wie möglich die richtigen Zonen zu treffen. Verlangsamen Sie nicht auf halbem Weg durch eine Zone und überschreiten Sie keine Zonen."
+			}
+		},
+		{
+			"workoutId": 10197051408,
+			"scheduledWorkoutId": 10197051408,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-11T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329994?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329994
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 37,
+			"recommendedTime": 2040,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Intervalle in der gelben Fartlek-Zone.",
+				"note": "Diese gelben Zonen werden in Ihrem 5-km-Renntempo gelaufen.",
+				"secondaryNote": "Fällt es Ihnen an manchen Tagen schwer, motiviert zu sein? Konzentrieren Sie sich auf das Aufwärmen. Wenn Sie fertig sind, können Sie es wahrscheinlich kaum erwarten, loszulaufen."
+			}
+		},
+		{
+			"workoutId": 10197051407,
+			"scheduledWorkoutId": 10197051407,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-09T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329993?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329993
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 36,
+			"recommendedTime": 7800,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 6600,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen.",
+				"note": "Lassen Sie sich Zeit, bei diesem Rennen sollten Sie insgesamt zwischen 22 und 26 km bzw. zwischen 14 und 16 Meilen zurücklegen.",
+				"secondaryNote": "Während die Herzfrequenzzonen auf Ihr Profil zugeschnitten sind, beziehen sich die Tempozonen speziell auf Ihr Laufziel. Um einen Marathon in 2 Stunden und 50 Minuten zu absolvieren, passen Sie Ihre Zonen in der Option „Einstellungen“ so an, dass das Tempo oben in der roten Zone 02:29:00 Min./km (04:00:00 Min./ km). ./Meile) und die grüne beträgt 03:56:00 Min./km (06:20:00 Min./Meile)."
+			}
+		},
+		{
+			"workoutId": 10197051406,
+			"scheduledWorkoutId": 10197051406,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-08T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329992?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329992
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 35,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Heute ist ein einfaches und angenehmes Rennen. Morgen erwartet dich eine lange Trainingseinheit.",
+				"secondaryNote": "Vergiss nicht zu essen. Mit zunehmenden Trainingsfortschritten werden Sie immer weiter laufen. Ihr Körper braucht Treibstoff, um diesen Fortschritt aufrechtzuerhalten."
+			}
+		},
+		{
+			"workoutId": 10197051405,
+			"scheduledWorkoutId": 10197051405,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-06T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329991?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329991
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 34,
+			"recommendedTime": 2040,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 60,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 120,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Intervalle in der gelben Fartlek-Zone.",
+				"note": "Kontrollieren Sie in der gelben Zone Ihre Geschwindigkeit. In jeder zweiminütigen gelben Zone müssen Sie eine Laufleistung zwischen 5 und 10 km erbringen.",
+				"secondaryNote": "Durch Training im gelben Bereich verbessern Sie Ihre Fähigkeit, größere Anstrengungen länger durchzuhalten."
+			}
+		},
+		{
+			"workoutId": 10197051404,
+			"scheduledWorkoutId": 10197051404,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-04T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329990?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329990
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 33,
+			"recommendedTime": 5700,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 4500,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Beginnen Sie dieses Training in Ihrem Marathontempo; Halten Sie es für den Rest der Sitzung bequem im grünen Bereich.",
+				"secondaryNote": "Die in grünen und blauen Zonen verbrachte Zeit ist eine der Säulen dieses Plans. Wenn Sie Ihre Distanzkapazität in diesen Zonen steigern, wird Ihr Körper Veränderungen vornehmen, die Ihnen helfen, Ihre Ausdauer zu steigern."
+			}
+		},
+		{
+			"workoutId": 10197051403,
+			"scheduledWorkoutId": 10197051403,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-02T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329989?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329989
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 32,
+			"recommendedTime": 7200,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 6000,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen.",
+				"note": "Lassen Sie sich Zeit, bei diesem Rennen sollten Sie insgesamt zwischen 22 und 26 km bzw. zwischen 14 und 16 Meilen zurücklegen.",
+				"secondaryNote": "Heute wird es besonders lang. Die Wirkung der „Pájara“ kann je nach Tempo und körperlicher Fitness bereits nach zwei Stunden einsetzen. Es ist in Ordnung, Ihr Tempo langsamer zu halten als Ihr Marathontempo."
+			}
+		},
+		{
+			"workoutId": 10197051402,
+			"scheduledWorkoutId": 10197051402,
+			"workoutType": "plan",
+			"scheduledDate": "2017-07-01T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329988?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329988
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 31,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Die blaue Zone ist in diesem Training genauso wichtig wie die grüne Zone. Geben Sie Ihr Bestes, in jeder Zone zu bleiben.",
+				"secondaryNote": "Nehmen Sie für den langen Lauf morgen ein Energiegel mit. Probieren Sie verschiedene Marken aus. Wählen Sie die Option aus, die für Sie am besten geeignet ist. Befolgen Sie die Anweisungen für jede Marke."
+			}
+		},
+		{
+			"workoutId": 10197051401,
+			"scheduledWorkoutId": 10197051401,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-29T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329987?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329987
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 30,
+			"recommendedTime": 5100,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 600,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 3600,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Bleiben Sie auf der Schwelle",
+				"note": "Laufen Sie mit konstantem Tempo in der gelben Zone. Das Tempo sollte zwischen Ihrem 30-km-Renntempo und Ihrem Halbmarathontempo liegen.",
+				"secondaryNote": "Nutzen Sie Ihre Erfahrungen bei diesem Familienrennen um den Aufwand abzuschätzen. Es kann Ihnen helfen, die von Ihnen gelaufene Distanz zu verlängern."
+			}
+		},
+		{
+			"workoutId": 10197051400,
+			"scheduledWorkoutId": 10197051400,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-27T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329986?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329986
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 29,
+			"recommendedTime": 3150,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 900,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 900,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Schrittintervalle.",
+				"note": "Kennen Sie Ihre Sprintgeschwindigkeit für die rote Zone, aber behalten Sie die Kontrolle.",
+				"secondaryNote": "Tempotraining ist der Schlüssel zu schnelleren Rennzeiten, also stillen Sie Ihren Durst nach Geschwindigkeit."
+			}
+		},
+		{
+			"workoutId": 10197051399,
+			"scheduledWorkoutId": 10197051399,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-25T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329985?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329985
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 28,
+			"recommendedTime": 3900,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1800,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1200,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Karriere im Gange.",
+				"note": "Beenden Sie dieses Rennen mit Ihrer 10-km-Rennleistung in der gelben Zone.",
+				"secondaryNote": "Die blaue und grüne Zone steigern die Ausdauer und die gelbe Zone hilft beim Aufbau der Herz-Kreislauf-Ausdauer. Dadurch verbessert sich die Fähigkeit, intensiveren Belastungen über einen längeren Zeitraum standzuhalten."
+			}
+		},
+		{
+			"workoutId": 10197051398,
+			"scheduledWorkoutId": 10197051398,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-24T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329984?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329984
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 27,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Heute ist ein sanfter und angenehmer Rhythmus angesagt. Sie sollten Energie für die größere Anstrengung am nächsten Tag sparen.",
+				"secondaryNote": "Konzentrieren Sie sich statt auf lange, kräftige Schritte auf kürzere, schnellere Schritte. Der Fuß sollte den Boden knapp unter dem Körper berühren, nicht zu weit vorne."
+			}
+		},
+		{
+			"workoutId": 10197051397,
+			"scheduledWorkoutId": 10197051397,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-22T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329983?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329983
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 26,
+			"recommendedTime": 4800,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 600,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 3300,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Bleiben Sie auf der Schwelle",
+				"note": "Laufen Sie mit konstantem Tempo in der gelben Zone. Das Tempo sollte zwischen Ihrem 30-km-Renntempo und Ihrem Halbmarathontempo liegen.",
+				"secondaryNote": "Nach dem leichten Lauf des Vortags können Sie Ihren Oberschenkel und Ihre Waden mit einer langsamen, sanften Dehnung pflegen."
+			}
+		},
+		{
+			"workoutId": 10197051396,
+			"scheduledWorkoutId": 10197051396,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-20T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329982?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329982
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 25,
+			"recommendedTime": 3150,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 900,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 900,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Schrittintervalle.",
+				"note": "Erhöhen Sie bei jedem Betreten der roten Zone Ihre Geschwindigkeit, bis Sie am Ende der Zone Ihre Höchstgeschwindigkeit erreichen. Verlangsamen Sie das Tempo mit einem leichten Erholungslauf für jede blaue Zone wieder. Versuchen Sie, während des gesamten Rennens eine gute Laufhaltung beizubehalten.",
+				"secondaryNote": "Weitere Informationen zur Schrittfrequenz finden Sie unter www.McMillanRunning.com."
+			}
+		},
+		{
+			"workoutId": 10197051395,
+			"scheduledWorkoutId": 10197051395,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-18T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329981?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329981
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 24,
+			"recommendedTime": 6600,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 5400,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen.",
+				"note": "Lassen Sie sich Zeit, dieses Training sollte 22 km bzw. 14 Meilen nicht überschreiten.",
+				"secondaryNote": "Nutzen Sie diese langen Läufe, um Ihr Tempo herauszufinden. Welches können Sie bequem halten? Experiment."
+			}
+		},
+		{
+			"workoutId": 10197051394,
+			"scheduledWorkoutId": 10197051394,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-17T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329980?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329980
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 23,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Hören Sie auf Ihren Körper. Übertreiben Sie es in der blauen und grünen Zone nicht. Beim Durcharbeiten des Plans kann es sein, dass Sie einige Tage haben, an denen Sie es langsamer angehen lassen müssen.",
+				"secondaryNote": "Es gibt kein einzelnes Training, das Sie auf den Marathon vorbereitet. Der Marathon erfordert viele Trainingskilometer mit ausreichend Ruhepausen zur Anpassung."
+			}
+		},
+		{
+			"workoutId": 10197051393,
+			"scheduledWorkoutId": 10197051393,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-15T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329979?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329979
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 22,
+			"recommendedTime": 4200,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 600,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2700,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Bleiben Sie auf der Schwelle",
+				"note": "Wenn Sie bei diesem Training das Tempo im gelben Bereich nicht halten können, passen Sie den oberen Bereich des grünen Bereichs an, um etwas langsamer zu werden.",
+				"secondaryNote": "Nutzen Sie Ihre Erfahrungen bei diesem Familienrennen um den Aufwand abzuschätzen. Es kann Ihnen helfen, die von Ihnen gelaufene Distanz zu verlängern."
+			}
+		},
+		{
+			"workoutId": 10197051392,
+			"scheduledWorkoutId": 10197051392,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-13T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329978?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329978
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 21,
+			"recommendedTime": 3150,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 900,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 900,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Schrittintervalle.",
+				"note": "Steigern Sie die Geschwindigkeit jedes Mal, wenn Sie die rote Zone erreichen, bis Sie sprinten, und verlangsamen Sie dann die Geschwindigkeit auf einen langsamen Erholungslauf in der blauen Zone.",
+				"secondaryNote": "Werden diese Trainingsserien einfacher? Weiter so."
+			}
+		},
+		{
+			"workoutId": 10197051391,
+			"scheduledWorkoutId": 10197051391,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-11T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329977?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329977
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 20,
+			"recommendedTime": 6600,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 5400,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen.",
+				"note": "Machen Sie einen langen, langsamen Lauf. Machen Sie die Zeit zu Ihrem Ziel. Dieses Training sollte nicht mehr als 22 km bzw. 14 Meilen umfassen.",
+				"secondaryNote": "Während die Herzfrequenzzonen auf Ihr Profil zugeschnitten sind, beziehen sich die Tempozonen speziell auf Ihr Laufziel. Um einen Marathon in 2 Stunden und 50 Minuten zu absolvieren, passen Sie Ihre Zonen in der Option „Einstellungen“ so an, dass das Tempo oben in der roten Zone 02:29:00 Min./km (04:00:00 Min./ km). ./Meile) und die grüne beträgt 03:56:00 Min./km (06:20:00 Min./Meile)."
+			}
+		},
+		{
+			"workoutId": 10197051390,
+			"scheduledWorkoutId": 10197051390,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-10T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329976?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329976
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 19,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Geh zur Tür hinaus und lauf.",
+				"secondaryNote": "Lassen Sie es heute ruhig angehen und versuchen Sie, heute Abend komplexe Kohlenhydrate zu essen. Beginnen Sie mit der Planung Ihrer Marathonmahlzeit."
+			}
+		},
+		{
+			"workoutId": 10197051389,
+			"scheduledWorkoutId": 10197051389,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-08T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329975?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329975
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 18,
+			"recommendedTime": 3900,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 900,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Bleiben Sie auf der Schwelle",
+				"note": "Der Schlüssel zu diesem Training besteht darin, in der gesamten gelben Zone ein konstantes Tempo beizubehalten. Ihr gleichmäßiges Tempo entspricht Ihrem Halbmarathon-Renntempo.",
+				"secondaryNote": "Durch die Beschleunigung verringert sich Ihre Belastbarkeit. Beim Marathon sollten Sie unterhalb der gelben Zone bleiben, um „la pájara“ zu vermeiden."
+			}
+		},
+		{
+			"workoutId": 10197051388,
+			"scheduledWorkoutId": 10197051388,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-06T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329974?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329974
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 17,
+			"recommendedTime": 3150,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 900,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 900,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Schrittintervalle.",
+				"note": "Dieses Training verbessert Ihre Ausdauer. Das Ziel ist Zeit; Geschwindigkeit spielt keine Rolle. Es ist in Ordnung, langsamer zu laufen als Ihre erwartete Marathongeschwindigkeit.",
+				"secondaryNote": "Die in den Zonen verbrachte Zeit ist ein besserer Maßstab für die Trainingsbelastung als die Distanz. Zwei verschiedene Läufer können in einer 50-minütigen grünen Zone unterschiedliche Distanzen laufen, die Trainingsbelastung für ihren Körper ist jedoch dieselbe. Wenn beide Läufer gezwungen werden, genau 8 km zu laufen, kann dies dazu führen, dass einer der Läufer zu viel und der andere zu wenig beansprucht wird."
+			}
+		},
+		{
+			"workoutId": 10197051387,
+			"scheduledWorkoutId": 10197051387,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-04T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329973?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329973
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 16,
+			"recommendedTime": 3900,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1800,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1200,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Karriere im Gange.",
+				"note": "Beenden Sie dieses Rennen mit Ihrer 10-km-Rennleistung in der gelben Zone.",
+				"secondaryNote": "Nach dem leichten Lauf des Vortags können Sie Ihren Oberschenkel und Ihre Waden mit einer langsamen, sanften Dehnung pflegen."
+			}
+		},
+		{
+			"workoutId": 10197051386,
+			"scheduledWorkoutId": 10197051386,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-03T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329972?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329972
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 15,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Sie werden dieses Rennen häufig wiedererkennen. Stellen Sie es sich wie das Zähneputzen vor. Sie tun es, sobald Sie aufstehen.",
+				"secondaryNote": "Warum in der blauen Zone? Um eine Basis zu schaffen. Dadurch können Sie weniger arbeiten und erzielen langfristig höhere Vorteile."
+			}
+		},
+		{
+			"workoutId": 10197051385,
+			"scheduledWorkoutId": 10197051385,
+			"workoutType": "plan",
+			"scheduledDate": "2017-06-01T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329971?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329971
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 14,
+			"recommendedTime": 3600,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1200,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1500,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Bleiben Sie auf der Schwelle",
+				"note": "Laufen Sie mit konstantem Tempo in der gelben Zone. Das Tempo sollte zwischen Ihrem 30-km-Renntempo und Ihrem Halbmarathontempo liegen.",
+				"secondaryNote": "Beginnen Sie am unteren Ende der grünen Zone und erhöhen Sie die Geschwindigkeit. Projizieren Sie einen sanften Übergang zum Eintritt in die gelbe Zone."
+			}
+		},
+		{
+			"workoutId": 10197051384,
+			"scheduledWorkoutId": 10197051384,
+			"workoutType": "plan",
+			"scheduledDate": "2017-05-30T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329970?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329970
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 13,
+			"recommendedTime": 2550,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Schrittintervalle.",
+				"note": "Diese kurzen Geschwindigkeitsschübe dienen der Verbesserung Ihrer Laufhaltung. Nehmen Sie sich die Zeit, die Sie zur Erholung in der blauen Zone benötigen, um den größtmöglichen Nutzen aus Ihrem Training zu ziehen.",
+				"secondaryNote": "Weitere Informationen zur Schrittfrequenz finden Sie unter www.McMillanRunning.com."
+			}
+		},
+		{
+			"workoutId": 10197051383,
+			"scheduledWorkoutId": 10197051383,
+			"workoutType": "plan",
+			"scheduledDate": "2017-05-28T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329969?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329969
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 12,
+			"recommendedTime": 6000,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 4800,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen.",
+				"note": "Beginnen Sie entspannt mit einem langsamen Lauf in der blauen Zone und beschränken Sie sich anschließend auf einen gemütlichen Lauf in der grünen Zone. Dieses Training sollte nicht mehr als 22 km bzw. 14 Meilen umfassen.",
+				"secondaryNote": "Dieses Training verbessert Ihre Ausdauer. Das Ziel ist Zeit; Geschwindigkeit spielt keine Rolle. Es ist in Ordnung, langsamer zu laufen als Ihre erwartete Marathongeschwindigkeit."
+			}
+		},
+		{
+			"workoutId": 10197051382,
+			"scheduledWorkoutId": 10197051382,
+			"workoutType": "plan",
+			"scheduledDate": "2017-05-27T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329968?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329968
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 11,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Denken Sie an das heutige Tempo. Was ist Ihrer Meinung nach natürlich, bequem und nachhaltig?",
+				"secondaryNote": "Die in grünen und blauen Zonen verbrachte Zeit ist eine der Säulen dieses Plans. Wenn Sie Ihre Distanzkapazität in diesen Zonen steigern, wird Ihr Körper Veränderungen vornehmen, die Ihnen helfen, Ihre Ausdauer zu steigern."
+			}
+		},
+		{
+			"workoutId": 10197051381,
+			"scheduledWorkoutId": 10197051381,
+			"workoutType": "plan",
+			"scheduledDate": "2017-05-25T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329967?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329967
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 10,
+			"recommendedTime": 3000,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 900,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1200,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Bleiben Sie auf der Schwelle",
+				"note": "Laufen Sie mit konstantem Tempo in der gelben Zone. Das Tempo sollte zwischen Ihrem 30-km-Renntempo und Ihrem Halbmarathontempo liegen.",
+				"secondaryNote": "Beginnen Sie am unteren Ende der grünen Zone und erhöhen Sie die Geschwindigkeit. Projizieren Sie einen sanften Übergang zum Eintritt in die gelbe Zone."
+			}
+		},
+		{
+			"workoutId": 10197051380,
+			"scheduledWorkoutId": 10197051380,
+			"workoutType": "plan",
+			"scheduledDate": "2017-05-23T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329966?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329966
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 9,
+			"recommendedTime": 2550,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Schrittintervalle.",
+				"note": "Die Schritte sollten sehr kurze Geschwindigkeitsbeschleunigungen sein. Sie helfen dabei, das neuromuskuläre System zu trainieren, schneller zu werden. Machen Sie weiter und sehen Sie, wie schnell Sie in jeder roten Zone laufen können. Sobald Sie die Höchstgeschwindigkeit erreicht haben, verlangsamen Sie die Geschwindigkeit erneut, um eine sanfte Erholung in die blaue Zone zu erreichen.",
+				"secondaryNote": "Die in den Zonen verbrachte Zeit ist ein besserer Maßstab für die Trainingsbelastung als die Distanz. Zwei verschiedene Läufer können in einer 50-minütigen grünen Zone unterschiedliche Distanzen laufen, die Trainingsbelastung für ihren Körper ist jedoch dieselbe. Wenn beide Läufer gezwungen werden, genau 8 km zu laufen, kann dies dazu führen, dass einer der Läufer zu viel und der andere zu wenig beansprucht wird."
+			}
+		},
+		{
+			"workoutId": 10197051379,
+			"scheduledWorkoutId": 10197051379,
+			"workoutType": "plan",
+			"scheduledDate": "2017-05-21T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329941?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329941
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 8,
+			"recommendedTime": 3900,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2700,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen.",
+				"note": "Bei langen Rennen sollte es nicht auf Geschwindigkeit ankommen. Gehen Sie es langsam an und setzen Sie sich eine bestimmte Zeit als Ziel, ohne sich zu beeilen, früh nach Hause zu kommen.",
+				"secondaryNote": "Während das Training dazu dient, den Körper zu stimulieren, ist Ruhezeit notwendig, damit sich der Körper anpassen kann. Diese einfachen Übungen dienen dazu, die Durchblutung anzuregen und so die Erholung zu beschleunigen."
+			}
+		},
+		{
+			"workoutId": 10197051378,
+			"scheduledWorkoutId": 10197051378,
+			"workoutType": "plan",
+			"scheduledDate": "2017-05-20T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329940?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329940
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 7,
+			"recommendedTime": 2700,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1500,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Lustig und einfach.",
+				"secondaryNote": "Vergiss nicht zu essen. Mit zunehmenden Trainingsfortschritten werden Sie immer weiter laufen. Ihr Körper braucht Treibstoff, um diesen Fortschritt aufrechtzuerhalten."
+			}
+		},
+		{
+			"workoutId": 10197051377,
+			"scheduledWorkoutId": 10197051377,
+			"workoutType": "plan",
+			"scheduledDate": "2017-05-18T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329939?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329939
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 6,
+			"recommendedTime": 1800,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 300,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 600,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Bleiben Sie auf der Schwelle",
+				"note": "Es ist ein häufiger Fehler, diese längeren gelben Zonen zu schnell zu durchlaufen. Bleiben Sie am unteren Ende Ihrer gelben Zone. Ihr Ziel besteht darin, Ihre Milchsäureschwelle durch eine anhaltende, „harte, aber angenehme“ Anstrengung zu verbessern.",
+				"secondaryNote": "Das Ziel dieses Trainings ist es, Ihre Milchsäureschwelle zu verbessern. Stimuliert den Körper, sich über längere Zeiträume an intensivere Anstrengungen anzupassen."
+			}
+		},
+		{
+			"workoutId": 10197051376,
+			"scheduledWorkoutId": 10197051376,
+			"workoutType": "plan",
+			"scheduledDate": "2017-05-16T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329938?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329938
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 5,
+			"recommendedTime": 1920,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Schrittintervalle.",
+				"note": "Die Schritte sollten sehr kurze Geschwindigkeitsbeschleunigungen sein. Sie helfen dabei, das neuromuskuläre System zu trainieren, schneller zu werden. Machen Sie weiter und sehen Sie, wie schnell Sie in jeder roten Zone laufen können. Sobald Sie die Höchstgeschwindigkeit erreicht haben, verlangsamen Sie die Geschwindigkeit erneut, um eine sanfte Erholung in die blaue Zone zu erreichen.",
+				"secondaryNote": "Die in den Zonen verbrachte Zeit ist ein besserer Maßstab für die Trainingsbelastung als die Distanz. Zwei verschiedene Läufer können in einer 50-minütigen grünen Zone unterschiedliche Distanzen laufen, die Trainingsbelastung für ihren Körper ist jedoch dieselbe. Wenn beide Läufer gezwungen werden, genau 8 km zu laufen, kann dies dazu führen, dass einer der Läufer zu viel und der andere zu wenig beansprucht wird."
+			}
+		},
+		{
+			"workoutId": 10197051375,
+			"scheduledWorkoutId": 10197051375,
+			"workoutType": "plan",
+			"scheduledDate": "2017-05-14T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329937?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329937
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 4,
+			"recommendedTime": 3600,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2400,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Langes Rennen.",
+				"note": "Beginnen Sie entspannt mit einem langsamen Lauf in der blauen Zone und beschränken Sie sich anschließend auf einen gemütlichen Lauf in der grünen Zone. Dieses Training sollte nicht mehr als 22 km bzw. 14 Meilen umfassen.",
+				"secondaryNote": "Während die Herzfrequenzzonen auf Ihr Profil zugeschnitten sind, beziehen sich die Tempozonen speziell auf Ihr Laufziel. Um einen Marathon in 2 Stunden und 50 Minuten zu absolvieren, passen Sie Ihre Zonen in der Option „Einstellungen“ so an, dass das Tempo oben in der roten Zone 02:29:00 Min./km (04:00:00 Min./ km). ./Meile) und die grüne beträgt 03:56:00 Min./km (06:20:00 Min./Meile)."
+			}
+		},
+		{
+			"workoutId": 10197051374,
+			"scheduledWorkoutId": 10197051374,
+			"workoutType": "plan",
+			"scheduledDate": "2017-05-13T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329936?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329936
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 3,
+			"recommendedTime": 3300,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 2100,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Grünes Rennen.",
+				"note": "Denken Sie an das heutige Tempo. Was ist Ihrer Meinung nach natürlich, bequem und nachhaltig?",
+				"secondaryNote": "Die in grünen und blauen Zonen verbrachte Zeit ist eine der Säulen dieses Plans. Wenn Sie Ihre Distanzkapazität in diesen Zonen steigern, wird Ihr Körper Veränderungen vornehmen, die Ihnen helfen, Ihre Ausdauer zu steigern."
+			}
+		},
+		{
+			"workoutId": 10197051373,
+			"scheduledWorkoutId": 10197051373,
+			"workoutType": "plan",
+			"scheduledDate": "2017-05-11T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329935?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329935
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 2,
+			"recommendedTime": 3000,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 300,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 900,
+					"miCoachZone": "green"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 1200,
+					"miCoachZone": "yellow"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Bleiben Sie auf der Schwelle",
+				"note": "Laufen Sie mit konstantem Tempo in der gelben Zone. Das Tempo sollte zwischen Ihrem 30-km-Renntempo und Ihrem Halbmarathontempo liegen.",
+				"secondaryNote": "Beginnen Sie am unteren Ende der grünen Zone und erhöhen Sie die Geschwindigkeit. Projizieren Sie einen sanften Übergang zum Eintritt in die gelbe Zone."
+			}
+		},
+		{
+			"workoutId": 10197051372,
+			"scheduledWorkoutId": 10197051372,
+			"workoutType": "plan",
+			"scheduledDate": "2017-05-09T00:00:00",
+			"workoutName": "SCHNELLER INS ZIEL - MARATHON",
+			"training": {
+				"href": "https://micoach.adidas.com/api/v3/content/trainings/workouts/60003329934?lang=ar",
+				"mediaType": "application/vnd.micoach+cardioPlanComponent+v1+json",
+				"id": 60003329934
+			},
+			"plan": {
+				"href": "https://micoach.adidas.com/api/v3/Users/8511104/plans/100004375491?lang=ar",
+				"mediaType": "application/vnd.micoach+userCardioPlan+v1+json",
+				"id": 100004375491
+			},
+			"order": 1,
+			"recommendedTime": 2550,
+			"intervals": [
+				{
+					"intervalType": "warmUp",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 65,
+					"miCoachZone": "blue"
+				},
+				{
+					"intervalType": "middle",
+					"totalTimeInZone": 25,
+					"miCoachZone": "red"
+				},
+				{
+					"intervalType": "coolDown",
+					"totalTimeInZone": 600,
+					"miCoachZone": "blue"
+				}
+			],
+			"trainingNotes": {
+				"noteSummary": "Schrittintervalle.",
+				"note": "Die Schritte sollten sehr kurze Geschwindigkeitsbeschleunigungen sein. Sie helfen dabei, das neuromuskuläre System zu trainieren, schneller zu werden. Machen Sie weiter und sehen Sie, wie schnell Sie in jeder roten Zone laufen können. Sobald Sie die Höchstgeschwindigkeit erreicht haben, verlangsamen Sie die Geschwindigkeit erneut, um eine sanfte Erholung in die blaue Zone zu erreichen.",
+				"secondaryNote": "Die in den Zonen verbrachte Zeit ist ein besserer Maßstab für die Trainingsbelastung als die Distanz. Zwei verschiedene Läufer können in einer 50-minütigen grünen Zone unterschiedliche Distanzen laufen, die Trainingsbelastung für ihren Körper ist jedoch dieselbe. Wenn beide Läufer gezwungen werden, genau 8 km zu laufen, kann dies dazu führen, dass einer der Läufer zu viel und der andere zu wenig beansprucht wird."
+			}
+		}
+	]
+}

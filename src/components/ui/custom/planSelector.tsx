@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-20T01:33:51-03:00
+ * @Last modified time: 2025-02-05T01:20:17-03:00
  */
 
 
@@ -22,10 +22,11 @@ import { ConfigReducerAction } from "@/types/global";
 interface PlanSelectorProps {
   availablePlans: TrainingPlanThinFrontList;
   selectedPlanId?: TrainingPlanId;
+  placeHolder?: string;
   dispatch: Dispatch<ConfigReducerAction>
 }
 
-export default function PlanSelector ({selectedPlanId, availablePlans, dispatch}: PlanSelectorProps) {
+export default function PlanSelector ({selectedPlanId, availablePlans, dispatch, placeHolder}: PlanSelectorProps) {
 
   const handleSelect = (value: TrainingPlanId) => {
     dispatch({type: 'CHANGE_PLAN', payload: {trainingPlanId: value}});
@@ -41,7 +42,7 @@ export default function PlanSelector ({selectedPlanId, availablePlans, dispatch}
   return (
       <Select value={selectedPlanId} onValueChange={handleSelect}>
         <SelectTrigger className="w-[280px]">
-        <SelectValue placeholder="Select training plan" />
+        <SelectValue placeholder={placeHolder} />
         </SelectTrigger>
         <SelectContent>
           {renderTrainingsList(availablePlans)}
