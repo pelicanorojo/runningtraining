@@ -1,0 +1,28 @@
+{
+  "translationTest": "Translation test: es",
+  "commons": {
+    "rootPageMessage": "Aun no ha seleccionado un plan y/o día de carrera ...",
+    "plan": "Plan",
+    "raceDate": "Día de Carrera",
+    "configuration": "Configuración",
+    "selectorTitle": "Selecciona el plan de entrenamiento y el dída de carrera.",
+    "schedule": "Cronograma",
+    "trainingOrder": "Orden de Entrenamiento",
+    "date": "Fecha",
+    "favorite": "Favorito",
+    "selectFavorite": "Elegir favorito"
+  },
+  "header": {
+		"title": "Entrenamientos para maratón"
+	},  
+	"configBar": {
+		"planLabel": "Plan",
+    "unSelectedPlanValue": "Seleccione uno",
+    "raceDateLabel": "Día de Carrera",
+    "unSelectedRaceDateValue":  "Seleccione uno",
+    "selectorDescription": "Seleccione el plan de entrenamiento y día de la carrera.",
+    "selectorTitle": "Configuración",
+		"planPlaceHolder": "Seleccione un plan"
+
+  }
+}

@@ -1,0 +1,27 @@
+{
+	"translationTest": "Translation test: de",
+	"commons": {
+		"rootPageMessage": "Noch kein Plan und/oder Renntermin ausgewählt ...",
+		"plan": "Planen",
+		"raceDate": "Renntag",
+		"configuration": "Konfiguration",
+		"selectorTitle": "Wählen Sie den Trainingsplan und den Renntag aus.",
+		"schedule": "Zeitplan",
+		"trainingOrder": "Trainingsreihenfolge",
+		"date": "Datum",
+		"favorite": "Favorit",
+		"selectFavorite": "Favoriten auswählen"
+	},
+	"header": {
+		"title": "Marathon-Trainingsplaner"
+	},
+  "configBar": {
+    "planLabel": "Plan",
+    "unSelectedPlanValue": "Wählen Sie einen aus",
+    "raceDateLabel": "Renndatum",
+    "unSelectedRaceDateValue": "Wählen Sie einen aus",
+    "selectorDescription": "Wählen Sie den Trainingsplan und das Renndatum aus.",
+    "selectorTitle": "Konfiguration",
+    "planPlaceHolder": "Wählen Sie einen Trainingsplan aus"
+  }
+}
