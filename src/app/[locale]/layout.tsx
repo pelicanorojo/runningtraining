@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-04T09:55:51-03:00
+ * @Last modified time: 2025-02-05T01:56:21-03:00
  */
 
 
@@ -44,8 +44,8 @@ export default async function LocaleLayout({
 }>) {
 
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
-    notFound();
+  if (!routing.locales.includes(locale as 'en' | 'es')) {
+      notFound();
   }
 
   // Providing all messages to the client
