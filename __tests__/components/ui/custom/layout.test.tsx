@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-06T12:00:44-03:00
+ * @Last modified time: 2025-02-07T10:49:09-03:00
  */
 
 
@@ -16,6 +16,10 @@ import {NextIntlClientProvider} from 'next-intl';
 jest.mock('next/navigation', () => ({
   useRouter: () => ({
     push: jest.fn(),
+  }),
+  useParams: () => jest.fn(),
+  usePathname: () => ({
+    startsWith: jest.fn()
   }),
 }));
 

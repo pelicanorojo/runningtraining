@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-04T11:04:01-03:00
+ * @Last modified time: 2025-02-07T10:25:24-03:00
  */
 
 import {useTranslations} from 'next-intl';
@@ -20,7 +20,7 @@ export default function Layout({
   return (
     <>
       {/* Header */}
-      <Header title={t('title')}/>
+      <Header title={t('title')} />
       {/* Main Content */}
 
       <div role="main" className="flex-1 flex flex-col overflow-hidden gap-2">
