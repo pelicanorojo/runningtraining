@@ -2,26 +2,26 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-20T01:08:43-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-20T12:05:44-03:00
+ * @Last modified time: 2025-02-07T12:36:28-03:00
  */
 
 import path from 'path';
 import process from 'process';
 import {plansSubFolder} from "@/lib/constants";
-import {TrainingPlanId, TrainingPlanThinFrontList, TrainingPlanThinBackList, RawPlanData, PlanData, RaceDate, RawTrainingData, TrainingData} from "@/types/global";
+import {TrainingPlanId, TrainingPlansAvailableBack, RawPlanData, PlanData, RaceDate, RawTrainingData, TrainingData, KnownLocales} from "@/types/global";
 
 import { trainingPlansAvailableBack } from "@/lib/constants";
-
+/*
 export const trainingPlansAvailableFront:TrainingPlanThinFrontList = trainingPlansAvailableBack.map( p => {
   return {id: p.id, label: p.label};
 })
-
+*/
 // Inmediate Invoked function, no globals
 // Using the known plan data, returns a function able to compute the json path using as input the trainingPlanID
-export const getPlanJsonPath = ((trainingPlansAvailableBack: TrainingPlanThinBackList) => {
-  return (trainingPlanId: TrainingPlanId) => {
-    const planFileName = trainingPlansAvailableBack.find(p => p.id === trainingPlanId)?.fileName;
-    return path.join(process.cwd(), `src/${plansSubFolder}/${planFileName}`)  
+export const getPlanJsonPath = ((trainingPlansAvailableBack: TrainingPlansAvailableBack) => {
+  return (trainingPlanId: TrainingPlanId, locale: KnownLocales) => {
+    const planFileName = trainingPlansAvailableBack['en'].find(p => p.id === trainingPlanId)?.fileName;
+    return path.join(process.cwd(), `src/${plansSubFolder}/${locale}/${planFileName}`)
   }
 })(trainingPlansAvailableBack);
 

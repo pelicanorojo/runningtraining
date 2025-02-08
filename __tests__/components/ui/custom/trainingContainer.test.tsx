@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-20T01:23:08-03:00
+ * @Last modified time: 2025-02-07T08:57:38-03:00
  */
 
 global.Element.prototype.scrollIntoView = jest.fn();
@@ -10,8 +10,12 @@ global.Element.prototype.scrollIntoView = jest.fn();
 import '@testing-library/jest-dom';
 import { waitFor, render, screen, fireEvent, act } from '@testing-library/react';
 import TrainingContainer, { TrainingContainerHeader, TrainingContainerFooter } from '@/components/ui/custom/trainingContainer';
-import { PlanDataParams } from '@/types/global';
+import { KnownLocales, PlanDataParams } from '@/types/global';
 import { aSampleTrainingData, aLongSampleTrainingData } from '@/lib/mockConstants';
+import {NextIntlClientProvider} from 'next-intl';
+
+import messages from '../../../../messages/en.json';
+
 
 // @ts-expect-error cause yes.
 global.fetch = jest.fn(() =>
@@ -19,7 +23,7 @@ global.fetch = jest.fn(() =>
     json: () => Promise.resolve(aSampleTrainingData),
   })
 );
-
+const locale: KnownLocales = 'en';
 const unSearcheableString = 'unSearcheableString';
 
 describe('TrainingContainerHeader ...', () => {
@@ -30,7 +34,9 @@ describe('TrainingContainerHeader ...', () => {
     const subTitle = trainingData?.trainingNotes.noteSummary;
     const subsubTitle = `(Training Order ${trainingData?.order || '?'}, Date ${trainingData?.trainingDate || '?'})`;
 
-    render(<TrainingContainerHeader trainingData={trainingData}/>);
+    render(
+        <TrainingContainerHeader trainingData={trainingData}/>
+    );
 
     const header = screen.getByText(title || unSearcheableString);
     expect(header).toBeInTheDocument();
@@ -71,7 +77,12 @@ describe('TrainingContainer ...', () => {
       trainingPlanId: 'test',
       raceDate: '2024-12-12'
     }
-    render(<TrainingContainer  scheduledTrainings={aLongSampleTrainingData} planDataParams={planParams} />);
+    render(
+      <NextIntlClientProvider messages={messages} locale={locale}>
+        <TrainingContainer  scheduledTrainings={aLongSampleTrainingData} planDataParams={planParams} />
+      </NextIntlClientProvider>
+    );
+
     const content = screen.getByTestId('emptyCardContent');
     expect(content).toBeInTheDocument();
   })
@@ -83,8 +94,12 @@ describe('TrainingContainer ...', () => {
       raceDate: '2025-03-11'
     }
 
-    render(<TrainingContainer scheduledTrainings={aLongSampleTrainingData} planDataParams={planParams}/>);
-
+    render(
+      <NextIntlClientProvider messages={messages} locale={locale}>
+        <TrainingContainer  scheduledTrainings={aLongSampleTrainingData} planDataParams={planParams} />
+      </NextIntlClientProvider>
+    );
+    
     //initially
     const content = screen.getAllByTestId('emptyCardContent');
     expect(content.length).toBe(1);
@@ -94,12 +109,12 @@ describe('TrainingContainer ...', () => {
     const theItemToClick = screen.getByText(training?.trainingDate || unSearcheableString);
 
     fireEvent.click(theItemToClick);
-//*
+
     //after fetch
     await waitFor(() => {
       const content = screen.getAllByTestId('trainingContainerHeader');
       expect(content.length).toBe(1);
     });
-    //*/
   })
+  
 });

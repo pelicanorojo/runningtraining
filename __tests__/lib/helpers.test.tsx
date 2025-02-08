@@ -2,20 +2,21 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-26T10:53:01-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-20T12:44:32-03:00
+ * @Last modified time: 2025-02-07T01:49:22-03:00
  */
 
 
 import '@testing-library/jest-dom';
 import * as helpers from  '@/lib/helpers';
-import { RawPlanData, TrainingPlanThinBack } from "@/types/global";
+import { RawPlanData, TrainingPlanThinBack, KnownLocales } from "@/types/global";
 
 import { trainingPlansAvailableBack, plansSubFolder } from "@/lib/constants";
 import * as process from 'process';
 import path from 'path';
 import aRawPlanData from  "@/data/plans/test.json";
 
-const aTrainingPlan: TrainingPlanThinBack = trainingPlansAvailableBack[1];
+const locale : KnownLocales = 'en';
+const aTrainingPlan: TrainingPlanThinBack = trainingPlansAvailableBack[locale][1];
 
 jest.mock('process', () => ({
   ...jest.requireActual('process'),
@@ -24,8 +25,8 @@ jest.mock('process', () => ({
 
 describe('Helper getPlanJsonPath', () => {
   it('Should construct the json path as cwd/src/${plansSubFolder}/${aTrainingPlan.fileName', () => {
-    const aPath = helpers.getPlanJsonPath(aTrainingPlan.id);
-    const expectedPath = path.join(process.cwd(), `src/${plansSubFolder}/${aTrainingPlan.fileName}`)
+    const aPath = helpers.getPlanJsonPath(aTrainingPlan.id, locale);
+    const expectedPath = path.join(process.cwd(), `src/${plansSubFolder}/${locale}/${aTrainingPlan.fileName}`)
     expect(aPath).toEqual(expectedPath); 
   });
 });
@@ -146,7 +147,6 @@ describe('generateScheduleFromPlan', () => {
   const theRawData = aRawPlanData as RawPlanData;
   const theScheduleData = helpers.generateScheduleFromPlan(theRawData, raceDate);
   const lastTraining = theScheduleData[theScheduleData.length -1];
-  //console.log(helpers.createUTCDateFromString(theRawData.results[0].scheduledDate))
 
   const lastTrainingDate = helpers.createUTCDateFromString(lastTraining.trainingDate);
   expect(theScheduleData.length).toEqual(theRawData.results.length);

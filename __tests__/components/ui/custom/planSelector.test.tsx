@@ -2,23 +2,21 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-11T11:11:50-03:00
+ * @Last modified time: 2025-02-07T08:39:57-03:00
  */
 
 
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import PlanSelector from '@/components/ui/custom/planSelector';
-import { TrainingPlanThinFrontList, TrainingPlanThinFront } from "@/types/global";
-import { trainingPlansAvailableBack } from "@/lib/constants";
+import {  TrainingPlanThinFront } from "@/types/global";
+import { trainingPlansAvailableFront } from "@/lib/constants";
 // TODO: don't mock reducer, limit to mock the dispatch, having here is used the dispatch, should be reducer agnostic
 //DONT: :) import { useReducer } from 'react';
 
-const trainingPlansAvailableFront:TrainingPlanThinFrontList = trainingPlansAvailableBack.map( p => {
-  return {id: p.id, label: p.label};
-})
+const locale = 'en';
 
-const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[1];
+const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[locale][1];
 
 //const recreateMocks = () => {
   //jest.clearAllMocks();
@@ -36,13 +34,14 @@ const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[1];
 
 describe('Plan Selector ...', () => {
   it('Should render without a plan selected, show placeholder.', () => {
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront} dispatch={jest.fn()}/>);
-    const theText = screen.getByText('Select training plan');
+    const thePlaceHolder = 'The plan placeholder';
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} dispatch={jest.fn()} placeHolder={thePlaceHolder}/>);
+    const theText = screen.getByText(thePlaceHolder);
     expect(theText).toBeInTheDocument();
   })
 
   it('Should render without a plan selected, should list once each training plan all unselected when unfolded.', () => {
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront} dispatch={jest.fn()}/>);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} dispatch={jest.fn()}/>);
 
     const combo = screen.getByRole('combobox');
 
@@ -51,7 +50,7 @@ describe('Plan Selector ...', () => {
 
     const options = screen.getAllByRole('option');
 
-    trainingPlansAvailableFront.forEach( (plan, index) => {
+    trainingPlansAvailableFront[locale].forEach( (plan, index) => {
       expect(options[index]).toHaveTextContent(plan.label);
     })
 
@@ -66,16 +65,16 @@ describe('Plan Selector ...', () => {
 
   it('Should render with a plan selected.', () => {
 
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront} selectedPlanId={aTrainingPlan.id} dispatch={jest.fn()}/>);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} selectedPlanId={aTrainingPlan.id} dispatch={jest.fn()}/>);
 
     const theText = screen.getByText(aTrainingPlan.label);
     expect(theText).toBeInTheDocument();
   })
 
   it('Should render with a plan selected, should list once each training plan when unfolded, with the selected one checked.', () => {
-    const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[0];
+    const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[locale][0];
 
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront}  selectedPlanId={aTrainingPlan.id} dispatch={jest.fn()} />);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]}  selectedPlanId={aTrainingPlan.id} dispatch={jest.fn()} />);
 
     const combo = screen.getByRole('combobox');
 
@@ -90,24 +89,19 @@ describe('Plan Selector ...', () => {
     );
 
     expect(checkedOptions.length).toBe(1);
-
-    
-    //const componentHtml = screen.debug();
-    //console.log(componentHtml);
-    //
   })
 
   it('Should dispatch an action when is selected an option', () => {
     const mockDispatch = jest.fn();
     //jest.mocked(useReducer).mockReturnValue([{ }, mockDispatch]);
 
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront} dispatch={mockDispatch}/>);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} dispatch={mockDispatch}/>);
 
     const combo = screen.getByRole('combobox');
 
     fireEvent.click(combo);
 
-    const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[2];
+    const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[locale][2];
 
     // Filter options by text
     const optionElement = screen.getAllByRole('option').filter(option => {

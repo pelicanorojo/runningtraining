@@ -24,5 +24,17 @@
     "selectorTitle": "Configuración",
 		"planPlaceHolder": "Seleccione un plan"
 
+  },
+  "planSelector": {
+    "test": "Un test",
+    "21k110m4wbw5m": "21k 1h10m 4 trabajosPorSemana 5 meses",
+    "21k110m6wbw5m": "21k 1h10m 6 trabajosPorSemana 5 meses",
+    "21k120m6wbw5m": "21k 1h20m 6 trabajosPorSemana 5 meses",
+    "42k230m4wbw5m": "42k 2h30m 4 trabajosPorSemana 5 meses",
+    "42k230m6wbw5m": "42k 2h30m 6 trabajosPorSemana 5 meses",
+    "42k240m4wbw5m": "42k 2h40m 4 trabajosPorSemana 5 meses",
+    "42k240m6wbw5m": "42k 2h40m 6 trabajosPorSemana 5 meses",
+    "42k250m4wbw5m": "42k 2h50m 4 trabajosPorSemana 5 meses",
+    "42k250m6wbw5m": "42k 2h50m 6 trabajosPorSemana 5 meses"
   }
 }
