@@ -2,11 +2,24 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-04T01:36:57-03:00
+ * @Last modified time: 2025-02-07T12:36:28-03:00
  */
 
 // -- plan types
-export type TrainingPlanId = string;
+//
+
+export type TrainingPlanId = 'test' |
+  '21k110m4wbw5m' |
+  '21k110m6wbw5m' |
+  '21k120m6wbw5m' |
+  '42k230m4wbw5m' |
+  '42k230m6wbw5m' |
+  '42k240m4wbw5m' |
+  '42k240m6wbw5m' |
+  '42k250m4wbw5m' |
+  '42k250m6wbw5m';
+
+//export type TrainingPlanId = string;
 export type RaceDate = string;
 export type utcDate = string;
 
@@ -48,11 +61,6 @@ export type ChangeRacedateAction = {
 export type ConfigReducerAction = ChangePlanAction | ChangeRacedateAction;
 
 // path types
-export interface TrainingPathDataREMOVE {
-  trainingPlanId: string;
-  raceDate: string;
-  trainingOrder?: number;
-}
 
 // training types
 export type IntervalType = 'warmUp' | 'middle' | 'coolDown';
@@ -113,3 +121,13 @@ export interface TrainingDataParams {
   raceDate: RaceDate;
   order: number;
 };
+
+export type KnownLocales = 'en' | 'es';
+
+export type TrainingPlansAvailableBack = {
+  [key in KnownLocales]: TrainingPlanThinBackList;
+}
+
+export type TrainingPlansAvailableFront = {
+  [key in KnownLocales]: TrainingPlanThinFrontList;
+}

@@ -2,11 +2,13 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-05T01:20:17-03:00
+ * @Last modified time: 2025-02-05T11:43:06-03:00
  */
 
 
 'use client'
+//import { useTranslations} from 'next-intl';
+
 import {
   Select,
   SelectContent,
@@ -27,6 +29,8 @@ interface PlanSelectorProps {
 }
 
 export default function PlanSelector ({selectedPlanId, availablePlans, dispatch, placeHolder}: PlanSelectorProps) {
+
+  //const t = useTranslations('configBar');
 
   const handleSelect = (value: TrainingPlanId) => {
     dispatch({type: 'CHANGE_PLAN', payload: {trainingPlanId: value}});

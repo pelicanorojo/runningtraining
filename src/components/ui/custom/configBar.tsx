@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-22T10:12:07-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-05T01:31:59-03:00
+ * @Last modified time: 2025-02-07T12:19:53-03:00
  */
 
 'use client'
@@ -22,8 +22,8 @@ import {
 
 import { Settings, MoveRightIcon } from 'lucide-react';
 
-import { trainingPlansAvailableFront } from '@/lib/constants';
-import { PlanConfig, TrainingPlanThinFrontList } from "@/types/global";
+//import { trainingPlansAvailableFront } from '@/lib/constants';
+import { PlanConfig, TrainingPlanThinFrontList, TrainingPlanId } from "@/types/global";
 import { configReducer } from '@/reducers/configReducer';
 import paths from '@/lib/paths';
 
@@ -60,18 +60,17 @@ interface ConfigBarProps {
   initialState: PlanConfig;
 };
 
-//function ClientConfigBar({trainingPlansAvailable, initialState}: ConfigBarProps) {
 export default function ConfigBar({trainingPlansAvailable, initialState}: ConfigBarProps) {
-    const [state, dispatch] = useReducer(configReducer, initialState);
+  const [state, dispatch] = useReducer(configReducer, initialState);
   const router = useRouter();
   const prevState = useRef(initialState);
 
-  const trainingLabel = trainingPlansAvailableFront.find( t => t.id === state.trainingPlanId)?.label;
+  const trainingLabel = trainingPlansAvailable.find( t => t.id === state.trainingPlanId)?.label;
 
   useEffect(() => {
     if (prevState.current.trainingPlanId !== state.trainingPlanId || prevState.current.raceDate !== state.raceDate) {
       if (isValidRouteData(trainingPlansAvailable, state)) {
-        router.push(paths.trainingPlanShow(state as {trainingPlanId: string; raceDate:string}))
+        router.push(paths.trainingPlanShow(state as {trainingPlanId: TrainingPlanId; raceDate: string}))
       }
     }
   }, [state, router, trainingPlansAvailable])
@@ -124,20 +123,3 @@ export default function ConfigBar({trainingPlansAvailable, initialState}: Config
     </div>
   );
 }
-
-/* Finally worked without this wrapping :)
-export default function ConfigBar({trainingPlansAvailable, initialState}: ConfigBarProps) {
-  // Receive messages provided in `i18n/request.ts` …
-  const messages = useMessages();
-  const locale = useLocale();
- 
-  return (
-    <NextIntlClientProvider
-      messages={messages.configBar}
-      locale={locale}
-    >
-      <ClientConfigBar trainingPlansAvailable={trainingPlansAvailable} initialState={initialState}/>
-    </NextIntlClientProvider>
-  );
-}
-*/

@@ -2,13 +2,13 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-30T10:30:09-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-12T12:32:12-03:00
+ * @Last modified time: 2025-02-07T09:01:03-03:00
  */
 
 import '@testing-library/jest-dom';
 import {  render, screen } from '@testing-library/react';
 import  TrainingContainerMain, {
-  seconds2Minutes, stripTitleBuilder, stripLabelBuilder, getStripCsslWidth
+  seconds2Minutes,seconds2TimeComponents, stripTitleBuilder, stripLabelBuilder, getStripCsslWidth
   , zoneToColorClassMap, zoneToMarginsMap
   , Strip
 } from '@/components/ui/custom/trainingContainerMain';
@@ -52,18 +52,6 @@ describe('seconds2TimeComponents ...', () => {
     expect(seconds2TimeComponents(3601)).toEqual({h: 1, m: 0, s: 1});
   });
 });
-
-export const seconds2TimeComponents = (_s: number): {h: number, m: number, s: number} => {
-  let s = _s;
-
-  const h = s < 3600 ? 0 : Math.trunc(s / 3600);
-  s-= h * 3600;
-
-  const m = s < 60 ? 0 : Math.trunc(s / 60) ;
-  s-= m * 60;
-  return {h, m, s};
-}
-
 
 describe('stripTitleBuilder ...', () => {
   it('Should build well a 59 seconds green zone title.', () => {
@@ -173,4 +161,5 @@ describe('TrainingContainerMain ...', () => {
       expect(s).toHaveClass(colorCssClass);
     })
   });
+ 
 });

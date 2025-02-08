@@ -23,5 +23,17 @@
     "selectorDescription": "Select the training plan, and the race date.",
     "selectorTitle": "Configuration",
 		"planPlaceHolder": "Select a training plan"
-	}
+	},
+	"planSelector": {
+    "test": "A test",
+    "21k110m4wbw5m": "21k 1h10m 4 worksPerWeek 5 months",
+    "21k110m6wbw5m": "21k 1h10m 6 worksPerWeek 5 months",
+    "21k120m6wbw5m": "21k 1h20m 6 worksPerWeek 5 months",
+    "42k230m4wbw5m": "42k 2h30m 4 worksPerWeek 5 months",
+    "42k230m6wbw5m": "42k 2h30m 6 worksPerWeek 5 months",
+    "42k240m4wbw5m": "42k 2h40m 4 worksPerWeek 5 months",
+    "42k240m6wbw5m": "42k 2h40m 6 worksPerWeek 5 months",
+    "42k250m4wbw5m": "42k 2h50m 4 worksPerWeek 5 months",
+    "42k250m6wbw5m": "42k 2h50m 6 worksPerWeek 5 months"
+  }
 }

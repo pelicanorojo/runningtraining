@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-27T10:39:18-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-20T12:40:05-03:00
+ * @Last modified time: 2025-02-07T01:48:24-03:00
  */
 
 
@@ -20,10 +20,11 @@ import {
   CardFooter
 } from "@/components/ui/card";
 
-import { PlanData, TrainingData, PlanDataParams as PlanDataParams } from "@/types/global";
+import { PlanData, TrainingData, PlanDataParams as PlanDataParams, KnownLocales } from "@/types/global";
 
 import { useState, useEffect  } from 'react';
 import { fetchTrainingData } from '@/lib/fetchers';
+import { useLocale } from 'next-intl';
 
 
 interface TrainingContainerHeaderProps {
@@ -64,6 +65,7 @@ interface TrainingContainerProps {
 export default function TrainingContainer({scheduledTrainings, planDataParams: getPlanDataParams, defaultOrder}: TrainingContainerProps) {
   const [order, setOrder] = useState<number|undefined>(defaultOrder);
   const [trainingData, setTrainingData] = useState<TrainingData | null>(null);
+  const locale = useLocale();
 
   useEffect(() => {
     
@@ -71,7 +73,7 @@ export default function TrainingContainer({scheduledTrainings, planDataParams: g
       let aTrainingData = null;
 
       if (order) {        
-        aTrainingData = await fetchTrainingData({...getPlanDataParams, order});
+        aTrainingData = await fetchTrainingData({...getPlanDataParams, order }, locale as KnownLocales);
         setTrainingData(aTrainingData);
       }
     };
