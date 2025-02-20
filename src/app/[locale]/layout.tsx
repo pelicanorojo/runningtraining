@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-05T01:56:21-03:00
+ * @Last modified time: 2025-02-14T12:16:04-03:00
  */
 
 
@@ -11,6 +11,8 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import Providers from '@/app/providers';
+
 
 import localFont from "next/font/local";
 import "../globals.css";
@@ -57,7 +59,9 @@ export default async function LocaleLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <div className={`container mx-auto h-svh px-2 flex flex-col gap-2`}>
         <NextIntlClientProvider messages={messages}>
-          <Layout>{children}</Layout>
+          <Providers>
+            <Layout>{children}</Layout>
+          </Providers>
         </NextIntlClientProvider>
       </div>
       </body>
