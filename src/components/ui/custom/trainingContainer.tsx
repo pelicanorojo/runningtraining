@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-27T10:39:18-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-07T01:48:24-03:00
+ * @Last modified time: 2025-02-20T12:12:03-03:00
  */
 
 
@@ -79,7 +79,7 @@ export default function TrainingContainer({scheduledTrainings, planDataParams: g
     };
 
     if (order) { fetchData();}
-  }, [getPlanDataParams, order])
+  }, [getPlanDataParams, order, locale])
 
   return (
     <div className="flex-1 w-full overflow-x-auto">
