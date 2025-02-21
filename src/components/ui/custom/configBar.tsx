@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-22T10:12:07-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-07T12:19:53-03:00
+ * @Last modified time: 2025-02-20T09:54:38-03:00
  */
 
 'use client'
@@ -29,6 +29,8 @@ import paths from '@/lib/paths';
 
 import PlanSelector from '@/components/ui/custom/planSelector';
 import RaceDateSelector from '@/components/ui/custom/raceDateSelector';
+import LanguageSwitcher from '@/components/ui/custom/languageSwitcher';
+
 
 
 
@@ -109,6 +111,7 @@ export default function ConfigBar({trainingPlansAvailable, initialState}: Config
             <DialogHeader>
               <DialogTitle>{t('selectorTitle')}</DialogTitle>
             </DialogHeader>
+            <LanguageSwitcher/>
             <div className="flex flex-row items-center gap-2 place-content-between">
               <h3>{t('planLabel')}: </h3>
               <PlanSelector availablePlans={trainingPlansAvailable} selectedPlanId={state.trainingPlanId} dispatch={dispatch} placeHolder={t('planPlaceHolder')}/>

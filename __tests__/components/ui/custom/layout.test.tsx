@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-07T10:49:09-03:00
+ * @Last modified time: 2025-02-20T10:25:14-03:00
  */
 
 
@@ -21,6 +21,14 @@ jest.mock('next/navigation', () => ({
   usePathname: () => ({
     startsWith: jest.fn()
   }),
+}));
+
+
+//import { useSession, signIn, signOut } from "next-auth/react";
+jest.mock('next-auth/react', () => ({
+  useSession: () => jest.fn(),
+  signIn: () => jest.fn(),
+  signOut: () => jest.fn(),
 }));
 
 describe('Renders layout properly', () => {
