@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-05T11:43:06-03:00
+ * @Last modified time: 2025-02-20T10:18:23-03:00
  */
 
 
@@ -45,7 +45,7 @@ export default function PlanSelector ({selectedPlanId, availablePlans, dispatch,
   }
   return (
       <Select value={selectedPlanId} onValueChange={handleSelect}>
-        <SelectTrigger className="w-[280px]">
+        <SelectTrigger className="w-[280px]"  aria-label="Plan Selector">
         <SelectValue placeholder={placeHolder} />
         </SelectTrigger>
         <SelectContent>

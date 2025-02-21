@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-25T01:44:44-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-07T12:36:28-03:00
+ * @Last modified time: 2025-02-20T10:18:45-03:00
  */
 
 
@@ -138,7 +138,7 @@ describe('ConfigBar ...', () => {
     const thePopupTrigger = screen.getByRole('button');
     fireEvent.click(thePopupTrigger);
 
-    const combo = screen.getByRole('combobox');
+    const combo = screen.getByRole('combobox', {name: 'Plan Selector'});
 
     fireEvent.click(combo);
 
