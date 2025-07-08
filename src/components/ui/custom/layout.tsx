@@ -2,13 +2,13 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-07T10:25:24-03:00
+ * @Last modified time: 2025-05-21T10:25:51-03:00
  */
 
 import {useTranslations} from 'next-intl';
 
-import React from 'react';
 import Header from "@/components/ui/custom/header";
+
 
 export default function Layout({
   children,

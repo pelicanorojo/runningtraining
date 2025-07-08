@@ -14,11 +14,13 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String        @id @default(cuid())
   name          String?
-  email         String    @unique
+  email         String        @unique
   emailVerified DateTime?
   image         String?
+  raceDate      String?
+  trainingPlan  TrainingPlan?
   accounts      Account[]
   sessions      Session[]
   // Optional for WebAuthn support
@@ -65,6 +67,19 @@ model VerificationToken {
   expires    DateTime
 
   @@id([identifier, token])
+}
+
+enum TrainingPlan {
+  tp_test
+  tp_21k110m4wbw5m
+  tp_21k110m6wbw5m
+  tp_21k120m6wbw5m
+  tp_42k230m4wbw5m
+  tp_42k230m6wbw5m
+  tp_42k240m4wbw5m
+  tp_42k240m6wbw5m
+  tp_42k250m4wbw5m
+  tp_42k250m6wbw5m
 }
 
 /**

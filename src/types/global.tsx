@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-07T12:36:28-03:00
+ * @Last modified time: 2025-02-27T12:23:29-03:00
  */
 
 // -- plan types
@@ -40,9 +40,11 @@ export type TrainingPlanThinFrontList = TrainingPlanThinFront[];
 export type PlanConfig = {
   trainingPlanId: TrainingPlanId | undefined;
   raceDate: RaceDate | undefined;
+  favoriteTrainingPlanId: TrainingPlanId | undefined;
+  favoriteRaceDate: RaceDate | undefined;
 }
 
-export type KnownConfigReducerAction = 'CHANGE_PLAN' | 'CHANGE_RACEDATE';
+export type KnownConfigReducerAction = 'CHANGE_PLAN' | 'CHANGE_RACEDATE' | 'SET_FAVORITE' | 'UNSET_FAVORITE' | 'CLEAR_FAVORITE';
 
 export type ChangePlanAction = {
   type: 'CHANGE_PLAN';
@@ -58,7 +60,28 @@ export type ChangeRacedateAction = {
   }
 }
 
-export type ConfigReducerAction = ChangePlanAction | ChangeRacedateAction;
+// A logged in user set his/her favorite
+export type SetFavoriteAction = {
+  type: 'SET_FAVORITE';
+  payload: {
+    trainingPlanId: TrainingPlanId | undefined;
+    raceDate: RaceDate | undefined;
+  }
+}
+
+// A logged in user unset his/her favorite
+export type UnsetFavoriteAction = {
+  type: 'UNSET_FAVORITE';
+  payload: null
+}
+
+// The favorite data is cleared on front end, maybe cause the user logged out.
+export type ClearFavoriteAction = {
+  type: 'CLEAR_FAVORITE';
+  payload: null
+}
+
+export type ConfigReducerAction = ChangePlanAction | ChangeRacedateAction | SetFavoriteAction | UnsetFavoriteAction | ClearFavoriteAction;
 
 // path types
 

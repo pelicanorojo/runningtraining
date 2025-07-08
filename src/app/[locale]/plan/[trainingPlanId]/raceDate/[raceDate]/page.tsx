@@ -2,11 +2,10 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-07T01:49:40-03:00
+ * @Last modified time: 2025-05-21T10:25:42-03:00
  */
 
 
-import React from 'react';
 import ConfigBar from '@/components/ui/custom/configBar';
 import TrainingContainer from '@/components/ui/custom/trainingContainer';
 

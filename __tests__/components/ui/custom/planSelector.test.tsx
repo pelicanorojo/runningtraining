@@ -2,46 +2,62 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-07T08:39:57-03:00
+ * @Last modified time: 2025-07-07T11:25:16-03:00
  */
 
 
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
-import PlanSelector from '@/components/ui/custom/planSelector';
 import {  TrainingPlanThinFront } from "@/types/global";
 import { trainingPlansAvailableFront } from "@/lib/constants";
-// TODO: don't mock reducer, limit to mock the dispatch, having here is used the dispatch, should be reducer agnostic
-//DONT: :) import { useReducer } from 'react';
+import * as configModule from '@/contexts/config';
+
 
 const locale = 'en';
 
 const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[locale][1];
 
-//const recreateMocks = () => {
-  //jest.clearAllMocks();
-//TODO: check how mock in an between tests decoupled way, but sharing a given text mock instance, with the used by the component tested.
-/*
-  const sharedRouterMock = jest.fn();
+const dispatchFnMock = jest.fn();
+const useConfigDispatchMock = jest.fn(() => dispatchFnMock); // here useConfigDispatchMock (...args: any[]) => any
+// Except I manually do: const useConfigDispatchMock: jest.Mock<() => (action: { type: string }) => void> = jest.fn(); assuming is the right signature
 
-  jest.mock('react', () => ({
-    ...jest.requireActual('react'),
-    useReducer: jest.fn(),
-  }));  
-  //*/ 
-//};
-//recreateMocks();
+// mock implementation
+jest.mock('@/contexts/config', () => {
+  const originalModule =
+    jest.requireActual<typeof import('@/contexts/config')>('@/contexts/config');
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    // this is needed for overwrite the one on ...originalModule. Actually could be useConfigDispatchMock, but this way we separate the wiring from the implementation,
+    //  which could be insided each test for instance.
+    useConfigDispatch: jest.fn() // this is a placeholder that jest.mocked will replace with a right signature on mockedConfig.useConfigDispatch (needed cause is a partial mock, if weren't , wouldnt needed.)
+  }
+});
+
+// pick right types from configModule, the one to mock
+const mockedConfig = jest.mocked(configModule);
+
+// 🛠 Override the `useConfigDispatch` mock implementation
+mockedConfig.useConfigDispatch.mockImplementation(useConfigDispatchMock); // useConfigDispatchMock is just the implementation, just needed be called the right way, and return the right type.
+
+
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+import PlanSelector from '@/components/ui/custom/planSelector';
 
 describe('Plan Selector ...', () => {
   it('Should render without a plan selected, show placeholder.', () => {
     const thePlaceHolder = 'The plan placeholder';
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} dispatch={jest.fn()} placeHolder={thePlaceHolder}/>);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} placeHolder={thePlaceHolder}/>);
     const theText = screen.getByText(thePlaceHolder);
     expect(theText).toBeInTheDocument();
   })
 
   it('Should render without a plan selected, should list once each training plan all unselected when unfolded.', () => {
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} dispatch={jest.fn()}/>);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]}/>);
 
     const combo = screen.getByRole('combobox');
 
@@ -65,7 +81,7 @@ describe('Plan Selector ...', () => {
 
   it('Should render with a plan selected.', () => {
 
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} selectedPlanId={aTrainingPlan.id} dispatch={jest.fn()}/>);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} selectedPlanId={aTrainingPlan.id} />);
 
     const theText = screen.getByText(aTrainingPlan.label);
     expect(theText).toBeInTheDocument();
@@ -74,7 +90,7 @@ describe('Plan Selector ...', () => {
   it('Should render with a plan selected, should list once each training plan when unfolded, with the selected one checked.', () => {
     const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[locale][0];
 
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]}  selectedPlanId={aTrainingPlan.id} dispatch={jest.fn()} />);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]}  selectedPlanId={aTrainingPlan.id} />);
 
     const combo = screen.getByRole('combobox');
 
@@ -92,10 +108,7 @@ describe('Plan Selector ...', () => {
   })
 
   it('Should dispatch an action when is selected an option', () => {
-    const mockDispatch = jest.fn();
-    //jest.mocked(useReducer).mockReturnValue([{ }, mockDispatch]);
-
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} dispatch={mockDispatch}/>);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]}/>);
 
     const combo = screen.getByRole('combobox');
 
@@ -109,7 +122,7 @@ describe('Plan Selector ...', () => {
     });
     
     fireEvent.click(optionElement[0]);
-
-    expect(mockDispatch).toHaveBeenCalledWith({ type: 'CHANGE_PLAN', payload: {trainingPlanId: aTrainingPlan.id} });
+    expect(dispatchFnMock).toHaveBeenCalledTimes(1);
+    expect(dispatchFnMock).toHaveBeenCalledWith({ type: 'CHANGE_PLAN', payload: {trainingPlanId: aTrainingPlan.id} });
   })
 });

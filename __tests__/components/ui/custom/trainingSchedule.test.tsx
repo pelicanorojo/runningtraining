@@ -2,13 +2,12 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-27T01:21:04-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-20T01:22:58-03:00
+ * @Last modified time: 2025-07-07T11:53:28-03:00
  */
 
 
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
-import TrainingSchedule from '@/components/ui/custom/trainingSchedule';
 import { RawPlanData } from "@/types/global";
 import { generateScheduleFromPlan } from '@/lib/helpers';
 import aRawPlanData from  "@/data/plans/test.json";
@@ -23,6 +22,8 @@ jest.mock('next/navigation', () => ({
 }));
 
 const unSearcheableString = 'unSearcheableString';
+
+import TrainingSchedule from '@/components/ui/custom/trainingSchedule';
 
 describe('TrainingSchedule ...', () => {
   it('Should render with its childs initialized with the param initialState, with the right number of items, with no item selected.',  () => {

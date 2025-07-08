@@ -3,7 +3,6 @@ import Google from "next-auth/providers/google";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/prisma";
 
-console.log('DBG: envs', process.env.GOOGLE_CLIENT_ID, process.env.GOOGLE_CLIENT_SECRET, process.env.NEXTAUTH_SECRET)
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [Google({
     clientId: process.env.GOOGLE_CLIENT_ID,
@@ -11,5 +10,23 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   })],
   secret: process.env.NEXTAUTH_SECRET, // Don't forget the secret!
   adapter: PrismaAdapter(prisma),
+  callbacks: {
+    async session({ session }) {
+      if (session?.user?.email) {
+        const user = await prisma.user.findUnique({
+          where: {
+            email: session.user.email,
+          },
+          select: {
+            id: true, // Select the user's ID
+          },
+        });
 
+        if (user) {
+          session.user.id = user.id; // Add the ID to the session
+        }
+      }
+      return session;
+    },
+  },
 });

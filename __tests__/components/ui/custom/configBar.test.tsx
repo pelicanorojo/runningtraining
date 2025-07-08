@@ -2,61 +2,80 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-25T01:44:44-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-20T10:18:45-03:00
+ * @Last modified time: 2025-07-07T10:05:22-03:00
  */
 
 
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
-import ConfigBar from '@/components/ui/custom/configBar';
 import { KnownLocales, TrainingPlanThinFront } from "@/types/global";
 import { trainingPlansAvailableFront } from "@/lib/constants";
-import { useRouter } from 'next/navigation';
-
 import paths from '@/lib/paths';
+import { useConfig, useConfigDispatch } from '@/contexts/config';
 
 import {NextIntlClientProvider} from 'next-intl';
 
 import messages from '../../../../messages/en.json';
 const locale :KnownLocales = 'en';
 
+const pushMock = jest.fn(); // a shared one for when on the component useEffect should be redirection
+
 
 // If the tested component uses features from Next.js, you have to mock them.
 jest.mock('next/navigation', () => ({
   usePathname: () => '/',
-  useRouter: jest.fn()/*() => ({
-    back: jest.fn(),
-    forward: jest.fn(),
-    refresh: jest.fn(),
-    push: jest.fn(),
-    prefetch: jest.fn(),
-    replace: jest.fn()
-  })*/,
+  useRouter: () => ({push: pushMock}),
   useParams: () => ({locale: locale}),
   useSelectedLayoutSegment: () => ({locale: locale})
 }));
 
-const mockPush = jest.fn(); // a shared one
+jest.mock('next-auth/react', () => ({
+  useSession: () => jest.fn(),
+}));
+
+jest.mock('@/contexts/config', () => ({
+  useConfig: jest.fn(),
+  useConfigDispatch: jest.fn(),
+}));
+
+const useConfigMock  = useConfig as jest.Mock;
+
+const dispatchFnMock = jest.fn();
+const useConfigDispatchMock = useConfigDispatch as jest.Mock;
+useConfigDispatchMock.mockReturnValue(dispatchFnMock);
+
+
+
+beforeEach(() => {
+  jest.clearAllMocks();
+  //pushMock.mockClear();
+  //dispatchFnMock.mockClear();
+  useConfigMock.mockReset(); // history and implementation, mainly for by test (no global) custom implementations
+  useConfigMock.mockImplementation(jest.requireActual('@/contexts/config').useConfig); // this is like an inline applyDefaultMockImplementation, with unmocked original functionality
+ // applyDefaultMockImplementation(); // ✅ apply default custom default mock implementation if wanted
+ //
+
+
+});
+
+let aUndefined;
 
 const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[locale][1];
 const otheraTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[locale][2];
 
+
+import ConfigBar from '@/components/ui/custom/configBar';
+
 describe('ConfigBar ...', () => {
   it('Should show placeholders on subtitles when some initial state undefined.', () => {
-    let aUndefined;
-
-    const initialState = {trainingPlanId: aUndefined, raceDate: aUndefined};
-
-    (useRouter as jest.Mock).mockReturnValue({
-      push: mockPush,
-    });
-
+    const initialState = {trainingPlanId: aUndefined, raceDate: aUndefined, favoriteTrainingPlanId: aUndefined, favoriteRaceDate: aUndefined};
+    useConfigMock.mockReturnValue(initialState);
     render(
         <NextIntlClientProvider
           locale={locale}
           messages={messages}
         >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} initialState={initialState}/>
+          <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]}/>
       </NextIntlClientProvider>
     );
 
@@ -70,21 +89,19 @@ describe('ConfigBar ...', () => {
 
   it('Should render the popup with its childs initialized with the param initialState.',  () => {
     const aRaceDate = '2024-12-01';
-    const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aRaceDate};
-
-    (useRouter as jest.Mock).mockReturnValue({
-      push: mockPush,
-    });
+    const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aRaceDate, favoriteTrainingPlanId: aUndefined, favoriteRaceDate: aUndefined};
+    useConfigMock.mockReturnValue(initialState);
 
     render(
       <NextIntlClientProvider
         locale={locale}
         messages={messages}
       >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} initialState={initialState}/>
+        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} />
       </NextIntlClientProvider>
     );
-    const thePopupTrigger = screen.getByRole('button');
+    const thePopupTrigger = screen.getByRole('button', {name: 'Config Popup'});
+
     fireEvent.click(thePopupTrigger);
 
     const theText =  screen.getByText(aTrainingPlan.label);
@@ -96,46 +113,39 @@ describe('ConfigBar ...', () => {
   })
 
   it('Should not initialy redirect to the initialState past param.', () => {
-    
-    const mockPush = jest.fn();
-    (useRouter as jest.Mock).mockReturnValue({
-      push: mockPush,
-    });
-
     const aRaceDate = '2024-12-01';
-    const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aRaceDate};
+    const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aRaceDate, favoriteTrainingPlanId: aUndefined, favoriteRaceDate: aUndefined};
+    useConfigMock.mockReturnValue(initialState);
 
     render(
       <NextIntlClientProvider
         locale={locale}
         messages={messages}
       >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} initialState={initialState}/>
+        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]}/>
       </NextIntlClientProvider>
     );
-    expect(mockPush).not.toHaveBeenCalled();
+    expect(pushMock).not.toHaveBeenCalled();
   })
 
   it('Should redirect, if changed to a valid plan.', () => {
 
-    const mockPush = jest.fn();
-
-    (useRouter as jest.Mock).mockReturnValue({
-      push: mockPush,
-    });
-
     const aDate = '2024-12-01';
-    const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aDate};
+    const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aDate, favoriteTrainingPlanId: aUndefined, favoriteRaceDate: aUndefined};
+    useConfigMock.mockReturnValue(initialState);
 
-    render(
+    const { rerender } = render(
       <NextIntlClientProvider
         locale={locale}
         messages={messages}
       >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} initialState={initialState}/>
+        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]}/>
       </NextIntlClientProvider>
     );
-    const thePopupTrigger = screen.getByRole('button');
+
+    /*
+    const thePopupTrigger = screen.getByRole('button', {name: 'Config Popup'});
+
     fireEvent.click(thePopupTrigger);
 
     const combo = screen.getByRole('combobox', {name: 'Plan Selector'});
@@ -145,83 +155,95 @@ describe('ConfigBar ...', () => {
 
     // Filter options by text
     const optionElement = screen.getAllByRole('option').filter(option => {
-      return option.textContent?.includes(otheraTrainingPlan.label);
+      return option.textContent?.includes(otheraTrainingPlan.label);    
     });
-    
-    fireEvent.click(optionElement[0]);
+    */
+    // all the ui simulations make no sense in this strategy where we mock the state (the unique thing which finally will produce the effect)
+    useConfigMock.mockReturnValue({...initialState, trainingPlanId: otheraTrainingPlan.id});
+    // Any way, can be added tests for check the ui flow works as expected in the sense of open a pop up, unroll options, etc.
+
+    //fireEvent.click(optionElement[0]);
+    rerender(
+      <NextIntlClientProvider
+        locale={locale}
+        messages={messages}
+      >
+        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]}/>
+      </NextIntlClientProvider>
+    );
     const expectedRoute = `/${locale}${paths.trainingPlanShow({...initialState, trainingPlanId: otheraTrainingPlan.id})}`;
 
-    expect(mockPush).toHaveBeenCalledWith(expectedRoute);
-    expect(mockPush).toHaveBeenCalledTimes(1);
+    //expect(dispatchFnMock).toHaveBeenCalledTimes(1);
+    //expect(dispatchFnMock).toHaveBeenCalledWith({ type: 'CHANGE_PLAN', payload: {trainingPlanId: otheraTrainingPlan.id} });
+
+    expect(pushMock).toHaveBeenCalledWith(expectedRoute);
+    expect(pushMock).toHaveBeenCalledTimes(1);    
   })
 
 
   it('Should redirect, if changed to a valid race date.', () => {
 
-    const mockPush = jest.fn();
-
-    (useRouter as jest.Mock).mockReturnValue({
-      push: mockPush,
-    });
-
     const aDate = '2024-12-01';
-    const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aDate};
+    const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aDate, favoriteTrainingPlanId: aUndefined, favoriteRaceDate: aUndefined};
+    useConfigMock.mockReturnValue(initialState);
 
-    render(
+    const { rerender } = render(
       <NextIntlClientProvider
         locale={locale}
         messages={messages}
       >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} initialState={initialState}/>
+        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]}/>
       </NextIntlClientProvider>
     );
-    const thePopupTrigger = screen.getByRole('button');
+    /*
+    const thePopupTrigger = screen.getByRole('button', {name: 'Config Popup'});
     fireEvent.click(thePopupTrigger);
 
     const theDate = screen.getByDisplayValue(aDate)
 
     fireEvent.click(theDate);
-
+    */
     const otherDate = '2024-11-02';
-
-    fireEvent.change(theDate, {target: {value: otherDate}});
-    
+    useConfigMock.mockReturnValue({...initialState, raceDate: otherDate});
+    //fireEvent.change(theDate, {target: {value: otherDate}});
+    rerender(
+      <NextIntlClientProvider
+        locale={locale}
+        messages={messages}
+      >
+        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]}/>
+      </NextIntlClientProvider>
+    );
     const expectedRoute = `/${locale}${paths.trainingPlanShow({...initialState, raceDate: otherDate})}`;
 
-    expect(mockPush).toHaveBeenCalledWith(expectedRoute);
-    expect(mockPush).toHaveBeenCalledTimes(1);
+    expect(pushMock).toHaveBeenCalledWith(expectedRoute);
+    expect(pushMock).toHaveBeenCalledTimes(1);  
   })
 
   it('Should not redirect, if changed to the same values.', () => {
-    const mockPush = jest.fn();
-
-    (useRouter as jest.Mock).mockReturnValue({
-      push: mockPush,
-    });
-
     const aDate = '2024-12-01';
-    const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aDate};
+    const initialState = {trainingPlanId: aTrainingPlan.id, raceDate: aDate, favoriteTrainingPlanId: aUndefined, favoriteRaceDate: aUndefined};
+    useConfigMock.mockReturnValue(initialState);
 
-    render(
+    const { rerender } = render(
       <NextIntlClientProvider
         locale={locale}
         messages={messages}
       >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} initialState={initialState}/>
+        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} />
       </NextIntlClientProvider>
     );
 
-    const thePopupTrigger = screen.getByRole('button');
-    fireEvent.click(thePopupTrigger);
+    rerender(
+      <NextIntlClientProvider
+        locale={locale}
+        messages={messages}
+      >
+        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]}/>
+      </NextIntlClientProvider>
+    );
 
-    const theDate = screen.getByDisplayValue(aDate)
-
-    fireEvent.click(theDate);
-
-    const otherDate = aDate;
-
-    fireEvent.change(theDate, {target: {value: otherDate}});
     
-    expect(mockPush).toHaveBeenCalledTimes(0);
+    expect(pushMock).toHaveBeenCalledTimes(0);
   })
 });
