@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-20T10:18:23-03:00
+ * @Last modified time: 2025-07-01T12:26:20-03:00
  */
 
 
@@ -18,19 +18,18 @@ import {
 } from "@/components/ui/select";
 import { Dispatch } from 'react';
 
-import { TrainingPlanThinFrontList, TrainingPlanThinFront, TrainingPlanId } from "@/types/global";
-import { ConfigReducerAction } from "@/types/global";
+import { TrainingPlanThinFrontList, TrainingPlanThinFront, TrainingPlanId, ConfigReducerAction } from "@/types/global";
+
+import { useConfigDispatch } from '@/contexts/config';
 
 interface PlanSelectorProps {
   availablePlans: TrainingPlanThinFrontList;
   selectedPlanId?: TrainingPlanId;
   placeHolder?: string;
-  dispatch: Dispatch<ConfigReducerAction>
 }
 
-export default function PlanSelector ({selectedPlanId, availablePlans, dispatch, placeHolder}: PlanSelectorProps) {
-
-  //const t = useTranslations('configBar');
+export default function PlanSelector ({selectedPlanId, availablePlans, placeHolder}: PlanSelectorProps) {
+  const dispatch: Dispatch<ConfigReducerAction> = useConfigDispatch();
 
   const handleSelect = (value: TrainingPlanId) => {
     dispatch({type: 'CHANGE_PLAN', payload: {trainingPlanId: value}});

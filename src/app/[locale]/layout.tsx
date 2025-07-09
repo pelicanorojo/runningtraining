@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-14T12:16:04-03:00
+ * @Last modified time: 2025-05-21T10:25:26-03:00
  */
 
 
@@ -16,7 +16,6 @@ import Providers from '@/app/providers';
 
 import localFont from "next/font/local";
 import "../globals.css";
-import React from 'react';
 import Layout from "@/components/ui/custom/layout";
 
 const geistSans = localFont({
@@ -37,7 +36,6 @@ export const metadata: Metadata = {
 };
 
 export default async function LocaleLayout({
-//export default function RootLayout({
   children,
   params: { locale }
 }: Readonly<{

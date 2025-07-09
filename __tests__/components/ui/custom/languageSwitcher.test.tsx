@@ -2,17 +2,13 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-07T11:40:33-03:00
+ * @Last modified time: 2025-07-07T11:24:05-03:00
  */
 
 
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
-//import userEvent from '@testing-library/user-event';
-import Header from '@/components/ui/custom/header';
 import {NextIntlClientProvider} from 'next-intl';
-import { defaultLocale } from '@/lib/constants';
-import LanguageSwitcher from '@/components/ui/custom/languageSwitcher';
 
 jest.mock('next/navigation', () => ({
   useRouter: () => ({
@@ -24,8 +20,9 @@ jest.mock('next/navigation', () => ({
   }),
 }));
 
-describe('LanguageSwitcher', () => {
+import LanguageSwitcher from '@/components/ui/custom/languageSwitcher';
 
+describe('LanguageSwitcher', () => {
   it('Should render with locale en as selected', () => {
 
     render(

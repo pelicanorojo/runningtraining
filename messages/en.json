@@ -2,15 +2,8 @@
 	"translationTest": "Translation test: en",
 	"commons": {
 		"rootPageMessage": "No plan and/or race date selected yet ...",
-		"plan": "Plan",
-		"raceDate": "Race Day",
-		"configuration": "Configuration",
-		"selectorTitle": "Select the training plan and race day.",
-		"schedule": "Schedule",
-		"trainingOrder": "Training Order",
-		"date": "Date",
-		"favorite": "Favorite",
-		"selectFavorite": "Choose favorite"
+		"btnAcept": "Acept",
+		"btnCancel": "Cancel"
 	},
 	"header": {
 		"title": "Marathon Training Planner"
@@ -22,7 +15,10 @@
     "unSelectedRaceDateValue":  "Select one",
     "selectorDescription": "Select the training plan, and the race date.",
     "selectorTitle": "Configuration",
-		"planPlaceHolder": "Select a training plan"
+		"planPlaceHolder": "Select a training plan",
+		"favoriteDescription": "Set / unset favorite popup.",
+		"setFavoriteTitle": "Set favorite",
+		"unsetFavoriteTitle": "Unset favorite"
 	},
 	"planSelector": {
     "test": "A test",

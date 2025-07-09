@@ -2,19 +2,15 @@
   "name": "runningtraining",
   "version": "0.1.0",
   "private": true,
-
-
-
-
   "scripts": {
     "dev": "next dev",
     "build": "prisma migrate deploy && next build",
     "start": "next start",
     "lint": "next lint",
     "test": "clear; jest",
-    "test:watch": "clear; jest --watch --detectOpenHandles",
+    "test:watch": "clear; jest --watch  --coverage --detectOpenHandles",
     "test:changes": "clear; jest --watch --onlyChanged --detectOpenHandles",
-    "start:db": "docker run --rm -p 5432:5432 -v postgres-data:/var/lib/postgresql/data -e POSTGRES_HOST_AUTH_METHOD=trust postgres",
+    "start:db": "docker run -d --rm -p 5432:5432 -v postgres-data:/var/lib/postgresql/data -e POSTGRES_HOST_AUTH_METHOD=trust postgres",
     "prisma:migrate:local": "dotenv -e .env.local -- npx prisma migrate dev --schema=prisma/schema.prisma",
     "prisma:generate:local": "dotenv -e .env.local -- npx prisma generate --schema=prisma/schema.prisma",
     "postinstall": "prisma generate"

@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-20T10:00:13-03:00
+ * @Last modified time: 2025-05-21T09:53:18-03:00
  */
 
 "use client"
@@ -33,7 +33,6 @@ export function AuthBox_() {
       </AvatarFallback>      
     </Avatar>
     <div>
-      {/*<span className="font-medium">{session?.data?.user?.name}</span>*/}
       <Button onClick={() => signOut()} className="ml-2">
         Sign out
       </Button>

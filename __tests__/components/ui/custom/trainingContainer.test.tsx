@@ -2,14 +2,13 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-07T08:57:38-03:00
+ * @Last modified time: 2025-07-07T11:52:13-03:00
  */
 
 global.Element.prototype.scrollIntoView = jest.fn();
 
 import '@testing-library/jest-dom';
-import { waitFor, render, screen, fireEvent, act } from '@testing-library/react';
-import TrainingContainer, { TrainingContainerHeader, TrainingContainerFooter } from '@/components/ui/custom/trainingContainer';
+import { waitFor, render, screen, fireEvent } from '@testing-library/react';
 import { KnownLocales, PlanDataParams } from '@/types/global';
 import { aSampleTrainingData, aLongSampleTrainingData } from '@/lib/mockConstants';
 import {NextIntlClientProvider} from 'next-intl';
@@ -26,6 +25,8 @@ global.fetch = jest.fn(() =>
 const locale: KnownLocales = 'en';
 const unSearcheableString = 'unSearcheableString';
 
+
+import TrainingContainer, { TrainingContainerHeader, TrainingContainerFooter } from '@/components/ui/custom/trainingContainer';
 describe('TrainingContainerHeader ...', () => {
   it('Should render with not null trainingData properly.', () => {
     
@@ -116,5 +117,4 @@ describe('TrainingContainer ...', () => {
       expect(content.length).toBe(1);
     });
   })
-  
 });

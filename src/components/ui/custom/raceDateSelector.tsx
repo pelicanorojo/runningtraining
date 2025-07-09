@@ -3,7 +3,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2024-12-20T01:35:15-03:00
+ * @Last modified time: 2025-07-01T12:26:20-03:00
  */
 
 
@@ -14,12 +14,14 @@ import { Input } from "@/components/ui/input"
 import { Dispatch } from 'react';
 import { ConfigReducerAction } from "@/types/global";
 
+import { useConfigDispatch } from '@/contexts/config';
+
 interface RaceDateSelectorProps {
   raceDate: string | undefined;
-  dispatch: Dispatch<ConfigReducerAction>
 }
 
-export default function RaceDateSelector({raceDate, dispatch}: RaceDateSelectorProps) {
+export default function RaceDateSelector({raceDate}: RaceDateSelectorProps) {
+  const dispatch: Dispatch<ConfigReducerAction> = useConfigDispatch();
 
   return (
       <Input

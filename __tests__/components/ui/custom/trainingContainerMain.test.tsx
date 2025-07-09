@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-30T10:30:09-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-07T09:01:03-03:00
+ * @Last modified time: 2025-07-07T11:52:38-03:00
  */
 
 import '@testing-library/jest-dom';
@@ -15,8 +15,6 @@ import  TrainingContainerMain, {
 
 import { Zone } from '@/types/global';
 import { aSampleTrainingData } from '@/lib/mockConstants';
-
-//const unSearcheableString = 'unSearcheableString';
 
 describe('seconds2Minutes ...', () => {
   it('Should convert 0 to 30 seconds to 0 minute.', () => {
