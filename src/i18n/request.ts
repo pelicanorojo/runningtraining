@@ -1,3 +1,10 @@
+/*
+ * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
+ * @Date: 2025-02-05T02:00:15-03:00
+ * @Last modified by: Pablo Benito <pelicanorojo>
+ * @Last modified time: 2025-07-31T08:46:34-03:00
+ */
+
 import {getRequestConfig} from 'next-intl/server';
 import {routing} from './routing';
  
@@ -12,6 +19,6 @@ export default getRequestConfig(async ({requestLocale}) => {
  
   return {
     locale,
-    messages: (await import(`../../messages/${locale}.json`)).default
+    messages: (await import(`@/i18n/messages/${locale}.json`)).default
   };
 });

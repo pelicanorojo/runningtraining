@@ -2,12 +2,12 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-27T12:23:29-03:00
+ * @Last modified time: 2025-07-31T11:59:40-03:00
  */
 
 // -- plan types
 //
-
+export type uString = string | undefined;
 export type TrainingPlanId = 'test' |
   '21k110m4wbw5m' |
   '21k110m6wbw5m' |
@@ -19,8 +19,66 @@ export type TrainingPlanId = 'test' |
   '42k250m4wbw5m' |
   '42k250m6wbw5m';
 
-//export type TrainingPlanId = string;
+export type uTrainingPlanId = TrainingPlanId | undefined;
+
+
+const VALID_TRAINING_PLAN_IDS = new Set<TrainingPlanId>([
+  'test',
+  '21k110m4wbw5m',
+  '21k110m6wbw5m',
+  '21k120m6wbw5m',
+  '42k230m4wbw5m',
+  '42k230m6wbw5m',
+  '42k240m4wbw5m',
+  '42k240m6wbw5m',
+  '42k250m4wbw5m',
+  '42k250m6wbw5m'
+]);
+
+export const isValidTrainingPlanId = (value: uString): value is TrainingPlanId => {
+   if (!(typeof value === 'string')) return false;
+
+  return VALID_TRAINING_PLAN_IDS.has(value as TrainingPlanId);
+};
+
+export const dbTrainingPlanIdPrefix = 'tp_';
+const dbTrainingPlanIdPrefixRegExp = new RegExp(`^${dbTrainingPlanIdPrefix}`);
+
+// Parser utility
+export const parseTrainingPlanId = (id: string): uTrainingPlanId => {
+  // discard '', undefined, null, etc.
+    if (!id) return undefined;
+  
+  const processed = id.replace(dbTrainingPlanIdPrefixRegExp, '');
+  
+  if (isValidTrainingPlanId(processed)) {
+    return processed;
+  }
+  
+  //console.warn(`Invalid training plan ID: "${processed}" (original: "${id}")`);
+  return undefined;
+};
+
 export type RaceDate = string;
+export type uRaceDate = RaceDate | undefined;
+
+
+export const isValidRaceDate = (value: uRaceDate): value is RaceDate => {
+
+  // is string?
+  if (! (typeof value === 'string')) return false;
+
+  // is well formatted?
+  const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+  if (!dateRegex.test(value )) return false;
+
+  // is a valid date?
+  const date = new Date(value);
+  return !isNaN(date.getTime());
+}
+
+
+export type TrainingPlan = `tp_${TrainingPlanId}`; // e.g., 'tp_21k110m4wbw5m'
 export type utcDate = string;
 
 export type TrainingPlanThinBack = {
@@ -38,25 +96,27 @@ export type TrainingPlanThinBackList = TrainingPlanThinBack[];
 export type TrainingPlanThinFrontList = TrainingPlanThinFront[];
 
 export type PlanConfig = {
-  trainingPlanId: TrainingPlanId | undefined;
-  raceDate: RaceDate | undefined;
-  favoriteTrainingPlanId: TrainingPlanId | undefined;
-  favoriteRaceDate: RaceDate | undefined;
+  trainingPlanId: uTrainingPlanId;
+  raceDate: uRaceDate;
+  favoriteTrainingPlanId: uTrainingPlanId;
+  favoriteRaceDate: uRaceDate;
 }
 
+// clean context reducer things
+/*
 export type KnownConfigReducerAction = 'CHANGE_PLAN' | 'CHANGE_RACEDATE' | 'SET_FAVORITE' | 'UNSET_FAVORITE' | 'CLEAR_FAVORITE';
 
 export type ChangePlanAction = {
   type: 'CHANGE_PLAN';
   payload: {
-    trainingPlanId: TrainingPlanId | undefined;
+    trainingPlanId: uTrainingPlanId;
   }
 }
 
 export type ChangeRacedateAction = {
   type: 'CHANGE_RACEDATE';
   payload: {
-    raceDate: RaceDate | undefined;
+    raceDate: uRaceDate;
   }
 }
 
@@ -64,8 +124,8 @@ export type ChangeRacedateAction = {
 export type SetFavoriteAction = {
   type: 'SET_FAVORITE';
   payload: {
-    trainingPlanId: TrainingPlanId | undefined;
-    raceDate: RaceDate | undefined;
+    trainingPlanId: uTrainingPlanId;
+    raceDate: uRaceDate;
   }
 }
 
@@ -82,7 +142,7 @@ export type ClearFavoriteAction = {
 }
 
 export type ConfigReducerAction = ChangePlanAction | ChangeRacedateAction | SetFavoriteAction | UnsetFavoriteAction | ClearFavoriteAction;
-
+*/
 // path types
 
 // training types

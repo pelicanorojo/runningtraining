@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-07-08T09:59:49-03:00
+ * @Last modified time: 2025-08-01T01:13:51-03:00
  */
 
 
@@ -13,7 +13,7 @@ import { generateScheduleFromPlan, formatDate } from '@/lib/helpers';
 
 import { loadRawPlanData } from '@/lib/loaders';
 import { trainingPlansAvailableFront } from "@/lib/constants";
-import { KnownLocales, RaceDate, TrainingPlanId } from '@/types/global';
+import { KnownLocales, RaceDate, TrainingPlanId, isValidRaceDate, isValidTrainingPlanId } from '@/types/global';
 
 interface ShowPlanPageProps {
   params: {
@@ -26,14 +26,31 @@ interface ShowPlanPageProps {
 export default async function ShowPlanPage({params}: ShowPlanPageProps) {
   const {trainingPlanId, raceDate, locale} = params;
   const today = formatDate(new Date());  
-  //TODO: check trainingPlanId and raceDate are valid, if not redirect to 404.
-  const rawPlanData = await loadRawPlanData(trainingPlanId , locale);
-  const scheduledTrainings = generateScheduleFromPlan(rawPlanData, raceDate);
-  const defaultOrder = scheduledTrainings.find( t => t.trainingDate >= today)?.order || scheduledTrainings.length;
+
+  const validPlanId = isValidTrainingPlanId(trainingPlanId);
+  const validRaceDate = isValidRaceDate(raceDate);
+
+  let rawPlanData 
+  
+  if (validPlanId) {
+    rawPlanData = await loadRawPlanData(trainingPlanId , locale);
+  }
+
+  let scheduledTrainings, defaultOrder;
+
+  if (validPlanId && validRaceDate && rawPlanData) {
+    scheduledTrainings = generateScheduleFromPlan(rawPlanData, raceDate);
+    defaultOrder = scheduledTrainings.find( t => t.trainingDate >= today)?.order || scheduledTrainings.length;
+  }
+
   return (
-    <>
-    <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]}/> 
-    <TrainingContainer  scheduledTrainings={scheduledTrainings} planDataParams={params} defaultOrder={defaultOrder}/>
-    </>
-  )
+      <>
+      <ConfigBar
+        trainingPlansAvailable={trainingPlansAvailableFront[locale]}
+        origTrainingPlanId={validPlanId ? trainingPlanId : undefined}
+        origRaceDate={validRaceDate ? raceDate : undefined}        
+      />
+      {scheduledTrainings && <TrainingContainer  scheduledTrainings={scheduledTrainings} planDataParams={params} defaultOrder={defaultOrder}/>}
+      </>
+    )
 }
