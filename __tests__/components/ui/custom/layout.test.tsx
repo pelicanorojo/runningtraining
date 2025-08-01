@@ -2,14 +2,14 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-07-07T11:24:19-03:00
+ * @Last modified time: 2025-07-31T08:40:44-03:00
  */
 
 
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { defaultLocale } from '@/lib/constants';
-import messages from '../../../../messages/en.json';
+import messages from '@/i18n/messages/en.json';
 import {NextIntlClientProvider} from 'next-intl';
 
 jest.mock('next/navigation', () => ({

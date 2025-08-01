@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-07-07T11:52:13-03:00
+ * @Last modified time: 2025-07-31T08:41:16-03:00
  */
 
 global.Element.prototype.scrollIntoView = jest.fn();
@@ -13,7 +13,7 @@ import { KnownLocales, PlanDataParams } from '@/types/global';
 import { aSampleTrainingData, aLongSampleTrainingData } from '@/lib/mockConstants';
 import {NextIntlClientProvider} from 'next-intl';
 
-import messages from '../../../../messages/en.json';
+import messages from '@/i18n//messages/en.json';
 
 
 // @ts-expect-error cause yes.

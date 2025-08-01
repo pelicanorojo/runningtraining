@@ -2,13 +2,11 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-07-01T12:26:20-03:00
+ * @Last modified time: 2025-07-30T10:51:02-03:00
  */
 
 
 'use client'
-//import { useTranslations} from 'next-intl';
-
 import {
   Select,
   SelectContent,
@@ -16,23 +14,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Dispatch } from 'react';
 
-import { TrainingPlanThinFrontList, TrainingPlanThinFront, TrainingPlanId, ConfigReducerAction } from "@/types/global";
+import { TrainingPlanThinFrontList, TrainingPlanThinFront, TrainingPlanId, uTrainingPlanId } from "@/types/global";
 
-import { useConfigDispatch } from '@/contexts/config';
+import { useAppStore } from '@/stores/useAppStore';
+
 
 interface PlanSelectorProps {
   availablePlans: TrainingPlanThinFrontList;
-  selectedPlanId?: TrainingPlanId;
+  selectedPlanId?: uTrainingPlanId;
   placeHolder?: string;
 }
 
 export default function PlanSelector ({selectedPlanId, availablePlans, placeHolder}: PlanSelectorProps) {
-  const dispatch: Dispatch<ConfigReducerAction> = useConfigDispatch();
+  const setTrainingPlanId = useAppStore((s) => s.setTrainingPlanIdAction);
+
 
   const handleSelect = (value: TrainingPlanId) => {
-    dispatch({type: 'CHANGE_PLAN', payload: {trainingPlanId: value}});
+    setTrainingPlanId(value)
   };
 
   const renderTrainingsList = (trainingList: TrainingPlanThinFrontList) => {

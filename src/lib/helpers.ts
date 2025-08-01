@@ -2,15 +2,21 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-20T01:08:43-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-07T12:36:28-03:00
+ * @Last modified time: 2025-07-31T11:49:33-03:00
  */
 
 import path from 'path';
 import process from 'process';
 import {plansSubFolder} from "@/lib/constants";
 import {TrainingPlanId, TrainingPlansAvailableBack, RawPlanData, PlanData, RaceDate, RawTrainingData, TrainingData, KnownLocales} from "@/types/global";
-
+import { dbTrainingPlanIdPrefix } from '@/types/global';
 import { trainingPlansAvailableBack } from "@/lib/constants";
+import { TrainingPlan } from '@prisma/client';
+
+export const constructDbTrainingPlanId = (trainingPlanId: TrainingPlanId): TrainingPlan => {
+  return `${dbTrainingPlanIdPrefix}${trainingPlanId}`;
+}
+
 /*
 export const trainingPlansAvailableFront:TrainingPlanThinFrontList = trainingPlansAvailableBack.map( p => {
   return {id: p.id, label: p.label};

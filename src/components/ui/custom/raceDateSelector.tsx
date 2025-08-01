@@ -3,7 +3,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-07-01T12:26:20-03:00
+ * @Last modified time: 2025-07-29T09:28:18-03:00
  */
 
 
@@ -11,29 +11,23 @@
 import { Input } from "@/components/ui/input"
 
 
-import { Dispatch } from 'react';
-import { ConfigReducerAction } from "@/types/global";
+import { uString } from "@/types/global";
 
-import { useConfigDispatch } from '@/contexts/config';
+import { useAppStore } from '@/stores/useAppStore';
 
 interface RaceDateSelectorProps {
-  raceDate: string | undefined;
+  raceDate: uString;
 }
 
 export default function RaceDateSelector({raceDate}: RaceDateSelectorProps) {
-  const dispatch: Dispatch<ConfigReducerAction> = useConfigDispatch();
+  const setRaceDate = useAppStore((s) => s.setRaceDateAction);
 
   return (
       <Input
         type="date"
         defaultValue={raceDate}
         className="w-[160px]"
-        onChange={(e) => {
-          dispatch({
-            type: 'CHANGE_RACEDATE'
-            , payload: {raceDate: e.target.value}
-          });
-        }}
+        onChange={ e => setRaceDate(e.target.value) }
       />
   );
 }
