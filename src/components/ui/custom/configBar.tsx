@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-22T10:12:07-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-08-02T05:08:00-03:00
+ * @Last modified time: 2025-08-02T05:53:43-03:00
  */
 
 'use client'
@@ -65,9 +65,9 @@ const FavoriteDialog = ({disabled, isFavorite, favoriteIconStyle, trainingLabel,
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button disabled={disabled} className="p-2 hover:bg-gray-100 rounded-full transition-colors" aria-label="Favorite Popup">
+        <Button disabled={disabled}  aria-label={t('favoriteDescription')} variant="outline" size="icon">
           <Star className="h-5 w-5" fill={isFavorite? 'orange' : 'white'} style={favoriteIconStyle}/>
-        </button>
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogDescription>{t("favoriteDescription")}</DialogDescription>
@@ -85,10 +85,10 @@ const FavoriteDialog = ({disabled, isFavorite, favoriteIconStyle, trainingLabel,
 
         <div className="flex flex-row items-center gap-2 place-content-between">
           <DialogClose asChild>
-            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors" aria-label="Favorite Cancel">{tc('btnCancel')}</button>
+            <Button aria-label={tc('btnCancel')} variant="default">{tc('btnCancel')}</Button>
           </DialogClose>
           <DialogClose asChild>
-            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors" aria-label="Favorite Acept" onClick={favoriteDistpatch}>{tc('btnAcept')}</button>
+            <Button aria-label={tc('btnAcept')} variant="default" onClick={favoriteDistpatch}>{tc('btnAcept')}</Button>
           </DialogClose>
         </div>
       </DialogContent>
