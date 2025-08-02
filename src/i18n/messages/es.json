@@ -9,6 +9,7 @@
 		"title": "Entrenamientos para maratón"
 	},  
 	"configBar": {
+    "useFavoriteLabel": "Cargar favorito",
 		"planLabel": "Plan",
     "unSelectedPlanValue": "Seleccione uno",
     "raceDateLabel": "Día de Carrera",

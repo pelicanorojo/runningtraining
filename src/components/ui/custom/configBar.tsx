@@ -2,12 +2,12 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-22T10:12:07-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-07-30T10:45:01-03:00
+ * @Last modified time: 2025-08-02T05:08:00-03:00
  */
 
 'use client'
 
-import {  useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useSession } from "next-auth/react";
 
 import { useRouter } from '@/i18n/routing';
@@ -35,6 +35,7 @@ import RaceDateSelector from '@/components/ui/custom/raceDateSelector';
 import LanguageSwitcher from '@/components/ui/custom/languageSwitcher';
 
 import { useAppStore } from '@/stores/useAppStore';
+import { Button } from '../button';
 
 
 
@@ -99,15 +100,18 @@ interface ConfigDialogProps {
   trainingPlansAvailable: TrainingPlanThinFrontList;
   trainingPlanId: uTrainingPlanId;
   raceDate: uRaceDate;
+  useFavoritesEnabled: boolean
   t: (x: string) => string;
 };
 
-const ConfigDialog = ({trainingPlansAvailable, trainingPlanId, raceDate, t}: ConfigDialogProps) => {
+const ConfigDialog = ({trainingPlansAvailable, trainingPlanId, raceDate, useFavoritesEnabled, t}: ConfigDialogProps) => {
+    const useFavorites = useAppStore((s) => s.useFavorites);
+// <Button className="p-2 hover:bg-gray-100 rounded-full transition-colors" aria-label="Config Popup">
     return (<Dialog>
     <DialogTrigger asChild>
-      <button className="p-2 hover:bg-gray-100 rounded-full transition-colors" aria-label="Config Popup">
+      <Button aria-label={t('selectorTitle')} variant="default" size="icon">
         <Settings className="h-5 w-5" />
-      </button>
+      </Button>
     </DialogTrigger>
     <DialogContent className="sm:max-w-[425px]">
       <DialogDescription>{t('selectorDescription')}</DialogDescription>
@@ -115,6 +119,14 @@ const ConfigDialog = ({trainingPlansAvailable, trainingPlanId, raceDate, t}: Con
         <DialogTitle>{t('selectorTitle')}</DialogTitle>
       </DialogHeader>
       <LanguageSwitcher/>
+      <div className="flex flex-row items-end gap-2 place-content-between">
+        <Button 
+        aria-label={t('useFavoriteLabel')}
+            onClick={() => useFavorites()} disabled={!useFavoritesEnabled}>        
+           {t('useFavoriteLabel')}
+        </Button>
+      </div>
+      <h3>O Elija</h3>
       <div className="flex flex-row items-center gap-2 place-content-between">
         <h3>{t('planLabel')}: </h3>
         <PlanSelector availablePlans={trainingPlansAvailable} selectedPlanId={trainingPlanId} placeHolder={t('planPlaceHolder')}/>
@@ -136,6 +148,7 @@ interface ConfigBarProps {
 
 export default function ConfigBar({trainingPlansAvailable, origTrainingPlanId, origRaceDate}: ConfigBarProps) {
   const initialized = useAppStore((s) => s.initialized);
+  const initializedFavorites = useAppStore((s) => s.initializedFavorites);
   const init = useAppStore((s) => s.init);
 
   useEffect(() => {
@@ -161,20 +174,24 @@ export default function ConfigBar({trainingPlansAvailable, origTrainingPlanId, o
   const prevRaceDate = useRef(raceDate);
 
   const session = useSession();
+  
+  const userId = session.data?.user?.id;
+  const userAuthenticated = session.status === 'authenticated';
 
   const setFavoriteAction = useAppStore((s) => s.setFavoriteAction);
   const clearFavorite = useAppStore((s) => s.clearFavoriteAction);
   const loadFavorites = useAppStore((s) => s.loadFavoritesAction);
   
   useEffect(() => {
-    if (session.status === 'authenticated' && !useAppStore.getState().initializedFavorites) {
-      loadFavorites(session.data?.user?.id as string);
+    if (userAuthenticated && !initializedFavorites) {
+      if (!userId) return;
+      loadFavorites(userId);
     }
-  }, [session.status, session.data, loadFavorites]);
+  }, [initializedFavorites, userAuthenticated, userId, loadFavorites]);
 
   const trainingLabel = trainingPlansAvailable.find( t => t.id === trainingPlanId)?.label;
 
-  const favoriteIsEnabled = !!(session.status === 'authenticated' && trainingPlanId && raceDate);
+  const favoriteIsEnabled = !!(userAuthenticated && trainingPlanId && raceDate);
 
   const favoriteIconStyle = {
     opacity: favoriteIsEnabled ? 1 : 0.5 ,
@@ -185,8 +202,10 @@ export default function ConfigBar({trainingPlansAvailable, origTrainingPlanId, o
   const isFavorite = favoriteIsEnabled  &&
     trainingPlanId === favoriteTrainingPlanId && raceDate === favoriteRaceDate;
 
-  useEffect(() => {
+  const  useFavoritesEnabled = !!(userAuthenticated && favoriteTrainingPlanId && favoriteRaceDate);
+  
 
+  useEffect(() => {
     if (!initialized) {
       prevTrainingPlanId.current = origTrainingPlanId;
       prevRaceDate.current = origRaceDate;
@@ -209,7 +228,6 @@ export default function ConfigBar({trainingPlansAvailable, origTrainingPlanId, o
 
   const t = useTranslations('configBar');
   
-  const userId = session.data?.user?.id;
 
   const dispatchSetFavorite = async () => {
     if (!trainingPlanId || !raceDate) return;
@@ -232,7 +250,7 @@ export default function ConfigBar({trainingPlansAvailable, origTrainingPlanId, o
           trainingLabel
             ? `${t('planLabel')}: ${trainingLabel}`
             : <>{t('planLabel')}: {t('unSelectedPlanValue')} <MoveRightIcon className="inline-block h-4 w-4"/></>
-          }    
+          }
           </div>
           <div className="flex-1 text-sm">
           {
@@ -242,7 +260,7 @@ export default function ConfigBar({trainingPlansAvailable, origTrainingPlanId, o
           }
           </div>
         </div>
-        <ConfigDialog  trainingPlansAvailable={trainingPlansAvailable} trainingPlanId={trainingPlanId} raceDate={raceDate} t={t} />
+        <ConfigDialog  trainingPlansAvailable={trainingPlansAvailable} trainingPlanId={trainingPlanId} raceDate={raceDate} useFavoritesEnabled={useFavoritesEnabled} t={t} />
       </div>
     </div>
   );

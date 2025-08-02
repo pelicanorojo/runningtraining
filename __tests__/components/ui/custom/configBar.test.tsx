@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-25T01:44:44-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-07-31T08:39:57-03:00
+ * @Last modified time: 2025-08-02T05:11:50-03:00
  */
 
 
@@ -32,7 +32,7 @@ jest.mock('next/navigation', () => ({
 }));
 
 jest.mock('next-auth/react', () => ({
-  useSession: () => jest.fn(),
+  useSession: jest.fn(),
 }));
 
 
@@ -52,12 +52,17 @@ afterEach(() => {
 
 const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[locale][1];
 const otheraTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[locale][2];
-
+const aRaceDate = '2024-12-01';
+const otherDate = '2024-11-02';
 
 import ConfigBar from '@/components/ui/custom/configBar';
 
 describe('ConfigBar ...', () => {
+  // Import useSession mock for local override
+  const { useSession } = require('next-auth/react');
+
   it('Should show placeholders on subtitles when some initial state undefined.', () => {
+    useSession.mockReturnValue({ status: 'unauthenticated', data: null });
     render(
         <NextIntlClientProvider
           locale={locale}
@@ -67,16 +72,59 @@ describe('ConfigBar ...', () => {
       </NextIntlClientProvider>
     );
 
-    const theText =   screen.getByText('Plan: Select one');
-
+    const theText = screen.getByText(`${messages.configBar.planLabel}: ${messages.configBar.unSelectedPlanValue}`);
     expect(theText).toBeInTheDocument();
-
-    const theDate =  screen.getByText('Race Date: ( Select one )');
-    expect(theDate).toBeInTheDocument();     
+    const theDate = screen.getByText(`${messages.configBar.raceDateLabel}: ( ${messages.configBar.unSelectedRaceDateValue} )`);
+    expect(theDate).toBeInTheDocument();
   })
 
+  it('Should enable Load Favorite button only when user and favorite exist, and call useFavorites', async () => {
+    useSession.mockReturnValue({ status: 'authenticated', data: { user: { id: 'user1' } } });
+    // Set up store with favorite values
+    useAppStore.setState({
+      favoriteTrainingPlanId: aTrainingPlan.id,
+      favoriteRaceDate: aRaceDate,
+      initializedFavorites: true,
+      trainingPlanId: undefined,
+      raceDate: undefined
+    });
+    render(
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} />
+      </NextIntlClientProvider>
+    );
+    // Open config dialog
+    const configBtn = screen.getByRole('button', { name: messages.configBar.selectorTitle });
+    fireEvent.click(configBtn);
+
+    // Load Favorite button should be enabled
+    const loadFavBtn = await screen.getByRole('button', { name: messages.configBar.useFavoriteLabel });
+    expect(loadFavBtn).toBeEnabled();
+
+    // Click it and check store values change
+    fireEvent.click(loadFavBtn);
+    expect(useAppStore.getState().trainingPlanId).toBe(aTrainingPlan.id);
+    expect(useAppStore.getState().raceDate).toBe(aRaceDate);
+  });
+
+  it('Should disable Load Favorite button if not authenticated or no favorite', async () => {
+    useSession.mockReturnValue({ status: 'unauthenticated', data: null });
+    useAppStore.setState({
+      favoriteTrainingPlanId: undefined,
+      favoriteRaceDate: undefined,
+      initializedFavorites: false
+    });
+    render(
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} />
+      </NextIntlClientProvider>
+    );
+    fireEvent.click(screen.getByRole('button', { name: messages.configBar.selectorTitle }));
+    const loadFavBtn = await screen.findByRole('button', { name: messages.configBar.useFavoriteLabel });
+    expect(loadFavBtn).toBeDisabled();
+  });
+
   it('Should render the popup with its childs initialized with the param initialState.',  async ()  => {
-    const aRaceDate = '2024-12-01';
     render(
       <NextIntlClientProvider
         locale={locale}
@@ -86,7 +134,7 @@ describe('ConfigBar ...', () => {
       </NextIntlClientProvider>
     );  
 
-    const thePopupTrigger = screen.getByRole('button', {name: 'Config Popup'});
+    const thePopupTrigger = screen.getByRole('button', {name: messages.configBar.selectorTitle});
 
     fireEvent.click(thePopupTrigger);
 
@@ -99,7 +147,6 @@ describe('ConfigBar ...', () => {
   })
 
   it('Should not initialy redirect to the initialState past param.', () => {
-    const aRaceDate = '2024-12-01';
     render(
       <NextIntlClientProvider
         locale={locale}
@@ -112,7 +159,6 @@ describe('ConfigBar ...', () => {
   })
 
   it('Should redirect, if changed to a valid plan.', async() => {
-    const aRaceDate = '2024-12-01';
 
     // Initial render with the original plan and date
     render(
@@ -139,18 +185,15 @@ describe('ConfigBar ...', () => {
 
   it('Should redirect, if changed to a valid race date.', async () => {
 
-    const aDate = '2024-12-01';
-
     render(
       <NextIntlClientProvider
         locale={locale}
         messages={messages}
       >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aDate} />
+        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aRaceDate} />
       </NextIntlClientProvider>
     );
 
-    const otherDate = '2024-11-02';
     // Simulate changing the raceDate
     await act(async() => {
       const state = useAppStore.getState();
@@ -164,14 +207,13 @@ describe('ConfigBar ...', () => {
   })
 
   it('Should not redirect, if changed to the same values.', () => {
-    const aDate = '2024-12-01';
 
     const { rerender } = render(
       <NextIntlClientProvider
         locale={locale}
         messages={messages}
       >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aDate} />
+        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aRaceDate} />
       </NextIntlClientProvider>
     );
 
@@ -180,7 +222,7 @@ describe('ConfigBar ...', () => {
         locale={locale}
         messages={messages}
       >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aDate} />
+        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aRaceDate} />
       </NextIntlClientProvider>
     );
 
