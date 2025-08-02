@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-07-30T10:51:02-03:00
+ * @Last modified time: 2025-08-02T09:32:24-03:00
  */
 
 
@@ -29,7 +29,6 @@ interface PlanSelectorProps {
 export default function PlanSelector ({selectedPlanId, availablePlans, placeHolder}: PlanSelectorProps) {
   const setTrainingPlanId = useAppStore((s) => s.setTrainingPlanIdAction);
 
-
   const handleSelect = (value: TrainingPlanId) => {
     setTrainingPlanId(value)
   };
@@ -41,8 +40,9 @@ export default function PlanSelector ({selectedPlanId, availablePlans, placeHold
       );
     })
   }
+  const selectValue = selectedPlanId || '';
   return (
-      <Select value={selectedPlanId} onValueChange={handleSelect}>
+      <Select value={selectValue} onValueChange={handleSelect}>
         <SelectTrigger className="w-[280px]"  aria-label="Plan Selector">
         <SelectValue placeholder={placeHolder} />
         </SelectTrigger>
