@@ -9,6 +9,7 @@
 		"title": "Marathon Training Planner"
 	},
 	"configBar": {
+    "useFavoriteLabel": "Load favorite",
 		"planLabel": "Plan",
     "unSelectedPlanValue": "Select one",
     "raceDateLabel": "Race Date",

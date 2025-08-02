@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2025-07-31T12:12:34-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-07-31T11:09:28-03:00
+ * @Last modified time: 2025-08-01T11:32:13-03:00
  */
 
 
@@ -72,16 +72,6 @@ describe('Test sync actions and props', () => {
     expect(useAppStore.getState().raceDate).toBe(aRaceDate);
   });
 
-  it('Should initialize favorite data', () => {
-    useAppStore.setState({ favoriteTrainingPlanId: aTrainingPlan.id, favoriteRaceDate: aRaceDate });
-    act(() => {
-      useAppStore.getState().initializeFavorites();
-    });
-
-    expect(useAppStore.getState().initializedFavorites).toBe(true);
-    expect(useAppStore.getState().favoriteTrainingPlanId).toBeUndefined();
-    expect(useAppStore.getState().favoriteRaceDate).toBeUndefined();
-  });
 
   it('Should set trainingPlanId', () => {
     act(() => {

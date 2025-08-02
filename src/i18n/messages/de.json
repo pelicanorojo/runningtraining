@@ -9,6 +9,7 @@
 		"title": "Marathon-Trainingsplaner"
 	},
   "configBar": {
+    "useFavoriteLabel": "Favorit laden",
     "planLabel": "Plan",
     "unSelectedPlanValue": "Wählen Sie einen aus",
     "raceDateLabel": "Renndatum",
@@ -16,8 +17,8 @@
     "selectorDescription": "Wählen Sie den Trainingsplan und das Renndatum aus.",
     "selectorTitle": "Konfiguration",
     "planPlaceHolder": "Wählen Sie einen Trainingsplan aus",
-		"favoriteDescription": "TODO",
-		"setFavoriteTitle": "TODO",
-		"unsetFavoriteTitle": "TODO"
+    "favoriteDescription": "Favoriten-Popup setzen/aufheben.",
+    "setFavoriteTitle": "Favorit setzen",
+		"unsetFavoriteTitle": "Favorit aufheben"
   }
 }

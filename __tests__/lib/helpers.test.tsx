@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-26T10:53:01-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-02-07T01:49:22-03:00
+ * @Last modified time: 2025-08-02T05:33:00-03:00
  */
 
 
@@ -137,7 +137,42 @@ describe('Helper shiftDate', () => {
   });
 });
 
-//TODO: dateDiff tests
+
+describe('generateTrainingFromPlan', () => {
+  const raceDate = '2024-12-15';
+  const theRawData = aRawPlanData as RawPlanData;
+
+  it('should return correct training data for a valid order', () => {
+    // Use an order that exists in the test data
+    const order = theRawData.results[0].order;
+    const result = helpers.generateTrainingFromPlan({ planData: theRawData, raceDate, order });
+    expect(result).not.toBeNull();
+    if (result) {
+      // Check mapped fields
+      expect(result.workoutName).toEqual(theRawData.results[0].workoutName);
+      expect(result.order).toEqual(order);
+      expect(result.recommendedTime).toEqual(theRawData.results[0].recommendedTime);
+      expect(Array.isArray(result.intervals)).toBe(true);
+      expect(result.trainingDate).toMatch(/\d{4}-\d{2}-\d{2}/);
+    }
+  });
+
+  it('should return null if order does not exist', () => {
+    const invalidOrder = 9999;
+    const result = helpers.generateTrainingFromPlan({ planData: theRawData, raceDate, order: invalidOrder });
+    expect(result).toBeNull();
+  });
+
+  it('should shift the training date so last training is the day before race', () => {
+    // The first result in test data is the last training (by contract)
+    const lastOrder = theRawData.results[0].order;
+    const result = helpers.generateTrainingFromPlan({ planData: theRawData, raceDate, order: lastOrder });
+    if (result) {
+      const expectedDate = helpers.formatDate(helpers.shiftDate(helpers.createUTCDateFromString(raceDate), -1));
+      expect(result.trainingDate).toEqual(expectedDate);
+    }
+  });
+});
 
 //generateScheduleFromPlan
 describe('generateScheduleFromPlan', () => {
