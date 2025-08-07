@@ -2,37 +2,25 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-22T10:12:07-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-08-02T05:53:43-03:00
+ * @Last modified time: 2025-08-05T07:34:35-03:00
  */
 
 'use client'
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useSession } from "next-auth/react";
 
 import { useRouter } from '@/i18n/routing';
 import { useTranslations} from 'next-intl';
 
-import {
-  DialogClose,
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
 
-import { Star, Settings, MoveRightIcon } from 'lucide-react';
+import { MoveRightIcon } from 'lucide-react';
 
-import { PlanConfig, TrainingPlanThinFrontList, uTrainingPlanId, uRaceDate, PlanDataParams, isValidRaceDate, isValidTrainingPlanId } from "@/types/global";
+import { PlanConfig, TrainingPlanThinFrontList, uTrainingPlanId, uRaceDate, PlanDataParams, isValidRaceDate, isValidTrainingPlanId, TrainingPlanId } from "@/types/global";
 import paths from '@/lib/paths';
 
-import PlanSelector from '@/components/ui/custom/planSelector';
-
-import RaceDateSelector from '@/components/ui/custom/raceDateSelector';
-
-import LanguageSwitcher from '@/components/ui/custom/languageSwitcher';
+import ConfigDialog from '@/components/ui/custom/configDialog';
+import FavoriteDialog from '@/components/ui/custom/configFavoriteDialog';
 
 import { useAppStore } from '@/stores/useAppStore';
 import { Button } from '../button';
@@ -45,133 +33,17 @@ function isValidRouteData (availablePlans: TrainingPlanThinFrontList, {trainingP
   return selectedPlanOk && selectedRaceDateOk
 }
 
-interface FavoriteDialogProps {
-  disabled: boolean;
-  isFavorite: boolean;
-  favoriteIconStyle: {opacity: number; color: string; cursor: string};
-  trainingLabel: string;
-  raceDate: uRaceDate;  
-  t: (x: string) => string;
-  dispatch: () => void;
-};
-
-
-const FavoriteDialog = ({disabled, isFavorite, favoriteIconStyle, trainingLabel, raceDate, t, dispatch}: FavoriteDialogProps) => {
-  const tc = useTranslations('commons');
-  const favoriteDistpatch = () => (
-    dispatch()
-  )
-  
-  return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button disabled={disabled}  aria-label={t('favoriteDescription')} variant="outline" size="icon">
-          <Star className="h-5 w-5" fill={isFavorite? 'orange' : 'white'} style={favoriteIconStyle}/>
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogDescription>{t("favoriteDescription")}</DialogDescription>
-        <DialogHeader>
-          <DialogTitle>{t(isFavorite ? 'unsetFavoriteTitle' : 'setFavoriteTitle')}</DialogTitle>
-        </DialogHeader>
-        <div className='flex-1 flex flex-col'>
-          <div className="flex-1 text-sm">
-          {`${t('planLabel')}: ${trainingLabel}`}    
-          </div>
-          <div className="flex-1 text-sm">
-          {`${t('raceDateLabel')}: (${raceDate})`}
-          </div>
-        </div>
-
-        <div className="flex flex-row items-center gap-2 place-content-between">
-          <DialogClose asChild>
-            <Button aria-label={tc('btnCancel')} variant="default">{tc('btnCancel')}</Button>
-          </DialogClose>
-          <DialogClose asChild>
-            <Button aria-label={tc('btnAcept')} variant="default" onClick={favoriteDistpatch}>{tc('btnAcept')}</Button>
-          </DialogClose>
-        </div>
-      </DialogContent>
-    </Dialog>
-  );
-}
-
-interface ConfigDialogProps {
-  trainingPlansAvailable: TrainingPlanThinFrontList;
-  trainingPlanId: uTrainingPlanId;
-  raceDate: uRaceDate;
-  useFavoritesEnabled: boolean
-  t: (x: string) => string;
-};
-
-const ConfigDialog = ({trainingPlansAvailable, trainingPlanId, raceDate, useFavoritesEnabled, t}: ConfigDialogProps) => {
-    const useFavorites = useAppStore((s) => s.useFavorites);
-// <Button className="p-2 hover:bg-gray-100 rounded-full transition-colors" aria-label="Config Popup">
-    return (<Dialog>
-    <DialogTrigger asChild>
-      <Button aria-label={t('selectorTitle')} variant="default" size="icon">
-        <Settings className="h-5 w-5" />
-      </Button>
-    </DialogTrigger>
-    <DialogContent className="sm:max-w-[425px]">
-      <DialogDescription>{t('selectorDescription')}</DialogDescription>
-      <DialogHeader>
-        <DialogTitle>{t('selectorTitle')}</DialogTitle>
-      </DialogHeader>
-      <LanguageSwitcher/>
-      <div className="flex flex-row items-end gap-2 place-content-between">
-        <Button 
-        aria-label={t('useFavoriteLabel')}
-            onClick={() => useFavorites()} disabled={!useFavoritesEnabled}>        
-           {t('useFavoriteLabel')}
-        </Button>
-      </div>
-      <h3>O Elija</h3>
-      <div className="flex flex-row items-center gap-2 place-content-between">
-        <h3>{t('planLabel')}: </h3>
-        <PlanSelector availablePlans={trainingPlansAvailable} selectedPlanId={trainingPlanId} placeHolder={t('planPlaceHolder')}/>
-      </div>
-      <div className="flex flex-row items-center gap-2 place-content-between">
-      <h3>{t('raceDateLabel')}: </h3>
-      <RaceDateSelector raceDate={raceDate} />
-      </div>
-    </DialogContent>
-  </Dialog>);
-}
-
-
 interface ConfigBarProps {
   trainingPlansAvailable: TrainingPlanThinFrontList;
   origTrainingPlanId?: uTrainingPlanId;
   origRaceDate?: uRaceDate;
 };
 
-export default function ConfigBar({trainingPlansAvailable, origTrainingPlanId, origRaceDate}: ConfigBarProps) {
-  const initialized = useAppStore((s) => s.initialized);
-  const initializedFavorites = useAppStore((s) => s.initializedFavorites);
-  const init = useAppStore((s) => s.init);
-
-  useEffect(() => {
-    if (initialized) return;
-
-    // Initialize the store with the original values if they are provided
-    init({
-      trainingPlanId: origTrainingPlanId,
-      raceDate: origRaceDate,
-    });
-  }, [initialized, origTrainingPlanId, origRaceDate, init]);
-
-  const trainingPlanId = useAppStore(s => s.trainingPlanId);
-  
-  const raceDate = useAppStore(s => s.raceDate);
-
+export default function ConfigBar({trainingPlansAvailable, origTrainingPlanId, origRaceDate}: ConfigBarProps) { // Clean plan and date
   const favoriteTrainingPlanId = useAppStore((s) => s.favoriteTrainingPlanId);
   const favoriteRaceDate = useAppStore((s) => s.favoriteRaceDate);
   
   const router = useRouter();
-
-  const prevTrainingPlanId = useRef(trainingPlanId);
-  const prevRaceDate = useRef(raceDate);
 
   const session = useSession();
   
@@ -183,67 +55,59 @@ export default function ConfigBar({trainingPlansAvailable, origTrainingPlanId, o
   const loadFavorites = useAppStore((s) => s.loadFavoritesAction);
   
   useEffect(() => {
-    if (userAuthenticated && !initializedFavorites) {
+    if (userAuthenticated) {
       if (!userId) return;
       loadFavorites(userId);
     }
-  }, [initializedFavorites, userAuthenticated, userId, loadFavorites]);
+  }, [ userAuthenticated, userId, loadFavorites]);
 
-  const trainingLabel = trainingPlansAvailable.find( t => t.id === trainingPlanId)?.label;
+  const trainingLabel = trainingPlansAvailable.find( t => t.id === origTrainingPlanId)?.label;
 
-  const favoriteIsEnabled = !!(userAuthenticated && trainingPlanId && raceDate);
+  const changeFavoriteIsEnabled = !!(userAuthenticated && origTrainingPlanId && origRaceDate);
 
   const favoriteIconStyle = {
-    opacity: favoriteIsEnabled ? 1 : 0.5 ,
-    color: favoriteIsEnabled ?  'currentColor': '#888', // or your desired color
-    cursor: favoriteIsEnabled ? 'pointer' : 'not-allowed',
+    opacity: changeFavoriteIsEnabled ? 1 : 0.5 ,
+    color: changeFavoriteIsEnabled ?  'currentColor': '#888', // or your desired color
+    cursor: changeFavoriteIsEnabled ? 'pointer' : 'not-allowed',
   };
 
-  const isFavorite = favoriteIsEnabled  &&
-    trainingPlanId === favoriteTrainingPlanId && raceDate === favoriteRaceDate;
+  const isFavorite = changeFavoriteIsEnabled  &&
+    origTrainingPlanId === favoriteTrainingPlanId && origRaceDate === favoriteRaceDate;
 
   const  useFavoritesEnabled = !!(userAuthenticated && favoriteTrainingPlanId && favoriteRaceDate);
   
-
-  useEffect(() => {
-    if (!initialized) {
-      prevTrainingPlanId.current = origTrainingPlanId;
-      prevRaceDate.current = origRaceDate;
+  const loadNewPlanData = (planConfig: PlanConfig) => {
+    if (isValidRouteData(trainingPlansAvailable, planConfig)) {
+      router.push(paths.trainingPlanShow(planConfig as PlanDataParams));
     }
-  }, [initialized, origTrainingPlanId, , origRaceDate])
+  }
 
-
-  useEffect(() => {
-    if (!initialized) {return;}
-
-    if (
-      prevTrainingPlanId.current !== trainingPlanId ||
-      prevRaceDate.current !== raceDate
-    ) {
-      if (isValidRouteData(trainingPlansAvailable, { trainingPlanId, raceDate} as PlanConfig)) {
-        router.push(paths.trainingPlanShow({ trainingPlanId, raceDate} as PlanDataParams));
-      }
-    }
-  }, [initialized, trainingPlanId, raceDate, router, trainingPlansAvailable])
+  const onLoadFavorites = () => {
+    if (!favoriteTrainingPlanId || !favoriteRaceDate) return;
+    loadNewPlanData({
+      trainingPlanId: favoriteTrainingPlanId,
+      raceDate: favoriteRaceDate
+    });
+  }
 
   const t = useTranslations('configBar');
   
 
   const dispatchSetFavorite = async () => {
-    if (!trainingPlanId || !raceDate) return;
-    await setFavoriteAction(userId as string, trainingPlanId , raceDate as string);
+    if (!origTrainingPlanId || !origRaceDate) return;
+    await setFavoriteAction(userId as string, origTrainingPlanId as TrainingPlanId, origRaceDate as string);
   };
 
   const dispatchClearFavorite = async () => {
     await clearFavorite(userId as string);
   };
 
-  const dispatchFavorite = isFavorite ? dispatchClearFavorite : dispatchSetFavorite
+  const dispatchFavorite = isFavorite ? dispatchClearFavorite : dispatchSetFavorite;
 
   return (
     <div className="container w-full">
       <div className="flex flex-row items-center gap-6 p-4 bg-background border-b">
-        <FavoriteDialog disabled={!favoriteIsEnabled} isFavorite={isFavorite} favoriteIconStyle={favoriteIconStyle} trainingLabel={trainingLabel as string} raceDate={raceDate} t={t} dispatch={dispatchFavorite}/>
+        <FavoriteDialog disabled={!changeFavoriteIsEnabled} isFavorite={isFavorite} favoriteIconStyle={favoriteIconStyle} trainingLabel={trainingLabel as string} raceDate={origRaceDate} dispatch={dispatchFavorite}/>
         <div className='flex-1 flex flex-col'>
           <div className="flex-1 text-sm">
           {
@@ -254,13 +118,18 @@ export default function ConfigBar({trainingPlansAvailable, origTrainingPlanId, o
           </div>
           <div className="flex-1 text-sm">
           {
-          raceDate
-            ? `${t('raceDateLabel')}: (${raceDate})`
+          origRaceDate
+            ? `${t('raceDateLabel')}: (${origRaceDate})`
             : <>{t('raceDateLabel')}: ( {t('unSelectedRaceDateValue')} <MoveRightIcon className="inline-block h-4 w-4"/>)</>
           }
           </div>
         </div>
-        <ConfigDialog  trainingPlansAvailable={trainingPlansAvailable} trainingPlanId={trainingPlanId} raceDate={raceDate} useFavoritesEnabled={useFavoritesEnabled} t={t} />
+        <Button disabled={!useFavoritesEnabled}
+            aria-label={t('goToFavorites')}
+            onClick={onLoadFavorites} >        
+           {t('goToFavorites')}
+        </Button>
+        <ConfigDialog  trainingPlansAvailable={trainingPlansAvailable} trainingPlanId={origTrainingPlanId} raceDate={origRaceDate} useFavoritesEnabled={useFavoritesEnabled} loadNewPlanData={loadNewPlanData} />
       </div>
     </div>
   );

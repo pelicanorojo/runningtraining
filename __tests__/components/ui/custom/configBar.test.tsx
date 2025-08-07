@@ -2,12 +2,11 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-25T01:44:44-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-08-02T05:11:50-03:00
+ * @Last modified time: 2025-08-06T09:05:48-03:00
  */
 
-
 import '@testing-library/jest-dom';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen, fireEvent, act, waitFor } from '@testing-library/react';
 import { KnownLocales, TrainingPlanId, TrainingPlanThinFront } from "@/types/global";
 import { trainingPlansAvailableFront } from "@/lib/constants";
 import paths from '@/lib/paths';
@@ -23,6 +22,25 @@ console.log('DBG: NODE_ENV, @testing-library/react getConfig',  process.env.NODE
 const locale :KnownLocales = 'en';
 
 const pushMock = jest.fn(); // a shared one for when on the component useEffect should redirec
+
+
+
+jest.mock('@/components/ui/custom/configFavoriteDialog', () => ({
+  __esModule: true, // <-- important for default exports
+  default: jest.fn(() => null), // stub component
+}));
+
+import FavoriteDialog from '@/components/ui/custom/configFavoriteDialog';
+const FavoriteDialogMock = FavoriteDialog as jest.Mock;
+
+
+jest.mock('@/components/ui/custom/configDialog', () => ({
+  __esModule: true, // <-- important for default exports
+  default: jest.fn(() => <button>config button</button>), // stub component
+}));
+
+import ConfigDialog from '@/components/ui/custom/configDialog';
+const ConfigDialogMock = ConfigDialog as jest.Mock;
 
 jest.mock('next/navigation', () => ({
   usePathname: () => '/',
@@ -51,182 +69,303 @@ afterEach(() => {
 });
 
 const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[locale][1];
-const otheraTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[locale][2];
 const aRaceDate = '2024-12-01';
-const otherDate = '2024-11-02';
+
+ // Mock for db commands
+jest.mock('@/actions/index', () => {
+  return {
+    setFavorites: jest.fn(async () => undefined),
+    clearFavorites: jest.fn(async () => undefined),
+    loadFavorites: jest.fn(async () => ({
+      trainingId: aTrainingPlan.id,
+      raceDate: aRaceDate
+    }))
+  };
+});
 
 import ConfigBar from '@/components/ui/custom/configBar';
 
 describe('ConfigBar ...', () => {
   // Import useSession mock for local override
   const { useSession } = require('next-auth/react');
+  describe('Favorite set/unset control', () => {
+    it('Should be enable if user authenticated, and training plan data ok.', async () => {
+      useSession.mockReturnValue({ status: 'authenticated', data: null });
 
-  it('Should show placeholders on subtitles when some initial state undefined.', () => {
-    useSession.mockReturnValue({ status: 'unauthenticated', data: null });
-    render(
+      render(
         <NextIntlClientProvider
           locale={locale}
           messages={messages}
         >
-          <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]}/>
-      </NextIntlClientProvider>
-    );
+          <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aRaceDate} />
+        </NextIntlClientProvider>
+      );
 
-    const theText = screen.getByText(`${messages.configBar.planLabel}: ${messages.configBar.unSelectedPlanValue}`);
-    expect(theText).toBeInTheDocument();
-    const theDate = screen.getByText(`${messages.configBar.raceDateLabel}: ( ${messages.configBar.unSelectedRaceDateValue} )`);
-    expect(theDate).toBeInTheDocument();
-  })
+      // pick the handler from the calls history
+      const { disabled } = (FavoriteDialogMock).mock.calls[0][0];
 
-  it('Should enable Load Favorite button only when user and favorite exist, and call useFavorites', async () => {
-    useSession.mockReturnValue({ status: 'authenticated', data: { user: { id: 'user1' } } });
-    // Set up store with favorite values
-    useAppStore.setState({
-      favoriteTrainingPlanId: aTrainingPlan.id,
-      favoriteRaceDate: aRaceDate,
-      initializedFavorites: true,
-      trainingPlanId: undefined,
-      raceDate: undefined
+      expect(disabled).toBe(false);
     });
-    render(
-      <NextIntlClientProvider locale={locale} messages={messages}>
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} />
-      </NextIntlClientProvider>
-    );
-    // Open config dialog
-    const configBtn = screen.getByRole('button', { name: messages.configBar.selectorTitle });
-    fireEvent.click(configBtn);
 
-    // Load Favorite button should be enabled
-    const loadFavBtn = await screen.getByRole('button', { name: messages.configBar.useFavoriteLabel });
-    expect(loadFavBtn).toBeEnabled();
+    it('Should be disable if user not authenticated, despite training data be ok', () => {
+      useSession.mockReturnValue({ status: 'unauthenticated', data: null });
+      render(
+        <NextIntlClientProvider
+          locale={locale}
+          messages={messages}
+        >
+          <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aRaceDate} />
+        </NextIntlClientProvider>
+      );
 
-    // Click it and check store values change
-    fireEvent.click(loadFavBtn);
-    expect(useAppStore.getState().trainingPlanId).toBe(aTrainingPlan.id);
-    expect(useAppStore.getState().raceDate).toBe(aRaceDate);
+      // pick the handler from the calls history
+      const { disabled } = (FavoriteDialogMock).mock.calls[0][0];
+
+      expect(disabled).toBe(true);
+    });
+
+    it('Should be disable if user is authenticated, but training plan data is incomplete.', () => {
+      useSession.mockReturnValue({ status: 'authenticated', data: null });
+      render(
+        <NextIntlClientProvider
+          locale={locale}
+          messages={messages}
+        >
+          <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]}  />
+        </NextIntlClientProvider>
+      );
+
+      // pick the handler from the calls history
+      const { disabled } = (FavoriteDialogMock).mock.calls[0][0];
+
+      expect(disabled).toBe(true);
+    });
+
+    it('Should mark is favorite, if enabled and current plan is the favorite', () => {
+      useSession.mockReturnValue({ status: 'authenticated', data: null });
+
+      // Set up store with favorite values
+      useAppStore.setState({
+        favoriteTrainingPlanId: aTrainingPlan.id,
+        favoriteRaceDate: aRaceDate,
+      });
+
+      render(
+        <NextIntlClientProvider
+          locale={locale}
+          messages={messages}
+        >
+          <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id} origRaceDate={aRaceDate} />
+        </NextIntlClientProvider>
+      );
+
+      // pick the handler from the calls history
+      const { isFavorite } = (FavoriteDialogMock).mock.calls[0][0];
+
+      expect(isFavorite).toBe(true);
+    });
   });
 
-  it('Should disable Load Favorite button if not authenticated or no favorite', async () => {
-    useSession.mockReturnValue({ status: 'unauthenticated', data: null });
-    useAppStore.setState({
-      favoriteTrainingPlanId: undefined,
-      favoriteRaceDate: undefined,
-      initializedFavorites: false
+  describe('Current training data', () => {
+    it('Should show placeholders on subtitles when some initial state undefined.', () => {
+      useSession.mockReturnValue({ status: 'unauthenticated', data: null });
+      render(
+          <NextIntlClientProvider
+            locale={locale}
+            messages={messages}
+          >
+            <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]}/>
+        </NextIntlClientProvider>
+      );
+
+      const theText = screen.getByText(`${messages.configBar.planLabel}: ${messages.configBar.unSelectedPlanValue}`);
+      expect(theText).toBeInTheDocument();
+      const theDate = screen.getByText(`${messages.configBar.raceDateLabel}: ( ${messages.configBar.unSelectedRaceDateValue} )`);
+      expect(theDate).toBeInTheDocument();
+    })
+
+      it('Should render subtitles with initial state.', ()  => {
+      render(
+        <NextIntlClientProvider
+          locale={locale}
+          messages={messages}
+        >
+          <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aRaceDate} />
+        </NextIntlClientProvider>
+      );  
+
+      const theText = screen.getByText(`${messages.configBar.planLabel}: ${aTrainingPlan.label}`);
+      expect(theText).toBeInTheDocument();
+      const theDate = screen.getByText(`${messages.configBar.raceDateLabel}: (${aRaceDate})`);
+      expect(theDate).toBeInTheDocument();
+    })
+  });
+  
+  describe('Go to favorites', () => {
+    it('Should be enable if user authenticated, and favorites are setted', async () => {
+      useSession.mockReturnValue({ status: 'authenticated', data: null });
+
+      // Set up store with favorite values
+      useAppStore.setState({
+        favoriteTrainingPlanId: aTrainingPlan.id,
+        favoriteRaceDate: aRaceDate,
+      });
+
+      render(
+        <NextIntlClientProvider
+          locale={locale}
+          messages={messages}
+        >
+          <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} />
+        </NextIntlClientProvider>
+      );
+
+      const loadFavBtn = screen.getByRole('button', {name: messages.configBar.goToFavorites});
+      expect(loadFavBtn).toBeEnabled();
     });
-    render(
-      <NextIntlClientProvider locale={locale} messages={messages}>
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} />
-      </NextIntlClientProvider>
-    );
-    fireEvent.click(screen.getByRole('button', { name: messages.configBar.selectorTitle }));
-    const loadFavBtn = await screen.findByRole('button', { name: messages.configBar.useFavoriteLabel });
-    expect(loadFavBtn).toBeDisabled();
+
+    it('Should be disable if user not authenticated, despite favorites be ok', () => {
+      useSession.mockReturnValue({ status: 'unauthenticated', data: null });
+
+      // Set up store with favorite values
+      useAppStore.setState({
+        favoriteTrainingPlanId: aTrainingPlan.id,
+        favoriteRaceDate: aRaceDate,
+      });
+      
+      render(
+        <NextIntlClientProvider
+          locale={locale}
+          messages={messages}
+        >
+          <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} />
+        </NextIntlClientProvider>
+      );
+
+      const loadFavBtn = screen.getByRole('button', {name: messages.configBar.goToFavorites});
+      expect(loadFavBtn).toBeDisabled();
+    });
+
+    it('Should be disable if user authenticated, but favorites are not setted', () => {
+      useSession.mockReturnValue({ status: 'authenticated', data: null });
+
+      // Set up store with no favorite values
+      useAppStore.setState({
+        favoriteTrainingPlanId: undefined,
+        favoriteRaceDate: undefined,
+      });
+
+      render(
+        <NextIntlClientProvider
+          locale={locale}
+          messages={messages}
+        >
+          <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} />
+        </NextIntlClientProvider>
+      );
+
+      const loadFavBtn = screen.getByRole('button', {name: messages.configBar.goToFavorites});
+      expect(loadFavBtn).toBeDisabled();
+    });
   });
 
-  it('Should render the popup with its childs initialized with the param initialState.',  async ()  => {
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages}
-      >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aRaceDate} />
-      </NextIntlClientProvider>
-    );  
+  describe('Config button', () => {
+    it('Should be present', () => {
+      useSession.mockReturnValue({ status: 'authenticated', data: null });
 
-    const thePopupTrigger = screen.getByRole('button', {name: messages.configBar.selectorTitle});
+      // Set up store with no favorite values
+      useAppStore.setState({
+        favoriteTrainingPlanId: undefined,
+        favoriteRaceDate: undefined,
+      });
 
-    fireEvent.click(thePopupTrigger);
+      render(
+        <NextIntlClientProvider
+          locale={locale}
+          messages={messages}
+        >
+          <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} />
+        </NextIntlClientProvider>
+      );
 
-    const theText = screen.getByText(aTrainingPlan.label);
+      const configBtn = screen.getByRole('button', {name: 'config button'});
+      expect(configBtn).toBeInTheDocument();      
+    });
+  });
 
-    expect(theText).toBeInTheDocument();
+  describe('Events handlers', () => {
+    describe('dispatchFavorite', () => {
+      it('Should call setFavoriteAction if current plan and date isn\'t favorite yet.', async () => {
+        const userId = 'user1';
+        
+        useSession.mockReturnValue({ status: 'authenticated', data: { user: {id: userId} }    });
+        const setFavoriteActionSpy = jest.spyOn(useAppStore.getState(), 'setFavoriteAction');
 
-    const theDate =  screen.getByDisplayValue(aRaceDate);
-    expect(theDate).toBeInTheDocument(); 
-  })
+        render(
+          <NextIntlClientProvider
+            locale={locale}
+            messages={messages}
+          >
+            <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id} origRaceDate={aRaceDate}/>
+          </NextIntlClientProvider>
+        );
 
-  it('Should not initialy redirect to the initialState past param.', () => {
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages}
-      >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aRaceDate} />
-      </NextIntlClientProvider>
-    );
-    expect(pushMock).not.toHaveBeenCalled();
-  })
-
-  it('Should redirect, if changed to a valid plan.', async() => {
-
-    // Initial render with the original plan and date
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages}
-      >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aRaceDate} />
-      </NextIntlClientProvider>
-    );
-
-
-    // Simulate changing the training plan
-    await act(async() => {
-      const state = useAppStore.getState();
-      state.setTrainingPlanIdAction(otheraTrainingPlan.id);
+        // pick the handler from the calls history
+        const { dispatch: dispatchFavorite } = (FavoriteDialogMock).mock.calls[0][0];
+        
+        // call manually
+        await act(() => dispatchFavorite());
+     
+        expect(setFavoriteActionSpy).toHaveBeenCalledTimes(1);
+        expect(setFavoriteActionSpy).toHaveBeenCalledWith(userId, aTrainingPlan.id, aRaceDate);
+   
+      });
     });
 
-    const expectedRoute = `/${locale}${paths.trainingPlanShow({raceDate: aRaceDate, trainingPlanId: otheraTrainingPlan.id})}`;
-    expect(pushMock).toHaveBeenCalledWith(expectedRoute);
-    expect(pushMock).toHaveBeenCalledTimes(1);  
-   })
+    describe('onLoadFavorites', () => {
+      it('Should call router.push with the favorite training (when no empty)', async () => {
+        useSession.mockReturnValue({ status: 'authenticated', data: null });
 
+        useAppStore.setState({
+          favoriteTrainingPlanId: aTrainingPlan.id,
+          favoriteRaceDate: aRaceDate,
+        });
 
-  it('Should redirect, if changed to a valid race date.', async () => {
+        render(
+          <NextIntlClientProvider
+            locale={locale}
+            messages={messages}
+          >
+            <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} />
+          </NextIntlClientProvider>
+        );
+        const loadFavBtn = screen.getByRole('button', {name: messages.configBar.goToFavorites});
+        fireEvent.click(loadFavBtn);
+        const expectedRoute = `/${locale}${paths.trainingPlanShow({raceDate: aRaceDate, trainingPlanId: aTrainingPlan.id})}`;
+        expect(pushMock).toHaveBeenCalledWith(expectedRoute);
+        expect(pushMock).toHaveBeenCalledTimes(1);
+      });
 
-    render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages}
-      >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aRaceDate} />
-      </NextIntlClientProvider>
-    );
+      it('Should not call router.push if favorite training plan is empty', async () => {
+        useSession.mockReturnValue({ status: 'authenticated', data: null });
 
-    // Simulate changing the raceDate
-    await act(async() => {
-      const state = useAppStore.getState();
-      state.setRaceDateAction(otherDate);
-    });
+        useAppStore.setState({
+          favoriteTrainingPlanId: undefined,
+          favoriteRaceDate: aRaceDate,
+        });
 
-    const expectedRoute = `/${locale}${paths.trainingPlanShow({raceDate: otherDate, trainingPlanId: aTrainingPlan.id})}`;
-
-    expect(pushMock).toHaveBeenCalledWith(expectedRoute);
-    expect(pushMock).toHaveBeenCalledTimes(1);
-  })
-
-  it('Should not redirect, if changed to the same values.', () => {
-
-    const { rerender } = render(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages}
-      >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aRaceDate} />
-      </NextIntlClientProvider>
-    );
-
-    rerender(
-      <NextIntlClientProvider
-        locale={locale}
-        messages={messages}
-      >
-        <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} origTrainingPlanId={aTrainingPlan.id as TrainingPlanId} origRaceDate={aRaceDate} />
-      </NextIntlClientProvider>
-    );
-
-    
-    expect(pushMock).toHaveBeenCalledTimes(0);
-  })  
+        render(
+          <NextIntlClientProvider
+            locale={locale}
+            messages={messages}
+          >
+            <ConfigBar trainingPlansAvailable={trainingPlansAvailableFront[locale]} />
+          </NextIntlClientProvider>
+        );
+        const loadFavBtn = screen.getByRole('button', {name: messages.configBar.goToFavorites});
+        fireEvent.click(loadFavBtn);
+        expect(pushMock).not.toHaveBeenCalled();
+      });
+    })
+  });
 });

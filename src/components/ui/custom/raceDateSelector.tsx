@@ -3,7 +3,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-07-29T09:28:18-03:00
+ * @Last modified time: 2025-08-06T09:18:51-03:00
  */
 
 
@@ -13,21 +13,18 @@ import { Input } from "@/components/ui/input"
 
 import { uString } from "@/types/global";
 
-import { useAppStore } from '@/stores/useAppStore';
-
 interface RaceDateSelectorProps {
   raceDate: uString;
+  onChangeDate: (date: uString) => void;
 }
 
-export default function RaceDateSelector({raceDate}: RaceDateSelectorProps) {
-  const setRaceDate = useAppStore((s) => s.setRaceDateAction);
-
+export default function RaceDateSelector({raceDate, onChangeDate}: RaceDateSelectorProps) {
   return (
       <Input
         type="date"
         defaultValue={raceDate}
         className="w-[160px]"
-        onChange={ e => setRaceDate(e.target.value) }
+        onChange={ e => onChangeDate(e.target.value) }
       />
   );
 }

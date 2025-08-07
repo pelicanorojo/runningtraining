@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-07-31T11:59:40-03:00
+ * @Last modified time: 2025-08-03T11:50:44-03:00
  */
 
 // -- plan types
@@ -61,7 +61,7 @@ export const parseTrainingPlanId = (id: string): uTrainingPlanId => {
 
 export type RaceDate = string;
 export type uRaceDate = RaceDate | undefined;
-
+export type uTrainingData = TrainingData | null;
 
 export const isValidRaceDate = (value: uRaceDate): value is RaceDate => {
 
@@ -98,6 +98,9 @@ export type TrainingPlanThinFrontList = TrainingPlanThinFront[];
 export type PlanConfig = {
   trainingPlanId: uTrainingPlanId;
   raceDate: uRaceDate;
+}
+
+export type PlanConfigFavorite = {
   favoriteTrainingPlanId: uTrainingPlanId;
   favoriteRaceDate: uRaceDate;
 }

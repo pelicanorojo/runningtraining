@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2024-11-21T11:34:30-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-07-31T12:08:34-03:00
+ * @Last modified time: 2025-08-05T12:51:32-03:00
  */
 
 
@@ -16,31 +16,25 @@ const locale = 'en';
 const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[locale][1];
 
 
-import { useAppStore } from '@/stores/useAppStore';
+const onChangePlanMock = jest.fn();
 
-// No mock needed by now for the store, simply spy, and use the helper reset.
 beforeEach(() => {
-  jest.clearAllMocks();
-  const state = useAppStore.getState();
-  state.reset();
+  jest.resetAllMocks();
 });
 
-afterEach(() => {
-  jest.restoreAllMocks(); // IMPORTANT: This cleans up the spy
-});
 
 import PlanSelector from '@/components/ui/custom/planSelector';
 
 describe('Plan Selector ...', () => {
   it('Should render without a plan selected, show placeholder.', () => {
     const thePlaceHolder = 'The plan placeholder';
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} placeHolder={thePlaceHolder}/>);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} placeHolder={thePlaceHolder} onChangePlan={onChangePlanMock}/>);
     const theText = screen.getByText(thePlaceHolder);
     expect(theText).toBeInTheDocument();
   })
 
   it('Should render without a plan selected, should list once each training plan all unselected when unfolded.', () => {
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]}/>);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} onChangePlan={onChangePlanMock}/>);
 
     const combo = screen.getByRole('combobox');
 
@@ -64,7 +58,7 @@ describe('Plan Selector ...', () => {
 
   it('Should render with a plan selected.', () => {
 
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} selectedPlanId={aTrainingPlan.id} />);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]} selectedPlanId={aTrainingPlan.id}  onChangePlan={onChangePlanMock}/>);
 
     const theText = screen.getByText(aTrainingPlan.label);
     expect(theText).toBeInTheDocument();
@@ -73,7 +67,7 @@ describe('Plan Selector ...', () => {
   it('Should render with a plan selected, should list once each training plan when unfolded, with the selected one checked.', () => {
     const aTrainingPlan: TrainingPlanThinFront = trainingPlansAvailableFront[locale][0];
 
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]}  selectedPlanId={aTrainingPlan.id} />);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]}  selectedPlanId={aTrainingPlan.id}  onChangePlan={onChangePlanMock} />);
 
     const combo = screen.getByRole('combobox');
 
@@ -91,9 +85,9 @@ describe('Plan Selector ...', () => {
   })
 
   it('Should dispatch an action when is selected an option', () => {
-    const actionSpy = jest.spyOn(useAppStore.getState(), 'setTrainingPlanIdAction');
+    onChangePlanMock.mockImplementation((planId: string) => {});
 
-    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]}/>);
+    render(<PlanSelector availablePlans={trainingPlansAvailableFront[locale]}  onChangePlan={onChangePlanMock}/>);
 
     const combo = screen.getByRole('combobox');
 
@@ -108,10 +102,8 @@ describe('Plan Selector ...', () => {
     
     fireEvent.click(optionElement[0]);
 
-    const state = useAppStore.getState();
-    expect(state.trainingPlanId).toBe(aTrainingPlan.id);
 
-    expect(actionSpy).toHaveBeenCalledTimes(1);
-    expect(actionSpy).toHaveBeenCalledWith(aTrainingPlan.id);
+    expect(onChangePlanMock).toHaveBeenCalledTimes(1);
+    expect(onChangePlanMock).toHaveBeenCalledWith(aTrainingPlan.id);
   })
 });

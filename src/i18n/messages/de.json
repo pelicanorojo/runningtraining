@@ -10,6 +10,7 @@
 	},
   "configBar": {
     "useFavoriteLabel": "Favorit laden",
+ 		"goToFavorites": "TODO Cargar favorito",
     "planLabel": "Plan",
     "unSelectedPlanValue": "Wählen Sie einen aus",
     "raceDateLabel": "Renndatum",
