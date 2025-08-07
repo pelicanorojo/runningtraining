@@ -1,0 +1,51 @@
+#docker compose up -d
+#docker compose down --volumes --rmi all --remove-orphans
+#docker volume prune -f
+#docker system prune -a -f
+
+services:
+  # Init container to process SQL template
+  # init-sql:
+  #   image: busybox:1.35
+  #   volumes:
+  #     - ./COMPOSE_SETUP:/compose-setup:ro
+  #     - ./.env:/config/.env:ro
+  #     - ./COMPOSE_SETUP/temporal:/temporal
+  #   command: ["sh", "/compose-setup/process-init.sh"]
+  #   restart: "no"
+  # TODO handle the generated default network, explictiy here
+
+  postgres:
+    image: postgres:15.13-alpine
+    container_name: marathon_pg
+    # depends_on:
+    #   init-sql:
+    #     condition: service_completed_successfully
+    ports:
+      - "5432:5432" 
+    volumes:
+      - ./.env:/config/.env:ro
+      # - ./COMPOSE_SETUP:/compose-setup
+      # - ./COMPOSE_SETUP/postgres-data/easydrop:/var/lib/postgresql/data
+      # - ./COMPOSE_SETUP/temporal:/docker-entrypoint-initdb.d:ro
+      # - ./COMPOSE_SETUP/temporal:/temporal
+      # - ./COMPOSE_SETUP/aux:/aux
+      - ${COMPOSE_BASE}:/compose-setup
+      - ${POSTGRE_DATA}:/var/lib/postgresql/data
+      - ${COMPOSE_BASE}/temporal:/docker-entrypoint-initdb.d:ro
+      - ${COMPOSE_BASE}/temporal:/temporal
+      - ${COMPOSE_BASE}/aux:/aux
+    environment:
+      POSTGRES_DB: ${APP_DB_NAME}
+      POSTGRES_USER: ${POSTGRES_ADMIN_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_ADMIN_PASSWORD}
+      POSTGRES_HOST_AUTH_METHOD: scram-sha-256  # More secure than md5
+    command: ["sh", "/compose-setup/postgre-init.sh"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_ADMIN_USER} -d ${APP_DB_NAME}"]
+      interval: 15s
+      timeout: 14s
+      retries: 2
+    #restart: unless-stopped
+#volumes:
+  # No volumes needed - everything is in host directories now

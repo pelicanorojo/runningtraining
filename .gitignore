@@ -38,3 +38,11 @@ next-env.d.ts
 
 # personal
 .NOTES.TXT
+
+#docker compose
+COMPOSE_SETUP/aux/
+COMPOSE_SETUP/temoral/
+COMPOSE_SETUP/postgres-data/
+
+
+
