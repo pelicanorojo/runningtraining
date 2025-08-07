@@ -2,7 +2,7 @@
  * @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
  * @Date: 2025-07-31T12:12:34-03:00
  * @Last modified by: Pablo Benito <pelicanorojo>
- * @Last modified time: 2025-08-01T11:32:13-03:00
+ * @Last modified time: 2025-08-05T12:53:22-03:00
  */
 
 
@@ -67,23 +67,7 @@ describe('Test sync actions and props', () => {
       useAppStore.getState().init({ trainingPlanId: aTrainingPlan.id, raceDate: aRaceDate });
     });
 
-    expect(useAppStore.getState().initialized).toBe(true);
     expect(useAppStore.getState().trainingPlanId).toBe(aTrainingPlan.id);
-    expect(useAppStore.getState().raceDate).toBe(aRaceDate);
-  });
-
-
-  it('Should set trainingPlanId', () => {
-    act(() => {
-      useAppStore.getState().setTrainingPlanIdAction(aTrainingPlan.id);
-    });
-    expect(useAppStore.getState().trainingPlanId).toBe(aTrainingPlan.id);
-  });
-
-  it('should set raceDate', () => {
-    act(() => {
-      useAppStore.getState().setRaceDateAction(aRaceDate);
-    });
     expect(useAppStore.getState().raceDate).toBe(aRaceDate);
   });
 

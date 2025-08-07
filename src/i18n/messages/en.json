@@ -10,6 +10,7 @@
 	},
 	"configBar": {
     "useFavoriteLabel": "Load favorite",
+		"goToFavorites": "Go to favorite",
 		"planLabel": "Plan",
     "unSelectedPlanValue": "Select one",
     "raceDateLabel": "Race Date",
