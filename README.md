@@ -1,7 +1,7 @@
 # runningtraining
 A web app, for handle a running training plan.
 
-[Try its live](https://runningtraining.vercel.app/en/plan/21k110m6wbw5m/raceDate/2025-11-30)
+[🏃‍♂️ Try it live 🏃‍♂️](https://runningtraining.vercel.app/en/plan/21k110m6wbw5m/raceDate/2025-11-30)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
