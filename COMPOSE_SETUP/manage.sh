@@ -20,19 +20,18 @@ warn() { echo -e "${YELLOW}[WARN]${NC} $1"; }
 error() { echo -e "${RED}[ERROR]${NC} $1"; }
 
 # Get to project root (one level up from COMPOSE_SETUP)
-cd "$(dirname "$0")/.."
+#cd "$(dirname "$0")/.."
 
 # Check if we're in the right directory
-if [ ! -f "docker-compose.yml" ] || [ ! -f ".env" ]; then
-    error "docker-compose.yml or .env not found in parent directory"
-    error "Make sure you're running this from the project root"
+if [ ! -f "docker-compose.yml" ] || [ ! -f "../.env" ]; then
+    error "docker-compose.yml or ../.env not found"
     exit 1
 fi
 
 # Load environment variables from .env file
-if [ -f .env ]; then
+if [ -f ../.env ]; then
     set -a
-    . .env #POSIX source
+    . ../.env #POSIX source
     set +a
     echo "Loaded variables from root .env file"
 else
@@ -42,7 +41,7 @@ fi
 # Setup directories and permissions
 setup() {
     info "Setting up directories..."
-    mkdir -p ${COMPOSE_BASE}/postgres-data/easydrop
+    mkdir -p ${POSTGRE_DATA}/easydrop
     mkdir -p ${COMPOSE_BASE}/aux
     mkdir -p ${COMPOSE_BASE}/temporal
     
@@ -62,13 +61,13 @@ setup() {
     info "Directory structure:"
     echo "  ./docker-compose.yml"
     echo "  ./.env"
-    echo "  ./${COMPOSE_BASE}/postgres-data/easydrop (persistent data)"
-    echo "  ./${COMPOSE_BASE}/manage.sh"
-    echo "  ./${COMPOSE_BASE}/postgre-init.sh"
-    echo "  ./${COMPOSE_BASE}/pgusers-init.sh"
-    echo "  ./${COMPOSE_BASE}/init.sql.template"
-    echo "  ./${COMPOSE_BASE}/temporal/ (temporary processed SQL)"
-    echo "  ./${COMPOSE_BASE}/aux/ (aux signaling files first_start[n])"
+    echo "  ${POSTGRE_DATA}/easydrop (persistent data)"
+    echo "  ${COMPOSE_BASE}/manage.sh"
+    echo "  ${COMPOSE_BASE}/postgre-init.sh"
+    echo "  ${COMPOSE_BASE}/pgusers-init.sh"
+    echo "  ${COMPOSE_BASE}/init.sql.template"
+    echo "  ${COMPOSE_BASE}/temporal/ (temporary processed SQL)"
+    echo "  ${COMPOSE_BASE}/aux/ (aux signaling files first_start[n])"
 }
 
 # Start full stack
@@ -102,7 +101,7 @@ clean() {
             read -p "Confirm you want to clean the postgres-data directory, aux and temporal content? (y/N): " -n 1 -r
             echo ""
             if [[ $REPLY =~ ^[Yy]$ ]]; then
-                rm -rf ${POSTGRE_DATA}
+                rm -rf ${POSTGRE_DATA}/*
                 rm -rf ${COMPOSE_BASE}/aux/*
                 rm -rf ${COMPOSE_BASE}/temporal/*
                 info "postgres-data directory cleaned"
