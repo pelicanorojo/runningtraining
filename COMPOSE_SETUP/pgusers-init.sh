@@ -16,6 +16,7 @@ else
 fi
 
 # Validate required variables, if some empty or unset => exit
+#TODO: add the other vars, pass, schema
 if [ -z "$APP_DB_NAME" ] || [ -z "$POSTGRES_MIGRATION_USER" ] || [ -z "$POSTGRES_APP_USER" ]; then
     echo "ERROR: Missing required environment variables"
     echo "  APP_DB_NAME: $([ -n "$APP_DB_NAME" ] && echo "OK" || echo "EMPTY")"
@@ -32,6 +33,7 @@ echo "  POSTGRES_APP_USER"
 # Process template - replace variables
 sed \
     -e "s/\${APP_DB_NAME}/$APP_DB_NAME/g" \
+    -e "s/\${APP_SCHEMA_NAME}/$APP_SCHEMA_NAME/g" \
     -e "s/\${POSTGRES_MIGRATION_USER}/$POSTGRES_MIGRATION_USER/g" \
     -e "s/\${POSTGRES_MIGRATION_PASSWORD}/$POSTGRES_MIGRATION_PASSWORD/g" \
     -e "s/\${POSTGRES_APP_USER}/$POSTGRES_APP_USER/g" \

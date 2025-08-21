@@ -1,20 +1,11 @@
-#docker compose up -d
+#docker compose --env-file ../.env up -d
+#docker compose --env-file ../.env up postgres
 #docker compose down --volumes --rmi all --remove-orphans
 #docker volume prune -f
 #docker system prune -a -f
+#docker exec -it  marathon_pg psql -U ${POSTGRES_ADMIN_USER} -d ${APP_DB_NAME}
 
 services:
-  # Init container to process SQL template
-  # init-sql:
-  #   image: busybox:1.35
-  #   volumes:
-  #     - ./COMPOSE_SETUP:/compose-setup:ro
-  #     - ./.env:/config/.env:ro
-  #     - ./COMPOSE_SETUP/temporal:/temporal
-  #   command: ["sh", "/compose-setup/process-init.sh"]
-  #   restart: "no"
-  # TODO handle the generated default network, explictiy here
-
   postgres:
     image: postgres:15.13-alpine
     container_name: marathon_pg
@@ -24,19 +15,15 @@ services:
     ports:
       - "5432:5432" 
     volumes:
-      - ./.env:/config/.env:ro
-      # - ./COMPOSE_SETUP:/compose-setup
-      # - ./COMPOSE_SETUP/postgres-data/easydrop:/var/lib/postgresql/data
-      # - ./COMPOSE_SETUP/temporal:/docker-entrypoint-initdb.d:ro
-      # - ./COMPOSE_SETUP/temporal:/temporal
-      # - ./COMPOSE_SETUP/aux:/aux
+      - ../.env:/config/.env:ro
       - ${COMPOSE_BASE}:/compose-setup
-      - ${POSTGRE_DATA}:/var/lib/postgresql/data
+      - ${POSTGRE_DATA}/easydrop:/var/lib/postgresql/data
       - ${COMPOSE_BASE}/temporal:/docker-entrypoint-initdb.d:ro
       - ${COMPOSE_BASE}/temporal:/temporal
       - ${COMPOSE_BASE}/aux:/aux
     environment:
       POSTGRES_DB: ${APP_DB_NAME}
+      APP_SCHEMA_NAME: ${APP_SCHEMA_NAME}
       POSTGRES_USER: ${POSTGRES_ADMIN_USER}
       POSTGRES_PASSWORD: ${POSTGRES_ADMIN_PASSWORD}
       POSTGRES_HOST_AUTH_METHOD: scram-sha-256  # More secure than md5

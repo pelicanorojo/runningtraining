@@ -16,7 +16,7 @@
     PG_PID=$!  # Capture its Process ID
 
     wait_for_socket() {
-        while ! pg_isready -h localhost -U "${POSTGRES_USER}" >/dev/null 2>&1; do
+        while ! pg_isready -h localhost -U "${POSTGRES_USER}"  -d "${POSTGRES_DB}" >/dev/null 2>&1; do
             echo "Waiting for PostgreSQL socket to be ready..."
             sleep 4
         done
@@ -27,7 +27,7 @@
         local table_exists=$(psql -h localhost -U "${POSTGRES_USER}" -d "${POSTGRES_DB}" -t -c "
             SELECT EXISTS (
                 SELECT FROM information_schema.tables 
-                WHERE table_schema = 'public' 
+                WHERE table_schema = '${APP_SCHEMA_NAME}_ctrl' 
                 AND table_name = 'dontdropthisinittable'
             );" | tr -d '[:space:]')
         
