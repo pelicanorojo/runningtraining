@@ -3,36 +3,65 @@
 #docker compose down --volumes --rmi all --remove-orphans
 #docker volume prune -f
 #docker system prune -a -f
-#docker exec -it  marathon_pg psql -U ${POSTGRES_ADMIN_USER} -d ${APP_DB_NAME}
 
+#TODO: extract this container as separate project, and point to the code via volume.
 services:
   postgres:
-    image: postgres:15.13-alpine
+    image: postgres:15-alpine
+    pull_policy: if_not_present
     container_name: marathon_pg
-    # depends_on:
-    #   init-sql:
-    #     condition: service_completed_successfully
     ports:
       - "5432:5432" 
     volumes:
-      - ../.env:/config/.env:ro
-      - ${COMPOSE_BASE}:/compose-setup
-      - ${POSTGRE_DATA}/easydrop:/var/lib/postgresql/data
-      - ${COMPOSE_BASE}/temporal:/docker-entrypoint-initdb.d:ro
-      - ${COMPOSE_BASE}/temporal:/temporal
-      - ${COMPOSE_BASE}/aux:/aux
+      - .env.local:/config/.env:ro
+      - .:/compose-setup
+      - postgres-data:/var/lib/postgresql/data 
+      - ./temporal:/docker-entrypoint-initdb.d:ro
+      - ./temporal:/temporal
+      - ./aux:/aux
+    env_file:
+      - .env.local
     environment:
-      POSTGRES_DB: ${APP_DB_NAME}
+      COMPOSE_SETUP: compose-setup # for replace on bashes
       APP_SCHEMA_NAME: ${APP_SCHEMA_NAME}
-      POSTGRES_USER: ${POSTGRES_ADMIN_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_ADMIN_PASSWORD}
       POSTGRES_HOST_AUTH_METHOD: scram-sha-256  # More secure than md5
-    command: ["sh", "/compose-setup/postgre-init.sh"]
+    command: ["sh", "/compose-setup/postgres-init.sh"]
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_ADMIN_USER} -d ${APP_DB_NAME}"]
-      interval: 15s
-      timeout: 14s
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 20s
+      timeout: 4s
       retries: 2
+      start_period: 30s  # Give postgres time to start
     #restart: unless-stopped
-#volumes:
-  # No volumes needed - everything is in host directories now
+    networks:
+      - marathon-network
+  # Next.js Application
+  nextjs:
+    image: node:20-alpine
+    container_name: marathon_next
+    working_dir: /app
+    #restart: unless-stopped
+    ports:
+      - "3000:3000"
+      - "5555:5555"  # Prisma Studio
+    environment:
+      - NODE_ENV=development
+    command: sleep infinity  
+    env_file:
+      - .env.local
+    volumes:
+      # Mount entire project as working directory
+      - ..:/app
+    #- node-modules-data:/app/node_modules
+    #- next-cache-data:/app/.next
+    networks:
+      - marathon-network
+networks:
+  marathon-network:
+    driver: bridge
+    name: marathon_network
+volumes:
+  postgres-data:
+  #node-modules-data:
+  #next-cache-data:
+

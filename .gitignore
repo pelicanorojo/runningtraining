@@ -43,6 +43,3 @@ next-env.d.ts
 COMPOSE_SETUP/aux/
 COMPOSE_SETUP/temoral/
 COMPOSE_SETUP/postgres-data/
-
-
-
