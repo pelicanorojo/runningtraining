@@ -3,17 +3,57 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "help": "cd COMPOSE_SETUP && bash manage.sh npmCheatSheet",
+
+    "// Commands used by hosting (Vercel) ":  "",
     "build": "prisma migrate deploy && next build",
-    "start": "next start",
+    "postinstall": "prisma generate",
+
+    "// Commands with dockerized services ":  "",
+    "docks:up": "cd COMPOSE_SETUP && docker compose --env-file .env.local up #starts db & node ",
+
+    "// Commands with dockerized NEXTJS frequents":  "",
+    "nx:start": "cd COMPOSE_SETUP && docker compose --env-file .env.local up nextjs -d",
+    "nx:dev": "cd COMPOSE_SETUP && docker compose exec -T nextjs npm run dev",
+    "nx:restart": "npm run nx:devstop; npm run nx:stop && npm run nx:start && npm run nx:dev",
+    "// Commands with dockerized NEXTJS less frequent":  "",
+    "nx:devstop": "cd COMPOSE_SETUP && docker compose exec -T nextjs sh -c 'pkill -SIGTERM \"next-server\"'", 
+    "nx:stop": "cd COMPOSE_SETUP && docker compose --env-file .env.local down nextjs",
+    "nx:setup": "cd COMPOSE_SETUP && bash manage.sh npmAndPrismaInstallGenerate",
+    "nx:sh": "cd COMPOSE_SETUP && docker compose exec nextjs sh",
+    "nx:pris:mig": "cd COMPOSE_SETUP && docker compose exec -T  nextjs sh -c 'DATABASE_URL=\"$DATABASE_MIGR_URL\" npx prisma migrate dev'",  
+    "nx:pris:gen": "cd COMPOSE_SETUP && docker compose exec -T nextjs npx prisma generate",
+    "nx:pris:std": "cd COMPOSE_SETUP && docker compose exec -T nextjs sh -c 'DATABASE_URL=\"$DATABASE_MIGR_URL\" npx prisma studio'",
+
+    "// Commands with dockerized DB frequents":  "",
+    "db:start": "cd COMPOSE_SETUP && docker compose --env-file .env.local up -d postgres",
+    "db:stop": "cd COMPOSE_SETUP && docker compose --env-file .env.local down postgres",
+    "db:check": "docker exec -i marathon_pg pg_isready -U pgadmin -d marathon_db",
+
+    "// Commands with dockerized DB less frequents":  "",
+    "db:createInitSQL": "cd COMPOSE_SETUP && docker compose exec -T postgres sh ./compose-setup/pgusers-init.sh",
+    "db:removeInitSQL": "cd COMPOSE_SETUP && docker compose exec -T postgres sh -c 'rm ./compose-setup/temporal/init.sql'",
+    "db:pullimg": "cd COMPOSE_SETUP && docker compose --env-file .env.local  pull",
+    "db:sh": "cd COMPOSE_SETUP && docker compose exec postgres sh",
+    "db:psqlHelp": "cd COMPOSE_SETUP && bash manage.sh dbPSqlCheatSheet",
+    "db:psql": "docker exec -it marathon_pg psql -U pgadmin  -d marathon_db",
+
+    "// Commands with dockerized DB dangerous":  "",
+    "db:setup": "ENABL=t; if [ \"$ENABL\" = \"f\" ]; then echo disabled; exit 0; else echo enabled; fi && cd COMPOSE_SETUP && bash manage.sh dbSetup && docker compose --env-file .env.local up postgres",
+    "db:clean": "ENABL=t; if [ \"$ENABL\" = \"f\" ]; then echo disabled; exit 0; else echo enabled; fi && cd COMPOSE_SETUP && docker compose --env-file .env.local down -v && docker volume prune -f && bash manage.sh dbClean",
+
+    "// Pending commands to adapt:": "",
+    "nx:lint": "cd COMPOSE_SETUP && docker compose exec -T nextjs npm run lint",
+    "nx:test": "cd COMPOSE_SETUP && docker compose exec -T nextjs npm run test",
+    "nx:watch": "cd COMPOSE_SETUP && docker compose exec -T nextjs npm run test:watch",
+    "nx:changes": "cd COMPOSE_SETUP && docker compose exec -T nextjs npm run test:changes",
+    
+    "// Internal scripts for the container (used by the above commands)": "",
+    "dev": "next dev # use with nx:dev, not directly",
     "lint": "next lint",
     "test": "clear; jest",
-    "test:watch": "clear; jest --watch  --coverage --detectOpenHandles",
-    "test:changes": "clear; jest --watch --onlyChanged --detectOpenHandles",
-    "start:db": "docker run -d --rm -p 5432:5432 -v postgres-data:/var/lib/postgresql/data -e POSTGRES_HOST_AUTH_METHOD=trust postgres",
-    "prisma:migrate:local": "dotenv -e .env.local -- npx prisma migrate dev --schema=prisma/schema.prisma",
-    "prisma:generate:local": "dotenv -e .env.local -- npx prisma generate --schema=prisma/schema.prisma",
-    "postinstall": "prisma generate"
+    "test:watch": "clear; jest --watch --coverage --detectOpenHandles",
+    "test:changes": "clear; jest --watch --onlyChanged --detectOpenHandles"
   },
   "dependencies": {
     "@auth/prisma-adapter": "2.10.0",

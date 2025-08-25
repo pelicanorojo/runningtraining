@@ -1,14 +1,17 @@
 #!/bin/sh
     set -euo pipefail # exit if error, undefined variable or pipeline failured
 
+    cd $COMPOSE_SETUP
+
     # Signal first run point 0
     echo "** ** Checking signal file first_start0 ..."
     if [ ! -f /aux/first_start0 ]; then
-        ./compose-setup/pgusers-init.sh
-        touch /aux/first_start0
+        . pgusers-init.sh
+        echo "hola 0 $(date +%T)" > /aux/first_start0
         echo "** ** Done initialization and signal file first_start0 creation ..."
     else
         echo "** ** Already exists signal file first_start0 ..."
+        cat /aux/first_start0
     fi
 
     # Start Postgres manually and run init.sql on (default entrypoint)
@@ -45,16 +48,15 @@
         sleep 5
     done
 
-
-
     # Signal first run point 1
     echo "** ** Checking signal file first_start1 ..."
     if [ ! -f /aux/first_start1 ]; then
         rm -f /temporal/init.sql
-        touch /aux/first_start1
+        echo "hola 1 $(date +%T)" > /aux/first_start1
         echo "** ** Done initialization and signal file first_start1 creation ..."
     else
         echo "** ** Already exists signal file first_start1 ..."
+        cat /aux/first_start1
     fi
 
     # # Keep the container running

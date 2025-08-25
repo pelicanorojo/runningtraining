@@ -1,12 +1,16 @@
 #!/bin/bash
+##
+ # @Author: Pablo Benito <pelicanorojo> bioingbenito@gmail.com
+ # @Date: 2025-08-19T09:00:41-03:00
+ # @Last modified by: Pablo Benito <pelicanorojo>
+ # @Last modified time: 2025-08-21T02:44:40-03:00
+ ##
 
 # Management script for Docker Compose setup
-# Run from project root: ./COMPOSE_SETUP/manage.sh [command]
 # chmod 700 manage.sh
-# chmod 655 postgre-init.sh
-# chmod 644 pgusers-init.sh init.sql.template
 # TODO: general devlop permissions
 # TODO: general container users and permissions
+# TODO: enhance package.json scripts, flow there etc
 set -euo pipefail # exit if error, undefined variable or pipeline failured
 
 # Colors
@@ -19,132 +23,152 @@ info() { echo -e "${GREEN}[INFO]${NC} $1"; }
 warn() { echo -e "${YELLOW}[WARN]${NC} $1"; }
 error() { echo -e "${RED}[ERROR]${NC} $1"; }
 
-# Get to project root (one level up from COMPOSE_SETUP)
-#cd "$(dirname "$0")/.."
-
 # Check if we're in the right directory
-if [ ! -f "docker-compose.yml" ] || [ ! -f "../.env" ]; then
-    error "docker-compose.yml or ../.env not found"
+if [ ! -f "docker-compose.yml" ] || [ ! -f ".env.local" ]; then
+    error "docker-compose.yml or .env.local not found"
     exit 1
 fi
 
-# Load environment variables from .env file
-if [ -f ../.env ]; then
+# Load environment variables from .env.local file
+if [ -f .env.local ]; then
     set -a
-    . ../.env #POSIX source
+    . .env.local #POSIX source
     set +a
-    echo "Loaded variables from root .env file"
+    echo "Loaded variables from .env.local file"
 else
-    echo "Warning: .env file not found at .env"
+    echo "Warning: .env file not found at .env.local"
 fi
 
 # Setup directories and permissions
-setup() {
+dbSetup() {
     info "Setting up directories..."
-    mkdir -p ${POSTGRE_DATA}/easydrop
-    mkdir -p ${COMPOSE_BASE}/aux
-    mkdir -p ${COMPOSE_BASE}/temporal
-    
-    if [ -f "${COMPOSE_BASE}/postgre-init.sh" ]; then
-        #TODO: create a user, and set the permissions for this user.
-        #TODO, check each file, report if some missed
-        chmod 655 ${COMPOSE_BASE}/postgre-init.sh
-        chmod 655 ${COMPOSE_BASE}/pgusers-init.sh
-        chmod 644 ${COMPOSE_BASE}/init.sql.template    
-        #chmod +x ${COMPOSE_BASE}/postgre-init.sh
-        info "Made postgre-init.sh executable"
-    else
-        echo "Wasnt found the scripts postgre-init.sh, pgusers-init.sh and init.sql.template"    
-    fi
+    #TODO: **** create a user, and set the permissions for this user. ***
+    chmod 655 ./postgres-init.sh
+    chmod 655 ./pgusers-init.sh
+    chmod 644 ./init.sql.template    
+    info "Made shs executable"
     
     info "Setup complete"
-    info "Directory structure:"
-    echo "  ./docker-compose.yml"
-    echo "  ./.env"
-    echo "  ${POSTGRE_DATA}/easydrop (persistent data)"
-    echo "  ${COMPOSE_BASE}/manage.sh"
-    echo "  ${COMPOSE_BASE}/postgre-init.sh"
-    echo "  ${COMPOSE_BASE}/pgusers-init.sh"
-    echo "  ${COMPOSE_BASE}/init.sql.template"
-    echo "  ${COMPOSE_BASE}/temporal/ (temporary processed SQL)"
-    echo "  ${COMPOSE_BASE}/aux/ (aux signaling files first_start[n])"
 }
 
-# Start full stack
-start() {
-    info "Starting full stack..."
-    docker-compose up -d
-    info "Stack started"
-}
-
-# Stop services
-stop() {
-    info "Stopping services..."
-    docker-compose down
-}
-
-# TODO: Check DB connection with migrator and app user
-
-# Clean everything
-clean() {
-    info "Cleaning up..."
-    docker-compose down -v
-    docker volume prune -f
-    
-    # Ask about postgres-data directory
-    if [ -d ${POSTGRE_DATA} ] && [ "$(ls -A ${POSTGRE_DATA} 2>/dev/null)" ]; then
-        echo ""
-        read -p "Do you want to clean the postgres-data directory, aux and temporal content? (y/N): " -n 1 -r
-        echo ""
-        if [[ $REPLY =~ ^[Yy]$ ]]; then
-            echo ""
-            read -p "Confirm you want to clean the postgres-data directory, aux and temporal content? (y/N): " -n 1 -r
-            echo ""
-            if [[ $REPLY =~ ^[Yy]$ ]]; then
-                rm -rf ${POSTGRE_DATA}/*
-                rm -rf ${COMPOSE_BASE}/aux/*
-                rm -rf ${COMPOSE_BASE}/temporal/*
-                info "postgres-data directory cleaned"
-            else
-                warn "postgres-data, aux and temporal directory content kept (contains persistent data), cause no confirmation"
-            fi
-        else
-            warn "postgres-data, aux and temporal directory content kept (contains persistent data)"
-        fi
-    fi
-
-    #TODO: clean temporal
-    #TODO: clean aux
+# Clean everything about db
+dbClean() {
+    info "Cleaning up everything about db ..."
+ 
+    rm -rf ./aux/*
+    rm -rf ./temporal/*
     
     info "Cleanup complete"
 }
 
-# Show help
-help() {
-    echo "Usage: $0 [command]"
-    echo ""
-    echo "Commands:"
-    echo "  setup    - Create directories and set permissions"
-    echo "  clean    - Clean up volumes and containers"
-   ## do on setup echo "  init     - Run only the init container"
-    echo "  start    - Start the full stack (includes auto-cleanup)"
-    echo "  stop     - Stop services"
-   ## echo "  check    - Show generated SQL status"
-   ## echo "  connect  - Connect to database"
-    echo "  help     - Show this help"
-    echo ""
-    echo "Security: init.sql is automatically removed after PostgreSQL starts"
-    echo "Note: This script automatically changes to project root directory"
+npmAndPrismaInstallGenerate() {
+    # Docker Quick Dependencies Installation
+    # Run from COMPOSE_SETUP directory
+    # Only handles npm packages (OS already updated in image)
+
+    echo "⚡ Starting npm dependencies installation..."
+
+    # Clean install dependencies (fast)
+    echo "📦 Installing npm packages..."
+    docker compose --env-file .env.local exec -T nextjs npm ci # --verbose
+
+    # Generate Prisma client
+    echo "🗄️  Generating Prisma client..."
+    docker compose --env-file .env.local exec -T nextjs npx prisma generate # --verbose
+
+    echo "✅ Quick installation complete! (~20 seconds)"
+    echo "💡 You can now run: npm run nx:dev"
+}
+
+# npm commands
+npmCheatSheet() {
+cat << 'EOF'
+npm run help       # Show this help
+
+# DB alone stuff
+npm run db:setup   # creates directories and sets permissions, runs only once when create the db, leaves the db running
+npm run db:start   # starts the db, for frequent start / stop after the setup, so you have the db users migrator and app user craeated
+npm run db:stop    # stops the db, for frequent start / stop after the setup
+npm run db:check   # checks if the db is running, useful to check if the db is running before running the app
+npm run db:psql    # Connects to the db with psql, useful to check if the db is running and to run psql commands
+npm run psqlHelp   # Prints a PSQL cheatsheet
+npm run db:clean   # cleans up volumes and containers, use with care, removes all data
+
+# node service alone
+npm run nx:start   # starts the nextjs app, for frequent start / stop after the setup
+npm run nx:stop    # stops the nextjs app, for frequent start / stop after the setup
+npm run nx:setup   # runs only started the first time, installs npm packages and generates prisma client -- idenpotent both right?
+npm run nx:sh      # runs a bash shell inside the nextjs container, useful to run npm commands inside the container
+npm run nx:pris:mig # runs prisma migrate dev inside the nextjs container, useful to run migrations during development
+npm run prismaCheatSheet # prints a prisma migrate dev/deploy cheatsheet
+
+
+npm run docker:up      # starts db & nextjs
+
+npm run docker:install # ~20 seconds (just npm packages)
+npm run docker:dev     # Ready!
+
+TIPS:
+keep the same node version on the container and on the host (.nvmrc)
+  so, the intelligence works well with IDEs.
+EOF
+}
+
+# Show some psql commands
+dbPSqlCheatSheet() {
+cat << 'EOF'
+
+PSQL CHEATSHEET
+0. Connect to PostgreSQL: npm run db:psqlCS
+1. List all databases: \l
+2. Connect to a database: \c database_name
+3. List schemas in current database: \dn
+4. List tables in current schema:  \dt
+5. List tables in specific schema: \dt schema_name.*
+6. Show table structure (metadata): \d table_name
+7. Show detailed table info: \d+ table_name
+8. Basic SQL query: SELECT * FROM table_name LIMIT 10;
+9. Show all sequences: \ds
+10. Show all views: \dv
+11. List users: \du
+12. Show current user: SELECT current_user;
+13. Show current database: SELECT current_database();
+14. Show current schema: SELECT current_schema();
+BONUS:
+\x      - Toggle expanded display
+\?      - Show psql help  
+\q      - Quit psql
+\timing - Toggle query timing
+EOF
+}
+
+prismaCheatSheet() {
+cat << 'EOF'
+Key differences between migrate dev/deploy:
+prisma migrate dev (development):
+
+✅ Creates new migrations from schema changes
+✅ Applies migrations to database
+✅ Regenerates Prisma client automatically
+✅ Resets database if migration history conflicts
+❌ Only for development - not safe for production data
+
+prisma migrate deploy (production):
+
+✅ Only applies existing migrations (no new ones created)
+✅ Safe for production - won't reset/lose data
+✅ Fails safely if migrations conflict
+❌ Doesn't generate client (run prisma generate separately)
+❌ Won't create new migrations from schema changes
+EOF
 }
 
 case "${1:-}" in
-    setup) setup ;;
-    #init) init ;;
-    clean) clean ;;
-    start) start ;;
-    stop) stop ;;
-    ##check) check ;;
-    ##connect) connect ;;
-    help|--help|-h|"") help ;;
+    dbSetup) dbSetup ;;
+    dbClean) dbClean ;;
+    dbPSqlCheatSheet) dbPSqlCheatSheet ;;
+    npmCheatSheet) npmCheatSheet ;;
+    prismaCheatSheet) prismaCheatSheet ;;
+    npmAndPrismaInstallGenerate) npmAndPrismaInstallGenerate ;;
     *) error "Unknown command: $1"; help; exit 1 ;;
 esac
